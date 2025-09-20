@@ -1,0 +1,2630 @@
+[
+    {
+        "pregunta": "¿Cuál es el primer libro de la Biblia?",
+        "respuesta": "Génesis",
+        "opciones": ["Génesis", "Éxodo", "Levítico", "Números"],
+        "referencia": "Génesis 1:1"
+    },
+    {
+        "pregunta": "¿Quién fue el primer hombre creado por Dios?",
+        "respuesta": "Adán",
+        "opciones": ["Abraham", "Adán", "Noé", "Moisés"],
+        "referencia": "Génesis 2:7"
+    },
+    {
+        "pregunta": "¿Quién construyó el arca para el diluvio?",
+        "respuesta": "Noé",
+        "opciones": ["Abraham", "Noé", "Lot", "David"],
+        "referencia": "Génesis 6:14"
+    },
+    {
+        "pregunta": "¿Cuántos días y noches llovió durante el diluvio?",
+        "respuesta": "Cuarenta días y cuarenta noches",
+        "opciones": ["Cuarenta días y cuarenta noches", "Diez días y diez noches", "Siete días y siete noches", "Veinte días y veinte noches"],
+        "referencia": "Génesis 7:12"
+    },
+    {
+        "pregunta": "¿Cuál fue la señal del pacto de Dios con Noé después del diluvio?",
+        "respuesta": "El arcoíris",
+        "opciones": ["Una estrella", "El arcoíris", "Una paloma", "Una roca"],
+        "referencia": "Génesis 9:13"
+    },
+    {
+        "pregunta": "¿A quién le cambió Dios el nombre por el de 'Abraham'?",
+        "respuesta": "Abram",
+        "opciones": ["Isaac", "Jacob", "Abram", "José"],
+        "referencia": "Génesis 17:5"
+    },
+    {
+        "pregunta": "¿Qué le pidió Dios a Abraham que sacrificara en el monte Moriah?",
+        "respuesta": "A su hijo Isaac",
+        "opciones": ["A su hijo Isaac", "Un cordero", "Un becerro", "A su esposa Sara"],
+        "referencia": "Génesis 22:2"
+    },
+    {
+        "pregunta": "¿Qué le sucedió a la esposa de Lot cuando huían de Sodoma?",
+        "respuesta": "Se convirtió en una columna de sal",
+        "opciones": ["Se convirtió en una columna de sal", "Se ahogó en un río", "Fue devorada por animales", "Se perdió en el desierto"],
+        "referencia": "Génesis 19:26"
+    },
+    {
+        "pregunta": "¿Cuántos hijos tuvo Jacob, que llegaron a ser los patriarcas de las 12 tribus de Israel?",
+        "respuesta": "Doce",
+        "opciones": ["Diez", "Once", "Doce", "Trece"],
+        "referencia": "Génesis 35:22"
+    },
+    {
+        "pregunta": "¿Quién fue vendido por sus hermanos a unos mercaderes ismaelitas?",
+        "respuesta": "José",
+        "opciones": ["Benjamín", "Judá", "José", "Rubén"],
+        "referencia": "Génesis 37:28"
+    },
+    {
+        "pregunta": "¿Qué se convirtió en una serpiente cuando Moisés la arrojó al suelo?",
+        "respuesta": "Su vara",
+        "opciones": ["Su mano", "Una piedra", "Su vara", "Un manto"],
+        "referencia": "Éxodo 4:3"
+    },
+    {
+        "pregunta": "¿Cuántas plagas envió Dios a Egipto?",
+        "respuesta": "Diez",
+        "opciones": ["Ocho", "Nueve", "Diez", "Doce"],
+        "referencia": "Éxodo 7:14 - 12:30"
+    },
+    {
+        "pregunta": "¿Qué mar se dividió para que los israelitas pudieran cruzar en seco?",
+        "respuesta": "El Mar Rojo",
+        "opciones": ["El río Jordán", "El Mar Muerto", "El Mar Rojo", "El Mar de Galilea"],
+        "referencia": "Éxodo 14:21-22"
+    },
+    {
+        "pregunta": "¿Cuántos mandamientos le dio Dios a Moisés en el monte Sinaí?",
+        "respuesta": "Diez",
+        "opciones": ["Siete", "Doce", "Diez", "Cinco"],
+        "referencia": "Éxodo 20:1-17"
+    },
+    {
+        "pregunta": "¿Qué cayó del cielo para alimentar a los israelitas en el desierto?",
+        "respuesta": "Maná",
+        "opciones": ["Pan", "Agua", "Maná", "Carne"],
+        "referencia": "Éxodo 16:31"
+    },
+    {
+        "pregunta": "¿Qué profeta de la Biblia fue tragado por un gran pez?",
+        "respuesta": "Jonás",
+        "opciones": ["Elías", "Jeremías", "Jonás", "Ezequiel"],
+        "referencia": "Jonás 1:17"
+    },
+    {
+        "pregunta": "¿Qué profeta fue llevado al cielo en un carro de fuego?",
+        "respuesta": "Elías",
+        "opciones": ["Enoc", "Ezequiel", "Elías", "Isaías"],
+        "referencia": "2 Reyes 2:11"
+    },
+    {
+        "pregunta": "¿Qué ciudad tenía muros que cayeron después de que los israelitas la rodearan y tocaran las trompetas?",
+        "respuesta": "Jericó",
+        "opciones": ["Sodoma", "Gomorra", "Babilonia", "Jericó"],
+        "referencia": "Josué 6:20"
+    },
+    {
+        "pregunta": "¿Qué arma usó David para matar a Goliat?",
+        "respuesta": "Una onda y una piedra",
+        "opciones": ["Una espada", "Una lanza", "Una onda y una piedra", "Un arco y flechas"],
+        "referencia": "1 Samuel 17:49-50"
+    },
+    {
+        "pregunta": "¿Quién fue el primer rey de Israel?",
+        "respuesta": "Saúl",
+        "opciones": ["David", "Saúl", "Salomón", "Samuel"],
+        "referencia": "1 Samuel 10:24"
+    },
+    {
+        "pregunta": "¿Quién mató a Goliat?",
+        "respuesta": "David",
+        "opciones": ["Saúl", "Jonatán", "David", "Sansón"],
+        "referencia": "1 Samuel 17:50"
+    },
+    {
+        "pregunta": "¿Quién se convirtió en rey después de Saúl?",
+        "respuesta": "David",
+        "opciones": ["Salomón", "David", "Jonatán", "Samuel"],
+        "referencia": "2 Samuel 5:4-5"
+    },
+    {
+        "pregunta": "¿Cuál es el Salmo más largo de la Biblia?",
+        "respuesta": "El Salmo 119",
+        "opciones": ["El Salmo 23", "El Salmo 150", "El Salmo 119", "El Salmo 1"],
+        "referencia": "Salmo 119"
+    },
+    {
+        "pregunta": "¿Quién fue el rey más sabio de Israel?",
+        "respuesta": "Salomón",
+        "opciones": ["David", "Saúl", "Salomón", "Ezequías"],
+        "referencia": "1 Reyes 4:29"
+    },
+    {
+        "pregunta": "¿Qué profeta se enfrentó a los profetas de Baal en el monte Carmelo?",
+        "respuesta": "Elías",
+        "opciones": ["Jeremías", "Elías", "Eliseo", "Isaías"],
+        "referencia": "1 Reyes 18:20-40"
+    },
+    {
+        "pregunta": "¿Cuántos años vivió Matusalén?",
+        "respuesta": "969 años",
+        "opciones": ["800 años", "969 años", "950 años", "912 años"],
+        "referencia": "Génesis 5:27"
+    },
+    {
+        "pregunta": "¿Quién fue el último de los jueces y el primer profeta de Israel?",
+        "respuesta": "Samuel",
+        "opciones": ["Sansón", "Débora", "Gedeón", "Samuel"],
+        "referencia": "1 Samuel 3:20"
+    },
+    {
+        "pregunta": "¿Qué profeta fue arrojado en un pozo de leones?",
+        "respuesta": "Daniel",
+        "opciones": ["Jonás", "Daniel", "Jeremías", "Ezequiel"],
+        "referencia": "Daniel 6:16-23"
+    },
+    {
+        "pregunta": "¿Quién fue el gobernador romano que condenó a Jesús a la crucifixión?",
+        "respuesta": "Poncio Pilato",
+        "opciones": ["Herodes Antipas", "César Augusto", "Poncio Pilato", "Caiapás"],
+        "referencia": "Mateo 27:26"
+    },
+    {
+        "pregunta": "¿Dónde nació Jesús?",
+        "respuesta": "En Belén",
+        "opciones": ["En Nazaret", "En Belén", "En Jerusalén", "En Galilea"],
+        "referencia": "Mateo 2:1"
+    },
+    {
+        "pregunta": "¿Cuántos discípulos tenía Jesús?",
+        "respuesta": "Doce",
+        "opciones": ["Diez", "Doce", "Catorce", "Veinte"],
+        "referencia": "Marcos 3:14"
+    },
+    {
+        "pregunta": "¿Cuál fue el primer milagro de Jesús?",
+        "respuesta": "Convertir el agua en vino en las bodas de Caná",
+        "opciones": ["Caminar sobre el agua", "Multiplicar los panes y peces", "Sanar a un leproso", "Convertir el agua en vino en las bodas de Caná"],
+        "referencia": "Juan 2:1-11"
+    },
+    {
+        "pregunta": "¿Quién fue la madre de Jesús?",
+        "respuesta": "María",
+        "opciones": ["Ana", "Sara", "María", "Eva"],
+        "referencia": "Lucas 1:26-38"
+    },
+    {
+        "pregunta": "¿Quién fue el apóstol que negó a Jesús tres veces?",
+        "respuesta": "Pedro",
+        "opciones": ["Pedro", "Juan", "Judas", "Tomás"],
+        "referencia": "Lucas 22:54-62"
+    },
+    {
+        "pregunta": "¿Qué significa la palabra 'Emanuel'?",
+        "respuesta": "Dios con nosotros",
+        "opciones": ["Salvador del mundo", "Dios con nosotros", "Jesucristo", "Señor de los cielos"],
+        "referencia": "Mateo 1:23"
+    },
+    {
+        "pregunta": "¿Quién fue el apóstol que dudó de la resurrección de Jesús hasta que lo vio?",
+        "respuesta": "Tomás",
+        "opciones": ["Pedro", "Tomás", "Juan", "Mateo"],
+        "referencia": "Juan 20:24-29"
+    },
+    {
+        "pregunta": "¿Qué apóstol se convirtió en cristiano después de perseguir a la iglesia?",
+        "respuesta": "Pablo (Saulo de Tarso)",
+        "opciones": ["Pedro", "Juan", "Pablo (Saulo de Tarso)", "Jacobo"],
+        "referencia": "Hechos 9:1-19"
+    },
+    {
+        "pregunta": "¿Cuántos libros tiene el Nuevo Testamento?",
+        "respuesta": "Veintisiete",
+        "opciones": ["Veinticuatro", "Veinticinco", "Veintisiete", "Treinta y nueve"],
+        "referencia": "Nuevo Testamento"
+    },
+    {
+        "pregunta": "¿Quién escribió la mayoría de los libros del Nuevo Testamento?",
+        "respuesta": "Pablo",
+        "opciones": ["Juan", "Pedro", "Lucas", "Pablo"],
+        "referencia": "Nuevo Testamento"
+    },
+    {
+        "pregunta": "¿Qué libro de la Biblia es el último del Nuevo Testamento?",
+        "respuesta": "Apocalipsis",
+        "opciones": ["Judas", "Apocalipsis", "Hebreos", "Filipenses"],
+        "referencia": "Apocalipsis 1:1"
+    },
+    {
+        "pregunta": "¿Qué hizo Jesús con cinco panes y dos peces para alimentar a la multitud?",
+        "respuesta": "Multiplicó los panes y los peces",
+        "opciones": ["Multiplicó los panes y los peces", "Le dio de comer a los discípulos", "Le dio de comer a los niños", "Se los comió él mismo"],
+        "referencia": "Mateo 14:17-21"
+    },
+    {
+        "pregunta": "¿Quién fue la primera persona que vio a Jesús resucitado?",
+        "respuesta": "María Magdalena",
+        "opciones": ["Pedro", "María Magdalena", "Juan", "Tomás"],
+        "referencia": "Juan 20:11-18"
+    },
+    {
+        "pregunta": "¿Qué profeta anunció que una virgen daría a luz a un hijo llamado Emanuel?",
+        "respuesta": "Isaías",
+        "opciones": ["Jeremías", "Ezequiel", "Isaías", "Daniel"],
+        "referencia": "Isaías 7:14"
+    },
+    {
+        "pregunta": "¿Cómo se llamaba la madre de Samuel?",
+        "respuesta": "Ana",
+        "opciones": ["Ana", "Sara", "Rebeca", "Rut"],
+        "referencia": "1 Samuel 1:20"
+    },
+    {
+        "pregunta": "¿Quién fue el rey que mandó matar a Juan el Bautista?",
+        "respuesta": "Herodes Antipas",
+        "opciones": ["Herodes el Grande", "César Augusto", "Poncio Pilato", "Herodes Antipas"],
+        "referencia": "Marcos 6:27"
+    },
+    {
+        "pregunta": "¿En qué río fue bautizado Jesús?",
+        "respuesta": "El río Jordán",
+        "opciones": ["El río Nilo", "El río Jordán", "El río Éufrates", "El río Tigris"],
+        "referencia": "Marcos 1:9"
+    },
+    {
+        "pregunta": "¿Quién fue el padre de Juan el Bautista?",
+        "respuesta": "Zacarías",
+        "opciones": ["Zacarías", "José", "Abraham", "Elías"],
+        "referencia": "Lucas 1:13"
+    },
+    {
+        "pregunta": "¿A qué personaje bíblico se le conoce por haber construido un arca para salvar a su familia y a los animales del diluvio?",
+        "respuesta": "Noé",
+        "opciones": ["Abel", "Caín", "Noé", "Set"],
+        "referencia": "Génesis 6:13-14"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que vio la visión de los huesos secos?",
+        "respuesta": "Ezequiel",
+        "opciones": ["Isaías", "Jeremías", "Ezequiel", "Daniel"],
+        "referencia": "Ezequiel 37:1-14"
+    },
+    {
+        "pregunta": "¿Qué se le apareció a Moisés en el monte Horeb?",
+        "respuesta": "Una zarza ardiente",
+        "opciones": ["Un ángel", "Una zarza ardiente", "Una nube", "Fuego del cielo"],
+        "referencia": "Éxodo 3:2"
+    },
+    {
+        "pregunta": "¿Qué tipo de árbol subió Zaqueo para ver a Jesús?",
+        "respuesta": "Un sicómoro",
+        "opciones": ["Un olivo", "Un sicómoro", "Una higuera", "Un pino"],
+        "referencia": "Lucas 19:4"
+    },
+    {
+        "pregunta": "¿Qué profesión tenía Zaqueo?",
+        "respuesta": "Era jefe de los publicanos (recaudador de impuestos)",
+        "opciones": ["Pescador", "Carpintero", "Pastor", "Era jefe de los publicanos (recaudador de impuestos)"],
+        "referencia": "Lucas 19:2"
+    },
+    {
+        "pregunta": "¿Cuántos años vivió Adán?",
+        "respuesta": "930 años",
+        "opciones": ["969 años", "930 años", "912 años", "950 años"],
+        "referencia": "Génesis 5:5"
+    },
+    {
+        "pregunta": "¿Cómo se llamaban los primeros tres hijos de Adán y Eva mencionados en la Biblia?",
+        "respuesta": "Caín, Abel y Set",
+        "opciones": ["Abel, Caín y Set", "Caín, Abel y Set", "Set, Abel y Caín", "Caín, Adán y Abel"],
+        "referencia": "Génesis 4:1-2, 25"
+    },
+    {
+        "pregunta": "¿Quién asesinó a su hermano por celos?",
+        "respuesta": "Caín",
+        "opciones": ["Caín", "Adán", "Abel", "Set"],
+        "referencia": "Génesis 4:8"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre más fuerte de la Biblia?",
+        "respuesta": "Sansón",
+        "opciones": ["Moisés", "Sansón", "David", "Salomón"],
+        "referencia": "Jueces 16:17-30"
+    },
+    {
+        "pregunta": "¿Qué mujer conspiró para que le cortaran el cabello a Sansón?",
+        "respuesta": "Dalila",
+        "opciones": ["Jezabel", "Dalila", "Rut", "Ester"],
+        "referencia": "Jueces 16:17-19"
+    },
+    {
+        "pregunta": "¿Quién fue la primera mujer creada por Dios?",
+        "respuesta": "Eva",
+        "opciones": ["Sara", "Eva", "María", "Rebeca"],
+        "referencia": "Génesis 2:21-22"
+    },
+    {
+        "pregunta": "¿Cuál era el oficio de Pedro antes de seguir a Jesús?",
+        "respuesta": "Pescador",
+        "opciones": ["Carpintero", "Pescador", "Recaudador de impuestos", "Pastor"],
+        "referencia": "Mateo 4:18"
+    },
+    {
+        "pregunta": "¿Cómo se llamaba el hombre a quien Jesús resucitó de los muertos?",
+        "respuesta": "Lázaro",
+        "opciones": ["Zaqueo", "Lázaro", "Juan el Bautista", "Simón el Mago"],
+        "referencia": "Juan 11:43-44"
+    },
+    {
+        "pregunta": "¿Qué se les dio a los pastores como señal del nacimiento de Jesús?",
+        "respuesta": "Un niño envuelto en pañales y acostado en un pesebre",
+        "opciones": ["Un niño envuelto en pañales y acostado en un pesebre", "Un ángel cantando", "Una estrella brillante", "Un cordero"],
+        "referencia": "Lucas 2:12"
+    },
+    {
+        "pregunta": "¿Quién escribió el libro del Apocalipsis?",
+        "respuesta": "El apóstol Juan",
+        "opciones": ["El apóstol Pablo", "El apóstol Pedro", "El apóstol Juan", "El profeta Daniel"],
+        "referencia": "Apocalipsis 1:1"
+    },
+    {
+        "pregunta": "¿Qué se le apareció a Pablo en el camino a Damasco?",
+        "respuesta": "Una luz del cielo",
+        "opciones": ["Un ángel", "Una luz del cielo", "Una visión de Jesús", "Una zarza ardiente"],
+        "referencia": "Hechos 9:3"
+    },
+    {
+        "pregunta": "¿Quién fue el sumo sacerdote que sentenció a Jesús a muerte?",
+        "respuesta": "Caifás",
+        "opciones": ["Anás", "Caifás", "Poncio Pilato", "Herodes Antipas"],
+        "referencia": "Mateo 26:57"
+    },
+    {
+        "pregunta": "¿Quién fue el primer mártir cristiano?",
+        "respuesta": "Esteban",
+        "opciones": ["Pedro", "Esteban", "Santiago", "Jacobo"],
+        "referencia": "Hechos 7:59-60"
+    },
+    {
+        "pregunta": "¿Cuántas veces perdonó Jesús a Pedro antes de que él lo negara?",
+        "respuesta": "No lo perdonó antes, sino que predijo que lo negaría.",
+        "opciones": ["Una vez", "Tres veces", "Siete veces", "No lo perdonó antes, sino que predijo que lo negaría."],
+        "referencia": "Mateo 26:34"
+    },
+    {
+        "pregunta": "¿Qué libro de la Biblia es el último?",
+        "respuesta": "Apocalipsis",
+        "opciones": ["Judas", "Apocalipsis", "Hebreos", "Filipenses"],
+        "referencia": "Apocalipsis 22:21"
+    },
+    {
+        "pregunta": "¿En qué ciudad los creyentes fueron llamados 'cristianos' por primera vez?",
+        "respuesta": "En Antioquía",
+        "opciones": ["En Jerusalén", "En Cesarea", "En Damasco", "En Antioquía"],
+        "referencia": "Hechos 11:26"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que fue echado al foso de los leones?",
+        "respuesta": "Daniel",
+        "opciones": ["Eliseo", "Daniel", "Jonás", "Jeremías"],
+        "referencia": "Daniel 6:16"
+    },
+    {
+        "pregunta": "¿A quién llamó Dios para sacar a los israelitas de Egipto?",
+        "respuesta": "Moisés",
+        "opciones": ["Abraham", "Moisés", "Josué", "David"],
+        "referencia": "Éxodo 3:10"
+    },
+    {
+        "pregunta": "¿Qué significa la palabra 'Evangelio'?",
+        "respuesta": "Buena noticia",
+        "opciones": ["Palabra de Dios", "Buena noticia", "Libro de la ley", "Historia sagrada"],
+        "referencia": "Evangelio"
+    },
+    {
+        "pregunta": "¿Qué profeta de la Biblia tuvo un enfrentamiento con los profetas de Baal en el monte Carmelo?",
+        "respuesta": "Elías",
+        "opciones": ["Eliseo", "Elías", "Jeremías", "Isaías"],
+        "referencia": "1 Reyes 18:20-40"
+    },
+    {
+        "pregunta": "¿Quién escribió la mayoría de los Salmos?",
+        "respuesta": "David",
+        "opciones": ["Salomón", "Moisés", "David", "Asaf"],
+        "referencia": "Salmos 1-150"
+    },
+    {
+        "pregunta": "¿Cuál es el mandamiento más grande, según Jesús?",
+        "respuesta": "Amar a Dios sobre todas las cosas y a tu prójimo como a ti mismo",
+        "opciones": ["No matarás", "Amar a Dios sobre todas las cosas y a tu prójimo como a ti mismo", "Honra a tu padre y a tu madre", "No robarás"],
+        "referencia": "Mateo 22:37-39"
+    },
+    {
+        "pregunta": "¿Qué se le prometió a Abraham si obedecía a Dios?",
+        "respuesta": "Que sería padre de una gran nación",
+        "opciones": ["Riquezas y honor", "Larga vida", "Que sería padre de una gran nación", "La tierra prometida"],
+        "referencia": "Génesis 12:2"
+    },
+    {
+        "pregunta": "¿Quién fue la madre de Juan el Bautista?",
+        "respuesta": "Elisabet",
+        "opciones": ["Ana", "María", "Elisabet", "Débora"],
+        "referencia": "Lucas 1:57"
+    },
+    {
+        "pregunta": "¿A qué edad murió Moisés?",
+        "respuesta": "120 años",
+        "opciones": ["100 años", "120 años", "110 años", "150 años"],
+        "referencia": "Deuteronomio 34:7"
+    },
+    {
+        "pregunta": "¿En qué lugar de la Biblia está escrito: 'Porque de tal manera amó Dios al mundo'?",
+        "respuesta": "Juan 3:16",
+        "opciones": ["Juan 3:16", "Génesis 1:1", "Salmo 23:1", "Mateo 1:1"],
+        "referencia": "Juan 3:16"
+    },
+    {
+        "pregunta": "¿Qué mujer fue jueza y líder de Israel?",
+        "respuesta": "Débora",
+        "opciones": ["Jael", "Débora", "Rut", "Ester"],
+        "referencia": "Jueces 4:4-5"
+    },
+    {
+        "pregunta": "¿Quién mató a un león con sus propias manos?",
+        "respuesta": "Sansón",
+        "opciones": ["David", "Sansón", "Eliseo", "Gedeón"],
+        "referencia": "Jueces 14:5-6"
+    },
+    {
+        "pregunta": "¿Cuál era el oficio de Lucas?",
+        "respuesta": "Médico",
+        "opciones": ["Pescador", "Carpintero", "Médico", "Recaudador de impuestos"],
+        "referencia": "Colosenses 4:14"
+    },
+    {
+        "pregunta": "¿Quién fue el primer sumo sacerdote de Israel?",
+        "respuesta": "Aarón",
+        "opciones": ["Moisés", "Josué", "Aarón", "Elí"],
+        "referencia": "Éxodo 28:1"
+    },
+    {
+        "pregunta": "¿Cuál de los discípulos traicionó a Jesús por 30 piezas de plata?",
+        "respuesta": "Judas Iscariote",
+        "opciones": ["Judas Iscariote", "Pedro", "Tomás", "Santiago"],
+        "referencia": "Mateo 26:14-16"
+    },
+    {
+        "pregunta": "¿Quién escribió el libro de Proverbios?",
+        "respuesta": "Mayormente Salomón",
+        "opciones": ["David", "Moisés", "Salomón", "Isaías"],
+        "referencia": "Proverbios 1:1"
+    },
+    {
+        "pregunta": "¿Qué ciudad fue destruida por fuego y azufre por el pecado de sus habitantes?",
+        "respuesta": "Sodoma y Gomorra",
+        "opciones": ["Babilonia", "Jericó", "Sodoma y Gomorra", "Nínive"],
+        "referencia": "Génesis 19:24"
+    },
+    {
+        "pregunta": "¿Cuántos años anduvieron los israelitas en el desierto?",
+        "respuesta": "Cuarenta años",
+        "opciones": ["Veinte años", "Treinta años", "Cuarenta años", "Cincuenta años"],
+        "referencia": "Deuteronomio 29:5"
+    },
+    {
+        "pregunta": "¿Qué profeta tuvo que huir de la reina Jezabel?",
+        "respuesta": "Elías",
+        "opciones": ["Eliseo", "Jeremías", "Elías", "Isaías"],
+        "referencia": "1 Reyes 19:1-3"
+    },
+    {
+        "pregunta": "¿Quién fue el padre de los creyentes?",
+        "respuesta": "Abraham",
+        "opciones": ["Noé", "Isaac", "Jacob", "Abraham"],
+        "referencia": "Romanos 4:11"
+    },
+    {
+        "pregunta": "¿Qué libro de la Biblia narra el viaje de los israelitas por el desierto?",
+        "respuesta": "Números",
+        "opciones": ["Génesis", "Éxodo", "Levítico", "Números"],
+        "referencia": "Libro de Números"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre más viejo de la Biblia?",
+        "respuesta": "Matusalén",
+        "opciones": ["Noé", "Adán", "Matusalén", "Set"],
+        "referencia": "Génesis 5:27"
+    },
+    {
+        "pregunta": "¿Quién fue el hermano de Moisés que lo acompañó como su portavoz?",
+        "respuesta": "Aarón",
+        "opciones": ["Aarón", "Josué", "Elí", "Leví"],
+        "referencia": "Éxodo 4:14-16"
+    },
+    {
+        "pregunta": "¿Cuál era el trabajo de José, el padre de Jesús?",
+        "respuesta": "Carpintero",
+        "opciones": ["Pescador", "Carpintero", "Pastor", "Granjero"],
+        "referencia": "Mateo 13:55"
+    },
+    {
+        "pregunta": "¿Cuántos libros tiene la Biblia?",
+        "respuesta": "66",
+        "opciones": ["66", "73", "50", "45"],
+        "referencia": "Biblia"
+    },
+    {
+        "pregunta": "¿Quién dijo: 'Heme aquí, envíame a mí'?",
+        "respuesta": "Isaías",
+        "opciones": ["Moisés", "Elías", "Samuel", "Isaías"],
+        "referencia": "Isaías 6:8"
+    },
+    {
+        "pregunta": "¿Quién fue el segundo rey de Israel?",
+        "respuesta": "David",
+        "opciones": ["Salomón", "Saúl", "David", "Samuel"],
+        "referencia": "1 Samuel 16:13"
+    },
+    {
+        "pregunta": "¿Qué profeta fue arrojado a un pozo lleno de lodo?",
+        "respuesta": "Jeremías",
+        "opciones": ["Daniel", "Eliseo", "Jeremías", "Jonás"],
+        "referencia": "Jeremías 38:6"
+    },
+    {
+        "pregunta": "¿Quién escribió el libro del Eclesiastés?",
+        "respuesta": "Salomón",
+        "opciones": ["David", "Moisés", "Salomón", "Job"],
+        "referencia": "Eclesiastés 1:1"
+    },
+    {
+        "pregunta": "¿Quién fue el primer rey de Judá después de la división del reino?",
+        "respuesta": "Roboam",
+        "opciones": ["Jeroboam", "Roboam", "Salomón", "David"],
+        "referencia": "1 Reyes 12:17"
+    },
+    {
+        "pregunta": "¿Qué apóstol dijo 'Señor mío y Dios mío' al ver a Jesús resucitado?",
+        "respuesta": "Tomás",
+        "opciones": ["Pedro", "Tomás", "Juan", "Felipe"],
+        "referencia": "Juan 20:28"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que le contó a David la parábola de la ovejita?",
+        "respuesta": "Natán",
+        "opciones": ["Samuel", "Elías", "Natán", "Ezequiel"],
+        "referencia": "2 Samuel 12:1-4"
+    },
+    {
+        "pregunta": "¿Quién se sentó a los pies de Jesús y escuchaba su palabra, mientras su hermana, Marta, estaba ocupada?",
+        "respuesta": "María",
+        "opciones": ["María", "Débora", "Lidia", "Priscila"],
+        "referencia": "Lucas 10:39"
+    },
+    {
+        "pregunta": "¿Quién era el rey de los babilonios que llevó a Judá al cautiverio?",
+        "respuesta": "Nabucodonosor",
+        "opciones": ["Faraón", "Ciro", "Nabucodonosor", "Darío"],
+        "referencia": "2 Reyes 25:1-7"
+    },
+    {
+        "pregunta": "¿Qué animal habló con Balaam?",
+        "respuesta": "Un asna",
+        "opciones": ["Un perro", "Un caballo", "Una oveja", "Un asna"],
+        "referencia": "Números 22:28"
+    },
+    {
+        "pregunta": "¿Cuál fue el primer milagro de Jesús?",
+        "respuesta": "Convertir el agua en vino",
+        "opciones": ["Sanar a un ciego", "Multiplicar los panes", "Convertir el agua en vino", "Caminar sobre el agua"],
+        "referencia": "Juan 2:1-11"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre que Dios usó para abrir el Mar Rojo?",
+        "respuesta": "Moisés",
+        "opciones": ["Moisés", "Josué", "Aarón", "David"],
+        "referencia": "Éxodo 14:21"
+    },
+    {
+        "pregunta": "¿Cuál era la profesión de Mateo antes de seguir a Jesús?",
+        "respuesta": "Recaudador de impuestos",
+        "opciones": ["Pescador", "Carpintero", "Recaudador de impuestos", "Médico"],
+        "referencia": "Mateo 9:9"
+    },
+    {
+        "pregunta": "¿Qué profeta fue arrojado al foso de los leones?",
+        "respuesta": "Daniel",
+        "opciones": ["Jonás", "Daniel", "Elías", "Jeremías"],
+        "referencia": "Daniel 6:16"
+    },
+    {
+        "pregunta": "¿Cuál es el mandamiento más grande, según Jesús?",
+        "respuesta": "Amar a Dios sobre todas las cosas y a tu prójimo como a ti mismo",
+        "opciones": ["No matarás", "Amar a Dios sobre todas las cosas y a tu prójimo como a ti mismo", "Honra a tu padre y a tu madre", "No robarás"],
+        "referencia": "Mateo 22:37-39"
+    },
+    {
+        "pregunta": "¿Qué se les dio a los pastores como señal del nacimiento de Jesús?",
+        "respuesta": "Un niño envuelto en pañales y acostado en un pesebre",
+        "opciones": ["Un ángel cantando", "Un niño envuelto en pañales y acostado en un pesebre", "Una estrella brillante", "Un cordero"],
+        "referencia": "Lucas 2:12"
+    },
+    {
+        "pregunta": "¿Qué le dijo Jesús a los fariseos que era igual que matar?",
+        "respuesta": "Aborrecer a su hermano",
+        "opciones": ["Aborrecer a su hermano", "Mentir", "Juramentar", "Adulterar"],
+        "referencia": "Mateo 5:21-22"
+    },
+    {
+        "pregunta": "¿Cuántas veces perdonó Jesús a Pedro antes de que él lo negara?",
+        "respuesta": "No lo perdonó antes, sino que predijo que lo negaría",
+        "opciones": ["Una vez", "Tres veces", "Siete veces", "No lo perdonó antes, sino que predijo que lo negaría"],
+        "referencia": "Mateo 26:34"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre que Dios usó para abrir el Mar Rojo?",
+        "respuesta": "Moisés",
+        "opciones": ["Moisés", "Josué", "Aarón", "David"],
+        "referencia": "Éxodo 14:21"
+    },
+    {
+        "pregunta": "¿En qué ciudad se derrumbó el muro después de las trompetas?",
+        "respuesta": "Jericó",
+        "opciones": ["Sodoma", "Jericó", "Nínive", "Babilonia"],
+        "referencia": "Josué 6:20"
+    },
+    {
+        "pregunta": "¿Quién traicionó a Jesús por 30 piezas de plata?",
+        "respuesta": "Judas Iscariote",
+        "opciones": ["Pedro", "Judas Iscariote", "Tomás", "Juan"],
+        "referencia": "Mateo 26:14-16"
+    },
+    {
+        "pregunta": "¿Cuál era la profesión de Rut?",
+        "respuesta": "Noemí",
+        "opciones": ["Esposa", "Viuda", "Moabita", "Noemí"],
+        "referencia": "Rut 1:4"
+    },
+    {
+        "pregunta": "¿Quién fue la primera mujer creada por Dios?",
+        "respuesta": "Eva",
+        "opciones": ["Sara", "Eva", "María", "Rebeca"],
+        "referencia": "Génesis 2:21-22"
+    },
+    {
+        "pregunta": "¿Quién fue el primer hombre creado por Dios?",
+        "respuesta": "Adán",
+        "opciones": ["Adán", "Noé", "Abraham", "Moisés"],
+        "referencia": "Génesis 2:7"
+    },
+    {
+        "pregunta": "¿Qué le sucedió a la esposa de Lot cuando huían de Sodoma?",
+        "respuesta": "Se convirtió en una columna de sal",
+        "opciones": ["Se convirtió en una columna de sal", "Se ahogó", "Fue devorada", "Se perdió"],
+        "referencia": "Génesis 19:26"
+    },
+    {
+        "pregunta": "¿Cuántos años anduvieron los israelitas en el desierto?",
+        "respuesta": "Cuarenta años",
+        "opciones": ["Veinte años", "Treinta años", "Cuarenta años", "Cincuenta años"],
+        "referencia": "Deuteronomio 29:5"
+    },
+    {
+        "pregunta": "¿Quién fue la madre de Juan el Bautista?",
+        "respuesta": "Elisabet",
+        "opciones": ["Ana", "María", "Elisabet", "Débora"],
+        "referencia": "Lucas 1:57"
+    },
+    {
+        "pregunta": "¿Quién fue el rey que mandó matar a Juan el Bautista?",
+        "respuesta": "Herodes Antipas",
+        "opciones": ["Herodes Antipas", "César Augusto", "Poncio Pilato", "Caiapás"],
+        "referencia": "Marcos 6:27"
+    },
+    {
+        "pregunta": "¿A qué edad murió Moisés?",
+        "respuesta": "120 años",
+        "opciones": ["100 años", "120 años", "110 años", "150 años"],
+        "referencia": "Deuteronomio 34:7"
+    },
+    {
+        "pregunta": "¿Cuál era el oficio de Lucas?",
+        "respuesta": "Médico",
+        "opciones": ["Pescador", "Carpintero", "Médico", "Recaudador de impuestos"],
+        "referencia": "Colosenses 4:14"
+    },
+    {
+        "pregunta": "¿En qué ciudad los creyentes fueron llamados 'cristianos' por primera vez?",
+        "respuesta": "En Antioquía",
+        "opciones": ["En Jerusalén", "En Cesarea", "En Damasco", "En Antioquía"],
+        "referencia": "Hechos 11:26"
+    },
+    {
+        "pregunta": "¿Quién fue el primer mártir cristiano?",
+        "respuesta": "Esteban",
+        "opciones": ["Pedro", "Esteban", "Santiago", "Jacobo"],
+        "referencia": "Hechos 7:59-60"
+    },
+    {
+        "pregunta": "¿Quién fue la primera persona que vio a Jesús resucitado?",
+        "respuesta": "María Magdalena",
+        "opciones": ["Pedro", "María Magdalena", "Juan", "Tomás"],
+        "referencia": "Juan 20:11-18"
+    },
+    {
+        "pregunta": "¿Cuál fue el primer milagro de Jesús?",
+        "respuesta": "Convertir el agua en vino",
+        "opciones": ["Sanar a un ciego", "Multiplicar los panes", "Convertir el agua en vino", "Caminar sobre el agua"],
+        "referencia": "Juan 2:1-11"
+    },
+    {
+        "pregunta": "¿Quién fue el padre de los creyentes?",
+        "respuesta": "Abraham",
+        "opciones": ["Noé", "Isaac", "Jacob", "Abraham"],
+        "referencia": "Romanos 4:11"
+    },
+    {
+        "pregunta": "¿Qué profeta fue llevado al cielo en un carro de fuego?",
+        "respuesta": "Elías",
+        "opciones": ["Eliseo", "Elías", "Jeremías", "Isaías"],
+        "referencia": "2 Reyes 2:11"
+    },
+    {
+        "pregunta": "¿Qué se le apareció a Moisés en el monte Horeb?",
+        "respuesta": "Una zarza ardiente",
+        "opciones": ["Un ángel", "Una zarza ardiente", "Una nube", "Fuego del cielo"],
+        "referencia": "Éxodo 3:2"
+    },
+    {
+        "pregunta": "¿Qué animal habló con Balaam?",
+        "respuesta": "Un asna",
+        "opciones": ["Un perro", "Un caballo", "Una oveja", "Un asna"],
+        "referencia": "Números 22:28"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre más fuerte de la Biblia?",
+        "respuesta": "Sansón",
+        "opciones": ["Moisés", "Sansón", "David", "Salomón"],
+        "referencia": "Jueces 16:17-30"
+    },
+    {
+        "pregunta": "¿Quién mató a Goliat?",
+        "respuesta": "David",
+        "opciones": ["Saúl", "Jonatán", "David", "Sansón"],
+        "referencia": "1 Samuel 17:50"
+    },
+    {
+        "pregunta": "¿Qué arma usó David para matar a Goliat?",
+        "respuesta": "Una onda y una piedra",
+        "opciones": ["Una espada", "Una lanza", "Una onda y una piedra", "Un arco y flechas"],
+        "referencia": "1 Samuel 17:49-50"
+    },
+    {
+        "pregunta": "¿Quién fue el primer rey de Israel?",
+        "respuesta": "Saúl",
+        "opciones": ["David", "Saúl", "Salomón", "Samuel"],
+        "referencia": "1 Samuel 10:24"
+    },
+    {
+        "pregunta": "¿Quién escribió la mayoría de los Salmos?",
+        "respuesta": "David",
+        "opciones": ["Salomón", "Moisés", "David", "Asaf"],
+        "referencia": "Salmos 1-150"
+    },
+    {
+        "pregunta": "¿Quién fue el gobernador romano que condenó a Jesús a la crucifixión?",
+        "respuesta": "Poncio Pilato",
+        "opciones": ["Herodes Antipas", "César Augusto", "Poncio Pilato", "Caiapás"],
+        "referencia": "Mateo 27:26"
+    },
+    {
+        "pregunta": "¿Qué profeta de la Biblia fue tragado por un gran pez?",
+        "respuesta": "Jonás",
+        "opciones": ["Elías", "Jeremías", "Jonás", "Ezequiel"],
+        "referencia": "Jonás 1:17"
+    },
+    {
+        "pregunta": "¿Dónde nació Jesús?",
+        "respuesta": "En Belén",
+        "opciones": ["En Nazaret", "En Belén", "En Jerusalén", "En Galilea"],
+        "referencia": "Mateo 2:1"
+    },
+    {
+        "pregunta": "¿Qué libro de la Biblia es el último del Nuevo Testamento?",
+        "respuesta": "Apocalipsis",
+        "opciones": ["Judas", "Apocalipsis", "Hebreos", "Filipenses"],
+        "referencia": "Apocalipsis 1:1"
+    },
+    {
+        "pregunta": "¿Cuántos libros tiene el Nuevo Testamento?",
+        "respuesta": "Veintisiete",
+        "opciones": ["Veinticuatro", "Veinticinco", "Veintisiete", "Treinta y nueve"],
+        "referencia": "Nuevo Testamento"
+    },
+    {
+        "pregunta": "¿Cuál es el mandamiento más grande, según Jesús?",
+        "respuesta": "Amar a Dios sobre todas las cosas y a tu prójimo como a ti mismo",
+        "opciones": ["No matarás", "Amar a Dios sobre todas las cosas y a tu prójimo como a ti mismo", "Honra a tu padre y a tu madre", "No robarás"],
+        "referencia": "Mateo 22:37-39"
+    },
+    {
+        "pregunta": "¿Quién fue el rey más sabio de Israel?",
+        "respuesta": "Salomón",
+        "opciones": ["David", "Saúl", "Salomón", "Ezequías"],
+        "referencia": "1 Reyes 4:29"
+    },
+    {
+        "pregunta": "¿Qué profeta de la Biblia tuvo un enfrentamiento con los profetas de Baal en el monte Carmelo?",
+        "respuesta": "Elías",
+        "opciones": ["Jeremías", "Elías", "Eliseo", "Isaías"],
+        "referencia": "1 Reyes 18:20-40"
+    },
+    {
+        "pregunta": "¿Quién fue el primer hombre creado por Dios?",
+        "respuesta": "Adán",
+        "opciones": ["Adán", "Noé", "Abraham", "Moisés"],
+        "referencia": "Génesis 2:7"
+    },
+    {
+        "pregunta": "¿Quién fue vendido por sus hermanos a unos mercaderes ismaelitas?",
+        "respuesta": "José",
+        "opciones": ["Benjamín", "Judá", "José", "Rubén"],
+        "referencia": "Génesis 37:28"
+    },
+    {
+        "pregunta": "¿Quién fue el padre de Juan el Bautista?",
+        "respuesta": "Zacarías",
+        "opciones": ["Zacarías", "José", "Abraham", "Elías"],
+        "referencia": "Lucas 1:13"
+    },
+    {
+        "pregunta": "¿Quién fue el apóstol que negó a Jesús tres veces?",
+        "respuesta": "Pedro",
+        "opciones": ["Pedro", "Juan", "Judas", "Tomás"],
+        "referencia": "Lucas 22:54-62"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre más fuerte de la Biblia?",
+        "respuesta": "Sansón",
+        "opciones": ["Moisés", "Sansón", "David", "Salomón"],
+        "referencia": "Jueces 16:17-30"
+    },
+    {
+        "pregunta": "¿Quién fue la primera mujer creada por Dios?",
+        "respuesta": "Eva",
+        "opciones": ["Sara", "Eva", "María", "Rebeca"],
+        "referencia": "Génesis 2:21-22"
+    },
+    {
+        "pregunta": "¿Cuál es el Salmo más largo de la Biblia?",
+        "respuesta": "El Salmo 119",
+        "opciones": ["El Salmo 23", "El Salmo 150", "El Salmo 119", "El Salmo 1"],
+        "referencia": "Salmo 119"
+    },
+    {
+        "pregunta": "¿Quién fue el padre de los creyentes?",
+        "respuesta": "Abraham",
+        "opciones": ["Noé", "Isaac", "Jacob", "Abraham"],
+        "referencia": "Romanos 4:11"
+    },
+    {
+        "pregunta": "¿Quién fue la primera persona que vio a Jesús resucitado?",
+        "respuesta": "María Magdalena",
+        "opciones": ["Pedro", "María Magdalena", "Juan", "Tomás"],
+        "referencia": "Juan 20:11-18"
+    },
+    {
+        "pregunta": "¿Qué significa la palabra 'Emanuel'?",
+        "respuesta": "Dios con nosotros",
+        "opciones": ["Salvador del mundo", "Dios con nosotros", "Jesucristo", "Señor de los cielos"],
+        "referencia": "Mateo 1:23"
+    },
+    {
+        "pregunta": "¿Quién fue el primer mártir cristiano?",
+        "respuesta": "Esteban",
+        "opciones": ["Pedro", "Esteban", "Santiago", "Jacobo"],
+        "referencia": "Hechos 7:59-60"
+    },
+    {
+        "pregunta": "¿En qué ciudad los creyentes fueron llamados 'cristianos' por primera vez?",
+        "respuesta": "En Antioquía",
+        "opciones": ["En Jerusalén", "En Cesarea", "En Damasco", "En Antioquía"],
+        "referencia": "Hechos 11:26"
+    },
+    {
+        "pregunta": "¿A qué edad murió Moisés?",
+        "respuesta": "120 años",
+        "opciones": ["100 años", "120 años", "110 años", "150 años"],
+        "referencia": "Deuteronomio 34:7"
+    },
+    {
+        "pregunta": "¿Cuál era el trabajo de José, el padre de Jesús?",
+        "respuesta": "Carpintero",
+        "opciones": ["Pescador", "Carpintero", "Pastor", "Granjero"],
+        "referencia": "Mateo 13:55"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que fue echado al foso de los leones?",
+        "respuesta": "Daniel",
+        "opciones": ["Jonás", "Daniel", "Elías", "Jeremías"],
+        "referencia": "Daniel 6:16"
+    },
+    {
+        "pregunta": "¿Qué profeta fue llevado al cielo en un carro de fuego?",
+        "respuesta": "Elías",
+        "opciones": ["Eliseo", "Elías", "Jeremías", "Isaías"],
+        "referencia": "2 Reyes 2:11"
+    },
+    {
+        "pregunta": "¿Qué se convirtió en una serpiente cuando Moisés la arrojó al suelo?",
+        "respuesta": "Su vara",
+        "opciones": ["Su mano", "Una piedra", "Su vara", "Un manto"],
+        "referencia": "Éxodo 4:3"
+    },
+    {
+        "pregunta": "¿Cuántas plagas envió Dios a Egipto?",
+        "respuesta": "Diez",
+        "opciones": ["Ocho", "Nueve", "Diez", "Doce"],
+        "referencia": "Éxodo 7:14 - 12:30"
+    },
+    {
+        "pregunta": "¿Quién fue el rey que mandó matar a Juan el Bautista?",
+        "respuesta": "Herodes Antipas",
+        "opciones": ["Herodes Antipas", "César Augusto", "Poncio Pilato", "Caiapás"],
+        "referencia": "Marcos 6:27"
+    },
+    {
+        "pregunta": "¿En qué río fue bautizado Jesús?",
+        "respuesta": "El río Jordán",
+        "opciones": ["El río Nilo", "El río Jordán", "El río Éufrates", "El río Tigris"],
+        "referencia": "Marcos 1:9"
+    },
+    {
+        "pregunta": "¿Quién mató a un león con sus propias manos?",
+        "respuesta": "Sansón",
+        "opciones": ["David", "Sansón", "Eliseo", "Gedeón"],
+        "referencia": "Jueces 14:5-6"
+    },
+    {
+        "pregunta": "¿Qué ciudad fue destruida por fuego y azufre por el pecado de sus habitantes?",
+        "respuesta": "Sodoma y Gomorra",
+        "opciones": ["Babilonia", "Jericó", "Sodoma y Gomorra", "Nínive"],
+        "referencia": "Génesis 19:24"
+    },
+    {
+        "pregunta": "¿Qué animal habló con Balaam?",
+        "respuesta": "Un asna",
+        "opciones": ["Un perro", "Un caballo", "Una oveja", "Un asna"],
+        "referencia": "Números 22:28"
+    },
+    {
+        "pregunta": "¿Cuál es el último libro del Antiguo Testamento?",
+        "respuesta": "Malaquías",
+        "opciones": ["Zacarías", "Ezequiel", "Malaquías", "Joel"],
+        "referencia": "Malaquías 4:6"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre que Dios usó para sacar a los israelitas de Egipto?",
+        "respuesta": "Moisés",
+        "opciones": ["Abraham", "Moisés", "Josué", "David"],
+        "referencia": "Éxodo 3:10"
+    },
+    {
+        "pregunta": "¿Cuántos años anduvieron los israelitas en el desierto?",
+        "respuesta": "Cuarenta años",
+        "opciones": ["Veinte años", "Treinta años", "Cuarenta años", "Cincuenta años"],
+        "referencia": "Deuteronomio 29:5"
+    },
+    {
+        "pregunta": "¿Qué se convirtió en una columna de sal?",
+        "respuesta": "La esposa de Lot",
+        "opciones": ["La esposa de Lot", "La mujer de Noé", "La madre de José", "La hermana de Moisés"],
+        "referencia": "Génesis 19:26"
+    },
+    {
+        "pregunta": "¿Quién fue la madre de Juan el Bautista?",
+        "respuesta": "Elisabet",
+        "opciones": ["Ana", "María", "Elisabet", "Débora"],
+        "referencia": "Lucas 1:57"
+    },
+    {
+        "pregunta": "¿Quién fue la primera persona que vio a Jesús resucitado?",
+        "respuesta": "María Magdalena",
+        "opciones": ["Pedro", "María Magdalena", "Juan", "Tomás"],
+        "referencia": "Juan 20:11-18"
+    },
+    {
+        "pregunta": "¿Cuál fue la señal del pacto de Dios con Noé después del diluvio?",
+        "respuesta": "El arcoíris",
+        "opciones": ["Una estrella", "El arcoíris", "Una paloma", "Una roca"],
+        "referencia": "Génesis 9:13"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que fue echado al foso de los leones?",
+        "respuesta": "Daniel",
+        "opciones": ["Jonás", "Daniel", "Elías", "Jeremías"],
+        "referencia": "Daniel 6:16"
+    },
+    {
+        "pregunta": "¿Quién mató a Goliat?",
+        "respuesta": "David",
+        "opciones": ["Saúl", "Jonatán", "David", "Sansón"],
+        "referencia": "1 Samuel 17:50"
+    },
+    {
+        "pregunta": "¿Quién se convirtió en rey después de Saúl?",
+        "respuesta": "David",
+        "opciones": ["Salomón", "David", "Jonatán", "Samuel"],
+        "referencia": "2 Samuel 5:4-5"
+    },
+    {
+        "pregunta": "¿Cuál es el Salmo más largo de la Biblia?",
+        "respuesta": "El Salmo 119",
+        "opciones": ["El Salmo 23", "El Salmo 150", "El Salmo 119", "El Salmo 1"],
+        "referencia": "Salmo 119"
+    },
+    {
+        "pregunta": "¿Quién fue el primer rey de Israel?",
+        "respuesta": "Saúl",
+        "opciones": ["David", "Saúl", "Salomón", "Samuel"],
+        "referencia": "1 Samuel 10:24"
+    },
+    {
+        "pregunta": "¿Quién fue la primera mujer creada por Dios?",
+        "respuesta": "Eva",
+        "opciones": ["Sara", "Eva", "María", "Rebeca"],
+        "referencia": "Génesis 2:21-22"
+    },
+    {
+        "pregunta": "¿Quién fue el primer hombre creado por Dios?",
+        "respuesta": "Adán",
+        "opciones": ["Adán", "Noé", "Abraham", "Moisés"],
+        "referencia": "Génesis 2:7"
+    },
+    {
+        "pregunta": "¿Cuántos libros tiene la Biblia?",
+        "respuesta": "66",
+        "opciones": ["66", "73", "50", "45"],
+        "referencia": "Biblia"
+    },
+    {
+        "pregunta": "¿Quién escribió la mayoría de los Salmos?",
+        "respuesta": "David",
+        "opciones": ["Salomón", "Moisés", "David", "Asaf"],
+        "referencia": "Salmos 1-150"
+    },
+    {
+        "pregunta": "¿Quién fue el rey más sabio de Israel?",
+        "respuesta": "Salomón",
+        "opciones": ["David", "Saúl", "Salomón", "Ezequías"],
+        "referencia": "1 Reyes 4:29"
+    },
+    {
+        "pregunta": "¿Cuál de los discípulos traicionó a Jesús por 30 piezas de plata?",
+        "respuesta": "Judas Iscariote",
+        "opciones": ["Judas Iscariote", "Pedro", "Tomás", "Santiago"],
+        "referencia": "Mateo 26:14-16"
+    },
+    {
+        "pregunta": "¿Quién fue el gobernador romano que condenó a Jesús a la crucifixión?",
+        "respuesta": "Poncio Pilato",
+        "opciones": ["Herodes Antipas", "César Augusto", "Poncio Pilato", "Caiapás"],
+        "referencia": "Mateo 27:26"
+    },
+    {
+        "pregunta": "¿Quién fue el primer mártir cristiano?",
+        "respuesta": "Esteban",
+        "opciones": ["Pedro", "Esteban", "Santiago", "Jacobo"],
+        "referencia": "Hechos 7:59-60"
+    },
+    {
+        "pregunta": "¿En qué río fue bautizado Jesús?",
+        "respuesta": "El río Jordán",
+        "opciones": ["El río Nilo", "El río Jordán", "El río Éufrates", "El río Tigris"],
+        "referencia": "Marcos 1:9"
+    },
+    {
+        "pregunta": "¿Quién fue el apóstol que negó a Jesús tres veces?",
+        "respuesta": "Pedro",
+        "opciones": ["Pedro", "Juan", "Judas", "Tomás"],
+        "referencia": "Lucas 22:54-62"
+    },
+    {
+        "pregunta": "¿Quién fue el padre de los creyentes?",
+        "respuesta": "Abraham",
+        "opciones": ["Noé", "Isaac", "Jacob", "Abraham"],
+        "referencia": "Romanos 4:11"
+    },
+    {
+        "pregunta": "¿Cuántos años vivió Adán?",
+        "respuesta": "930 años",
+        "opciones": ["969 años", "930 años", "912 años", "950 años"],
+        "referencia": "Génesis 5:5"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre que Dios usó para abrir el Mar Rojo?",
+        "respuesta": "Moisés",
+        "opciones": ["Moisés", "Josué", "Aarón", "David"],
+        "referencia": "Éxodo 14:21"
+    },
+    {
+        "pregunta": "¿Quién fue la primera persona en la Biblia de la que se menciona que es profeta?",
+        "respuesta": "Abraham",
+        "opciones": ["Moisés", "Noé", "Abraham", "Samuel"],
+        "referencia": "Génesis 20:7"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que vio una visión de un canastillo de fruta en el verano?",
+        "respuesta": "Amós",
+        "opciones": ["Isaías", "Jeremías", "Amós", "Jonás"],
+        "referencia": "Amós 8:1-3"
+    },
+    {
+        "pregunta": "¿Cuál era el nombre de la mujer que lavó los pies de Jesús con sus lágrimas y los secó con su cabello?",
+        "respuesta": "María, hermana de Lázaro y Marta",
+        "opciones": ["María Magdalena", "María, hermana de Lázaro y Marta", "Marta", "Débora"],
+        "referencia": "Juan 12:3"
+    },
+    {
+        "pregunta": "¿Qué se le apareció a Moisés en el monte Horeb?",
+        "respuesta": "Una zarza ardiente",
+        "opciones": ["Un ángel", "Una zarza ardiente", "Una nube", "Fuego del cielo"],
+        "referencia": "Éxodo 3:2"
+    },
+    {
+        "pregunta": "¿Qué le dijo Jesús a los fariseos que era igual que matar?",
+        "respuesta": "Aborrecer a su hermano",
+        "opciones": ["Aborrecer a su hermano", "Mentir", "Juramentar", "Adulterar"],
+        "referencia": "Mateo 5:21-22"
+    },
+    {
+        "pregunta": "¿En qué ciudad se derrumbó el muro después de las trompetas?",
+        "respuesta": "Jericó",
+        "opciones": ["Sodoma", "Jericó", "Nínive", "Babilonia"],
+        "referencia": "Josué 6:20"
+    },
+    {
+        "pregunta": "¿Quién traicionó a Jesús por 30 piezas de plata?",
+        "respuesta": "Judas Iscariote",
+        "opciones": ["Pedro", "Judas Iscariote", "Tomás", "Juan"],
+        "referencia": "Mateo 26:14-16"
+    },
+    {
+        "pregunta": "¿Qué animal habló con Balaam?",
+        "respuesta": "Un asna",
+        "opciones": ["Un perro", "Un caballo", "Una oveja", "Un asna"],
+        "referencia": "Números 22:28"
+    },
+    {
+        "pregunta": "¿Qué se convirtió en una columna de sal?",
+        "respuesta": "La esposa de Lot",
+        "opciones": ["La esposa de Lot", "La mujer de Noé", "La madre de José", "La hermana de Moisés"],
+        "referencia": "Génesis 19:26"
+    },
+    {
+        "pregunta": "¿Cuál de los discípulos traicionó a Jesús por 30 piezas de plata?",
+        "respuesta": "Judas Iscariote",
+        "opciones": ["Judas Iscariote", "Pedro", "Tomás", "Santiago"],
+        "referencia": "Mateo 26:14-16"
+    },
+    {
+        "pregunta": "¿Quién fue el padre de los creyentes?",
+        "respuesta": "Abraham",
+        "opciones": ["Noé", "Isaac", "Jacob", "Abraham"],
+        "referencia": "Romanos 4:11"
+    },
+    {
+        "pregunta": "¿Quién fue el rey más sabio de Israel?",
+        "respuesta": "Salomón",
+        "opciones": ["David", "Saúl", "Salomón", "Ezequías"],
+        "referencia": "1 Reyes 4:29"
+    },
+    {
+        "pregunta": "¿Cuál es el mandamiento más grande, según Jesús?",
+        "respuesta": "Amar a Dios sobre todas las cosas y a tu prójimo como a ti mismo",
+        "opciones": ["No matarás", "Amar a Dios sobre todas las cosas y a tu prójimo como a ti mismo", "Honra a tu padre y a tu madre", "No robarás"],
+        "referencia": "Mateo 22:37-39"
+    },
+    {
+        "pregunta": "¿Cuántas veces perdonó Jesús a Pedro antes de que él lo negara?",
+        "respuesta": "No lo perdonó antes, sino que predijo que lo negaría",
+        "opciones": ["Una vez", "Tres veces", "Siete veces", "No lo perdonó antes, sino que predijo que lo negaría"],
+        "referencia": "Mateo 26:34"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que fue echado al foso de los leones?",
+        "respuesta": "Daniel",
+        "opciones": ["Jonás", "Daniel", "Elías", "Jeremías"],
+        "referencia": "Daniel 6:16"
+    },
+    {
+        "pregunta": "¿Qué profeta de la Biblia fue tragado por un gran pez?",
+        "respuesta": "Jonás",
+        "opciones": ["Elías", "Jeremías", "Jonás", "Ezequiel"],
+        "referencia": "Jonás 1:17"
+    },
+    {
+        "pregunta": "¿Quién fue el primer rey de Israel?",
+        "respuesta": "Saúl",
+        "opciones": ["David", "Saúl", "Salomón", "Samuel"],
+        "referencia": "1 Samuel 10:24"
+    },
+    {
+        "pregunta": "¿Quién mató a Goliat?",
+        "respuesta": "David",
+        "opciones": ["Saúl", "Jonatán", "David", "Sansón"],
+        "referencia": "1 Samuel 17:50"
+    },
+    {
+        "pregunta": "¿Qué arma usó David para matar a Goliat?",
+        "respuesta": "Una onda y una piedra",
+        "opciones": ["Una espada", "Una lanza", "Una onda y una piedra", "Un arco y flechas"],
+        "referencia": "1 Samuel 17:49-50"
+    },
+    {
+        "pregunta": "¿Quién escribió la mayoría de los Salmos?",
+        "respuesta": "David",
+        "opciones": ["Salomón", "Moisés", "David", "Asaf"],
+        "referencia": "Salmos 1-150"
+    },
+    {
+        "pregunta": "¿Quién fue el gobernador romano que condenó a Jesús a la crucifixión?",
+        "respuesta": "Poncio Pilato",
+        "opciones": ["Herodes Antipas", "César Augusto", "Poncio Pilato", "Caiapás"],
+        "referencia": "Mateo 27:26"
+    },
+    {
+        "pregunta": "¿Dónde nació Jesús?",
+        "respuesta": "En Belén",
+        "opciones": ["En Nazaret", "En Belén", "En Jerusalén", "En Galilea"],
+        "referencia": "Mateo 2:1"
+    },
+    {
+        "pregunta": "¿Qué libro de la Biblia es el último del Nuevo Testamento?",
+        "respuesta": "Apocalipsis",
+        "opciones": ["Judas", "Apocalipsis", "Hebreos", "Filipenses"],
+        "referencia": "Apocalipsis 1:1"
+    },
+    {
+        "pregunta": "¿Cuántos libros tiene el Nuevo Testamento?",
+        "respuesta": "Veintisiete",
+        "opciones": ["Veinticuatro", "Veinticinco", "Veintisiete", "Treinta y nueve"],
+        "referencia": "Nuevo Testamento"
+    },
+    {
+        "pregunta": "¿Quién fue la madre de Jesús?",
+        "respuesta": "María",
+        "opciones": ["Ana", "Sara", "María", "Eva"],
+        "referencia": "Lucas 1:26-38"
+    },
+    {
+        "pregunta": "¿Quién fue el apóstol que negó a Jesús tres veces?",
+        "respuesta": "Pedro",
+        "opciones": ["Pedro", "Juan", "Judas", "Tomás"],
+        "referencia": "Lucas 22:54-62"
+    },
+    {
+        "pregunta": "¿Quién fue el padre de Juan el Bautista?",
+        "respuesta": "Zacarías",
+        "opciones": ["Zacarías", "José", "Abraham", "Elías"],
+        "referencia": "Lucas 1:13"
+    },
+    {
+        "pregunta": "¿Qué significa la palabra 'Emanuel'?",
+        "respuesta": "Dios con nosotros",
+        "opciones": ["Salvador del mundo", "Dios con nosotros", "Jesucristo", "Señor de los cielos"],
+        "referencia": "Mateo 1:23"
+    },
+    {
+        "pregunta": "¿Quién fue el primer mártir cristiano?",
+        "respuesta": "Esteban",
+        "opciones": ["Pedro", "Esteban", "Santiago", "Jacobo"],
+        "referencia": "Hechos 7:59-60"
+    },
+    {
+        "pregunta": "¿En qué ciudad los creyentes fueron llamados 'cristianos' por primera vez?",
+        "respuesta": "En Antioquía",
+        "opciones": ["En Jerusalén", "En Cesarea", "En Damasco", "En Antioquía"],
+        "referencia": "Hechos 11:26"
+    },
+    {
+        "pregunta": "¿Quién fue el padre de los creyentes?",
+        "respuesta": "Abraham",
+        "opciones": ["Noé", "Isaac", "Jacob", "Abraham"],
+        "referencia": "Romanos 4:11"
+    },
+    {
+        "pregunta": "¿A qué edad murió Moisés?",
+        "respuesta": "120 años",
+        "opciones": ["100 años", "120 años", "110 años", "150 años"],
+        "referencia": "Deuteronomio 34:7"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre más fuerte de la Biblia?",
+        "respuesta": "Sansón",
+        "opciones": ["Moisés", "Sansón", "David", "Salomón"],
+        "referencia": "Jueces 16:17-30"
+    },
+    {
+        "pregunta": "¿Qué se le apareció a Moisés en el monte Horeb?",
+        "respuesta": "Una zarza ardiente",
+        "opciones": ["Un ángel", "Una zarza ardiente", "Una nube", "Fuego del cielo"],
+        "referencia": "Éxodo 3:2"
+    },
+    {
+        "pregunta": "¿Cuál fue la primera plaga de Egipto?",
+        "respuesta": "Las aguas del río Nilo se convirtieron en sangre",
+        "opciones": ["Las ranas", "Las moscas", "La oscuridad", "Las aguas del río Nilo se convirtieron en sangre"],
+        "referencia": "Éxodo 7:19-21"
+    },
+    {
+        "pregunta": "¿Qué libro de la Biblia narra el nacimiento de Jesús?",
+        "respuesta": "Mateo y Lucas",
+        "opciones": ["Juan", "Hechos", "Mateo y Lucas", "Marcos"],
+        "referencia": "Mateo 1:18-2:12, Lucas 1:26-2:20"
+    },
+    {
+        "pregunta": "¿Quién fue la primera persona en la Biblia de la que se menciona que es profeta?",
+        "respuesta": "Abraham",
+        "opciones": ["Moisés", "Noé", "Abraham", "Samuel"],
+        "referencia": "Génesis 20:7"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que vio una visión de un canastillo de fruta en el verano?",
+        "respuesta": "Amós",
+        "opciones": ["Isaías", "Jeremías", "Amós", "Jonás"],
+        "referencia": "Amós 8:1-3"
+    },
+    {
+        "pregunta": "¿Cuál era el nombre de la mujer que lavó los pies de Jesús con sus lágrimas y los secó con su cabello?",
+        "respuesta": "María, hermana de Lázaro y Marta",
+        "opciones": ["María Magdalena", "María, hermana de Lázaro y Marta", "Marta", "Débora"],
+        "referencia": "Juan 12:3"
+    },
+    {
+        "pregunta": "¿Qué le dijo Jesús a los fariseos que era igual que matar?",
+        "respuesta": "Aborrecer a su hermano",
+        "opciones": ["Aborrecer a su hermano", "Mentir", "Juramentar", "Adulterar"],
+        "referencia": "Mateo 5:21-22"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre más viejo de la Biblia?",
+        "respuesta": "Matusalén",
+        "opciones": ["Noé", "Adán", "Matusalén", "Set"],
+        "referencia": "Génesis 5:27"
+    },
+    {
+        "pregunta": "¿Quién fue el hermano de Moisés que lo acompañó como su portavoz?",
+        "respuesta": "Aarón",
+        "opciones": ["Aarón", "Josué", "Elí", "Leví"],
+        "referencia": "Éxodo 4:14-16"
+    },
+    {
+        "pregunta": "¿Quién dijo: 'Heme aquí, envíame a mí'?",
+        "respuesta": "Isaías",
+        "opciones": ["Moisés", "Elías", "Samuel", "Isaías"],
+        "referencia": "Isaías 6:8"
+    },
+    {
+        "pregunta": "¿Quién fue el segundo rey de Israel?",
+        "respuesta": "David",
+        "opciones": ["Salomón", "Saúl", "David", "Samuel"],
+        "referencia": "1 Samuel 16:13"
+    },
+    {
+        "pregunta": "¿Qué profeta fue arrojado a un pozo lleno de lodo?",
+        "respuesta": "Jeremías",
+        "opciones": ["Daniel", "Eliseo", "Jeremías", "Jonás"],
+        "referencia": "Jeremías 38:6"
+    },
+    {
+        "pregunta": "¿Quién escribió el libro del Eclesiastés?",
+        "respuesta": "Salomón",
+        "opciones": ["David", "Moisés", "Salomón", "Job"],
+        "referencia": "Eclesiastés 1:1"
+    },
+    {
+        "pregunta": "¿Quién fue el primer rey de Judá después de la división del reino?",
+        "respuesta": "Roboam",
+        "opciones": ["Jeroboam", "Roboam", "Salomón", "David"],
+        "referencia": "1 Reyes 12:17"
+    },
+    {
+        "pregunta": "¿Qué apóstol dijo 'Señor mío y Dios mío' al ver a Jesús resucitado?",
+        "respuesta": "Tomás",
+        "opciones": ["Pedro", "Tomás", "Juan", "Felipe"],
+        "referencia": "Juan 20:28"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que le contó a David la parábola de la ovejita?",
+        "respuesta": "Natán",
+        "opciones": ["Samuel", "Elías", "Natán", "Ezequiel"],
+        "referencia": "2 Samuel 12:1-4"
+    },
+    {
+        "pregunta": "¿Quién se sentó a los pies de Jesús y escuchaba su palabra, mientras su hermana, Marta, estaba ocupada?",
+        "respuesta": "María",
+        "opciones": ["María", "Débora", "Lidia", "Priscila"],
+        "referencia": "Lucas 10:39"
+    },
+    {
+        "pregunta": "¿Quién era el rey de los babilonios que llevó a Judá al cautiverio?",
+        "respuesta": "Nabucodonosor",
+        "opciones": ["Faraón", "Ciro", "Nabucodonosor", "Darío"],
+        "referencia": "2 Reyes 25:1-7"
+    },
+    {
+        "pregunta": "¿Qué animal habló con Balaam?",
+        "respuesta": "Un asna",
+        "opciones": ["Un perro", "Un caballo", "Una oveja", "Un asna"],
+        "referencia": "Números 22:28"
+    },
+    {
+        "pregunta": "¿Qué profeta de la Biblia fue tragado por un gran pez?",
+        "respuesta": "Jonás",
+        "opciones": ["Elías", "Jeremías", "Jonás", "Ezequiel"],
+        "referencia": "Jonás 1:17"
+    },
+    {
+        "pregunta": "¿Cuál fue el primer milagro de Jesús?",
+        "respuesta": "Convertir el agua en vino",
+        "opciones": ["Sanar a un ciego", "Multiplicar los panes", "Convertir el agua en vino", "Caminar sobre el agua"],
+        "referencia": "Juan 2:1-11"
+    },
+    {
+        "pregunta": "¿Qué se le prometió a Abraham si obedecía a Dios?",
+        "respuesta": "Que sería padre de una gran nación",
+        "opciones": ["Riquezas y honor", "Larga vida", "Que sería padre de una gran nación", "La tierra prometida"],
+        "referencia": "Génesis 12:2"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre que Dios usó para abrir el Mar Rojo?",
+        "respuesta": "Moisés",
+        "opciones": ["Moisés", "Josué", "Aarón", "David"],
+        "referencia": "Éxodo 14:21"
+    },
+    {
+        "pregunta": "¿Qué se convirtió en una columna de sal?",
+        "respuesta": "La esposa de Lot",
+        "opciones": ["La esposa de Lot", "La mujer de Noé", "La madre de José", "La hermana de Moisés"],
+        "referencia": "Génesis 19:26"
+    },
+    {
+        "pregunta": "¿Quién fue la madre de Juan el Bautista?",
+        "respuesta": "Elisabet",
+        "opciones": ["Ana", "María", "Elisabet", "Débora"],
+        "referencia": "Lucas 1:57"
+    },
+    {
+        "pregunta": "¿Quién fue el rey que mandó matar a Juan el Bautista?",
+        "respuesta": "Herodes Antipas",
+        "opciones": ["Herodes Antipas", "César Augusto", "Poncio Pilato", "Caiapás"],
+        "referencia": "Marcos 6:27"
+    },
+    {
+        "pregunta": "¿A qué edad murió Moisés?",
+        "respuesta": "120 años",
+        "opciones": ["100 años", "120 años", "110 años", "150 años"],
+        "referencia": "Deuteronomio 34:7"
+    },
+    {
+        "pregunta": "¿Cuál era el oficio de Lucas?",
+        "respuesta": "Médico",
+        "opciones": ["Pescador", "Carpintero", "Médico", "Recaudador de impuestos"],
+        "referencia": "Colosenses 4:14"
+    },
+    {
+        "pregunta": "¿Quién fue el primer mártir cristiano?",
+        "respuesta": "Esteban",
+        "opciones": ["Pedro", "Esteban", "Santiago", "Jacobo"],
+        "referencia": "Hechos 7:59-60"
+    },
+    {
+        "pregunta": "¿Quién fue la primera persona que vio a Jesús resucitado?",
+        "respuesta": "María Magdalena",
+        "opciones": ["Pedro", "María Magdalena", "Juan", "Tomás"],
+        "referencia": "Juan 20:11-18"
+    },
+    {
+        "pregunta": "¿Qué significa la palabra 'Emanuel'?",
+        "respuesta": "Dios con nosotros",
+        "opciones": ["Salvador del mundo", "Dios con nosotros", "Jesucristo", "Señor de los cielos"],
+        "referencia": "Mateo 1:23"
+    },
+    {
+        "pregunta": "¿Qué se le apareció a Moisés en el monte Horeb?",
+        "respuesta": "Una zarza ardiente",
+        "opciones": ["Un ángel", "Una zarza ardiente", "Una nube", "Fuego del cielo"],
+        "referencia": "Éxodo 3:2"
+    },
+    {
+        "pregunta": "¿Quién fue el padre de los creyentes?",
+        "respuesta": "Abraham",
+        "opciones": ["Noé", "Isaac", "Jacob", "Abraham"],
+        "referencia": "Romanos 4:11"
+    },
+    {
+        "pregunta": "¿Quién fue la primera mujer creada por Dios?",
+        "respuesta": "Eva",
+        "opciones": ["Sara", "Eva", "María", "Rebeca"],
+        "referencia": "Génesis 2:21-22"
+    },
+    {
+        "pregunta": "¿Quién fue el primer hombre creado por Dios?",
+        "respuesta": "Adán",
+        "opciones": ["Adán", "Noé", "Abraham", "Moisés"],
+        "referencia": "Génesis 2:7"
+    },
+    {
+        "pregunta": "¿Quién escribió la mayoría de los Salmos?",
+        "respuesta": "David",
+        "opciones": ["Salomón", "Moisés", "David", "Asaf"],
+        "referencia": "Salmos 1-150"
+    },
+    {
+        "pregunta": "¿Quién fue el rey más sabio de Israel?",
+        "respuesta": "Salomón",
+        "opciones": ["David", "Saúl", "Salomón", "Ezequías"],
+        "referencia": "1 Reyes 4:29"
+    },
+    {
+        "pregunta": "¿Quién fue el gobernador romano que condenó a Jesús a la crucifixión?",
+        "respuesta": "Poncio Pilato",
+        "opciones": ["Herodes Antipas", "César Augusto", "Poncio Pilato", "Caiapás"],
+        "referencia": "Mateo 27:26"
+    },
+    {
+        "pregunta": "¿En qué río fue bautizado Jesús?",
+        "respuesta": "El río Jordán",
+        "opciones": ["El río Nilo", "El río Jordán", "El río Éufrates", "El río Tigris"],
+        "referencia": "Marcos 1:9"
+    },
+    {
+        "pregunta": "¿Cuál es el Salmo más largo de la Biblia?",
+        "respuesta": "El Salmo 119",
+        "opciones": ["El Salmo 23", "El Salmo 150", "El Salmo 119", "El Salmo 1"],
+        "referencia": "Salmo 119"
+    },
+    {
+        "pregunta": "¿Cuántos libros tiene el Nuevo Testamento?",
+        "respuesta": "Veintisiete",
+        "opciones": ["Veinticuatro", "Veinticinco", "Veintisiete", "Treinta y nueve"],
+        "referencia": "Nuevo Testamento"
+    },
+    {
+        "pregunta": "¿Quién fue el primer rey de Israel?",
+        "respuesta": "Saúl",
+        "opciones": ["David", "Saúl", "Salomón", "Samuel"],
+        "referencia": "1 Samuel 10:24"
+    },
+    {
+        "pregunta": "¿Quién mató a Goliat?",
+        "respuesta": "David",
+        "opciones": ["Saúl", "Jonatán", "David", "Sansón"],
+        "referencia": "1 Samuel 17:50"
+    },
+    {
+        "pregunta": "¿Qué profeta de la Biblia fue tragado por un gran pez?",
+        "respuesta": "Jonás",
+        "opciones": ["Elías", "Jeremías", "Jonás", "Ezequiel"],
+        "referencia": "Jonás 1:17"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre más fuerte de la Biblia?",
+        "respuesta": "Sansón",
+        "opciones": ["Moisés", "Sansón", "David", "Salomón"],
+        "referencia": "Jueces 16:17-30"
+    },
+    {
+        "pregunta": "¿Qué ciudad tenía muros que cayeron después de que los israelitas la rodearan y tocaran las trompetas?",
+        "respuesta": "Jericó",
+        "opciones": ["Sodoma", "Jericó", "Nínive", "Babilonia"],
+        "referencia": "Josué 6:20"
+    },
+    {
+        "pregunta": "¿Cuál fue el primer milagro de Jesús?",
+        "respuesta": "Convertir el agua en vino",
+        "opciones": ["Sanar a un ciego", "Multiplicar los panes", "Convertir el agua en vino", "Caminar sobre el agua"],
+        "referencia": "Juan 2:1-11"
+    },
+    {
+        "pregunta": "¿Quién fue el apóstol que negó a Jesús tres veces?",
+        "respuesta": "Pedro",
+        "opciones": ["Pedro", "Juan", "Judas", "Tomás"],
+        "referencia": "Lucas 22:54-62"
+    },
+    {
+        "pregunta": "¿Quién fue el primer mártir cristiano?",
+        "respuesta": "Esteban",
+        "opciones": ["Pedro", "Esteban", "Santiago", "Jacobo"],
+        "referencia": "Hechos 7:59-60"
+    },
+    {
+        "pregunta": "¿En qué ciudad los creyentes fueron llamados 'cristianos' por primera vez?",
+        "respuesta": "En Antioquía",
+        "opciones": ["En Jerusalén", "En Cesarea", "En Damasco", "En Antioquía"],
+        "referencia": "Hechos 11:26"
+    },
+    {
+        "pregunta": "¿Cuál era el trabajo de José, el padre de Jesús?",
+        "respuesta": "Carpintero",
+        "opciones": ["Pescador", "Carpintero", "Pastor", "Granjero"],
+        "referencia": "Mateo 13:55"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que vio la visión de los huesos secos?",
+        "respuesta": "Ezequiel",
+        "opciones": ["Isaías", "Jeremías", "Ezequiel", "Daniel"],
+        "referencia": "Ezequiel 37:1-14"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que fue echado al foso de los leones?",
+        "respuesta": "Daniel",
+        "opciones": ["Jonás", "Daniel", "Elías", "Jeremías"],
+        "referencia": "Daniel 6:16"
+    },
+    {
+        "pregunta": "¿Quién fue el primer rey de Judá después de la división del reino?",
+        "respuesta": "Roboam",
+        "opciones": ["Jeroboam", "Roboam", "Salomón", "David"],
+        "referencia": "1 Reyes 12:17"
+    },
+    {
+        "pregunta": "¿Qué se le apareció a Pablo en el camino a Damasco?",
+        "respuesta": "Una luz del cielo",
+        "opciones": ["Un ángel", "Una luz del cielo", "Una visión de Jesús", "Una zarza ardiente"],
+        "referencia": "Hechos 9:3"
+    },
+    {
+        "pregunta": "¿Cuál era el nombre del rey de Israel al que un ángel le dijo que su hijo nacería y que él no podría hablar hasta que el niño naciera?",
+        "respuesta": "Zacarías",
+        "opciones": ["David", "Salomón", "Saúl", "Zacarías"],
+        "referencia": "Lucas 1:13, 20"
+    },
+    {
+        "pregunta": "¿Quién escribió la mayoría de los libros del Nuevo Testamento?",
+        "respuesta": "Pablo",
+        "opciones": ["Juan", "Pedro", "Lucas", "Pablo"],
+        "referencia": "Nuevo Testamento"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que le contó a David la parábola de la ovejita?",
+        "respuesta": "Natán",
+        "opciones": ["Samuel", "Elías", "Natán", "Ezequiel"],
+        "referencia": "2 Samuel 12:1-4"
+    },
+    {
+        "pregunta": "¿Quién se sentó a los pies de Jesús y escuchaba su palabra, mientras su hermana, Marta, estaba ocupada?",
+        "respuesta": "María",
+        "opciones": ["María", "Débora", "Lidia", "Priscila"],
+        "referencia": "Lucas 10:39"
+    },
+    {
+        "pregunta": "¿Quién era el rey de los babilonios que llevó a Judá al cautiverio?",
+        "respuesta": "Nabucodonosor",
+        "opciones": ["Faraón", "Ciro", "Nabucodonosor", "Darío"],
+        "referencia": "2 Reyes 25:1-7"
+    },
+    {
+        "pregunta": "¿Qué animal habló con Balaam?",
+        "respuesta": "Un asna",
+        "opciones": ["Un perro", "Un caballo", "Una oveja", "Un asna"],
+        "referencia": "Números 22:28"
+    },
+    {
+        "pregunta": "¿Qué profeta de la Biblia fue tragado por un gran pez?",
+        "respuesta": "Jonás",
+        "opciones": ["Elías", "Jeremías", "Jonás", "Ezequiel"],
+        "referencia": "Jonás 1:17"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre que Dios usó para abrir el Mar Rojo?",
+        "respuesta": "Moisés",
+        "opciones": ["Moisés", "Josué", "Aarón", "David"],
+        "referencia": "Éxodo 14:21"
+    },
+    {
+        "pregunta": "¿Quién fue la madre de Juan el Bautista?",
+        "respuesta": "Elisabet",
+        "opciones": ["Ana", "María", "Elisabet", "Débora"],
+        "referencia": "Lucas 1:57"
+    },
+    {
+        "pregunta": "¿Quién fue la primera persona que vio a Jesús resucitado?",
+        "respuesta": "María Magdalena",
+        "opciones": ["Pedro", "María Magdalena", "Juan", "Tomás"],
+        "referencia": "Juan 20:11-18"
+    },
+    {
+        "pregunta": "¿Cuál fue el primer milagro de Jesús?",
+        "respuesta": "Convertir el agua en vino",
+        "opciones": ["Sanar a un ciego", "Multiplicar los panes", "Convertir el agua en vino", "Caminar sobre el agua"],
+        "referencia": "Juan 2:1-11"
+    },
+    {
+        "pregunta": "¿Quién fue el gobernador romano que condenó a Jesús a la crucifixión?",
+        "respuesta": "Poncio Pilato",
+        "opciones": ["Herodes Antipas", "César Augusto", "Poncio Pilato", "Caiapás"],
+        "referencia": "Mateo 27:26"
+    },
+    {
+        "pregunta": "¿Cuántos libros tiene el Nuevo Testamento?",
+        "respuesta": "Veintisiete",
+        "opciones": ["Veinticuatro", "Veinticinco", "Veintisiete", "Treinta y nueve"],
+        "referencia": "Nuevo Testamento"
+    },
+    {
+        "pregunta": "¿Qué significa la palabra 'Evangelio'?",
+        "respuesta": "Buena noticia",
+        "opciones": ["Palabra de Dios", "Buena noticia", "Libro de la ley", "Historia sagrada"],
+        "referencia": "Evangelio"
+    },
+    {
+        "pregunta": "¿Qué se le prometió a Abraham si obedecía a Dios?",
+        "respuesta": "Que sería padre de una gran nación",
+        "opciones": ["Riquezas y honor", "Larga vida", "Que sería padre de una gran nación", "La tierra prometida"],
+        "referencia": "Génesis 12:2"
+    },
+    {
+        "pregunta": "¿Quién fue la primera persona en la Biblia de la que se menciona que es profeta?",
+        "respuesta": "Abraham",
+        "opciones": ["Moisés", "Noé", "Abraham", "Samuel"],
+        "referencia": "Génesis 20:7"
+    },
+    {
+        "pregunta": "¿Quién fue la mujer que fue jueza y líder de Israel?",
+        "respuesta": "Débora",
+        "opciones": ["Jael", "Débora", "Rut", "Ester"],
+        "referencia": "Jueces 4:4-5"
+    },
+    {
+        "pregunta": "¿Quién fue el primer sumo sacerdote de Israel?",
+        "respuesta": "Aarón",
+        "opciones": ["Moisés", "Josué", "Aarón", "Elí"],
+        "referencia": "Éxodo 28:1"
+    },
+    {
+        "pregunta": "¿Quién escribió el libro de Proverbios?",
+        "respuesta": "Mayormente Salomón",
+        "opciones": ["David", "Moisés", "Salomón", "Isaías"],
+        "referencia": "Proverbios 1:1"
+    },
+    {
+        "pregunta": "¿Cuál era el oficio de Pedro antes de seguir a Jesús?",
+        "respuesta": "Pescador",
+        "opciones": ["Carpintero", "Pescador", "Recaudador de impuestos", "Pastor"],
+        "referencia": "Mateo 4:18"
+    },
+    {
+        "pregunta": "¿Quién fue el apóstol que se convirtió en cristiano después de perseguir a la iglesia?",
+        "respuesta": "Pablo (Saulo de Tarso)",
+        "opciones": ["Pedro", "Juan", "Pablo (Saulo de Tarso)", "Jacobo"],
+        "referencia": "Hechos 9:1-19"
+    },
+    {
+        "pregunta": "¿Quién fue el último de los jueces y el primer profeta de Israel?",
+        "respuesta": "Samuel",
+        "opciones": ["Sansón", "Débora", "Gedeón", "Samuel"],
+        "referencia": "1 Samuel 3:20"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que tuvo que huir de la reina Jezabel?",
+        "respuesta": "Elías",
+        "opciones": ["Eliseo", "Jeremías", "Elías", "Isaías"],
+        "referencia": "1 Reyes 19:1-3"
+    },
+    {
+        "pregunta": "¿Qué libro de la Biblia narra el viaje de los israelitas por el desierto?",
+        "respuesta": "Números",
+        "opciones": ["Génesis", "Éxodo", "Levítico", "Números"],
+        "referencia": "Libro de Números"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre más viejo de la Biblia?",
+        "respuesta": "Matusalén",
+        "opciones": ["Noé", "Adán", "Matusalén", "Set"],
+        "referencia": "Génesis 5:27"
+    },
+    {
+        "pregunta": "¿Quién fue el hermano de Moisés que lo acompañó como su portavoz?",
+        "respuesta": "Aarón",
+        "opciones": ["Aarón", "Josué", "Elí", "Leví"],
+        "referencia": "Éxodo 4:14-16"
+    },
+    {
+        "pregunta": "¿Quién dijo: 'Heme aquí, envíame a mí'?",
+        "respuesta": "Isaías",
+        "opciones": ["Moisés", "Elías", "Samuel", "Isaías"],
+        "referencia": "Isaías 6:8"
+    },
+    {
+        "pregunta": "¿Quién fue el segundo rey de Israel?",
+        "respuesta": "David",
+        "opciones": ["Salomón", "Saúl", "David", "Samuel"],
+        "referencia": "1 Samuel 16:13"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que le contó a David la parábola de la ovejita?",
+        "respuesta": "Natán",
+        "opciones": ["Samuel", "Elías", "Natán", "Ezequiel"],
+        "referencia": "2 Samuel 12:1-4"
+    },
+    {
+        "pregunta": "¿Quién se sentó a los pies de Jesús y escuchaba su palabra, mientras su hermana, Marta, estaba ocupada?",
+        "respuesta": "María",
+        "opciones": ["María", "Débora", "Lidia", "Priscila"],
+        "referencia": "Lucas 10:39"
+    },
+    {
+        "pregunta": "¿Quién era el rey de los babilonios que llevó a Judá al cautiverio?",
+        "respuesta": "Nabucodonosor",
+        "opciones": ["Faraón", "Ciro", "Nabucodonosor", "Darío"],
+        "referencia": "2 Reyes 25:1-7"
+    },
+    {
+        "pregunta": "¿Qué profeta fue llevado al cielo en un carro de fuego?",
+        "respuesta": "Elías",
+        "opciones": ["Eliseo", "Elías", "Jeremías", "Isaías"],
+        "referencia": "2 Reyes 2:11"
+    },
+    {
+        "pregunta": "¿Qué se convirtió en una serpiente cuando Moisés la arrojó al suelo?",
+        "respuesta": "Su vara",
+        "opciones": ["Su mano", "Una piedra", "Su vara", "Un manto"],
+        "referencia": "Éxodo 4:3"
+    },
+    {
+        "pregunta": "¿Qué se les dio a los pastores como señal del nacimiento de Jesús?",
+        "respuesta": "Un niño envuelto en pañales y acostado en un pesebre",
+        "opciones": ["Un ángel cantando", "Un niño envuelto en pañales y acostado en un pesebre", "Una estrella brillante", "Un cordero"],
+        "referencia": "Lucas 2:12"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que vio la visión de los huesos secos?",
+        "respuesta": "Ezequiel",
+        "opciones": ["Isaías", "Jeremías", "Ezequiel", "Daniel"],
+        "referencia": "Ezequiel 37:1-14"
+    },
+    {
+        "pregunta": "¿Cuál fue la primera plaga de Egipto?",
+        "respuesta": "Las aguas del río Nilo se convirtieron en sangre",
+        "opciones": ["Las ranas", "Las moscas", "La oscuridad", "Las aguas del río Nilo se convirtieron en sangre"],
+        "referencia": "Éxodo 7:19-21"
+    },
+    {
+        "pregunta": "¿Qué libro de la Biblia narra el nacimiento de Jesús?",
+        "respuesta": "Mateo y Lucas",
+        "opciones": ["Juan", "Hechos", "Mateo y Lucas", "Marcos"],
+        "referencia": "Mateo 1:18-2:12, Lucas 1:26-2:20"
+    },
+    {
+        "pregunta": "¿Qué le dijo Jesús a los fariseos que era igual que matar?",
+        "respuesta": "Aborrecer a su hermano",
+        "opciones": ["Aborrecer a su hermano", "Mentir", "Juramentar", "Adulterar"],
+        "referencia": "Mateo 5:21-22"
+    },
+    {
+        "pregunta": "¿Quién fue el primer sumo sacerdote de Israel?",
+        "respuesta": "Aarón",
+        "opciones": ["Moisés", "Josué", "Aarón", "Elí"],
+        "referencia": "Éxodo 28:1"
+    },
+    {
+        "pregunta": "¿Quién escribió el libro del Eclesiastés?",
+        "respuesta": "Salomón",
+        "opciones": ["David", "Moisés", "Salomón", "Job"],
+        "referencia": "Eclesiastés 1:1"
+    },
+    {
+        "pregunta": "¿Quién fue el primer rey de Judá después de la división del reino?",
+        "respuesta": "Roboam",
+        "opciones": ["Jeroboam", "Roboam", "Salomón", "David"],
+        "referencia": "1 Reyes 12:17"
+    },
+    {
+        "pregunta": "¿Qué se le apareció a Pablo en el camino a Damasco?",
+        "respuesta": "Una luz del cielo",
+        "opciones": ["Un ángel", "Una luz del cielo", "Una visión de Jesús", "Una zarza ardiente"],
+        "referencia": "Hechos 9:3"
+    },
+    {
+        "pregunta": "¿Qué significa la palabra 'Evangelio'?",
+        "respuesta": "Buena noticia",
+        "opciones": ["Palabra de Dios", "Buena noticia", "Libro de la ley", "Historia sagrada"],
+        "referencia": "Evangelio"
+    },
+    {
+        "pregunta": "¿Qué animal habló con Balaam?",
+        "respuesta": "Un asna",
+        "opciones": ["Un perro", "Un caballo", "Una oveja", "Un asna"],
+        "referencia": "Números 22:28"
+    },
+    {
+        "pregunta": "¿Quién fue la primera persona en la Biblia de la que se menciona que es profeta?",
+        "respuesta": "Abraham",
+        "opciones": ["Moisés", "Noé", "Abraham", "Samuel"],
+        "referencia": "Génesis 20:7"
+    },
+    {
+        "pregunta": "¿Quién fue la mujer que fue jueza y líder de Israel?",
+        "respuesta": "Débora",
+        "opciones": ["Jael", "Débora", "Rut", "Ester"],
+        "referencia": "Jueces 4:4-5"
+    },
+    {
+        "pregunta": "¿Quién escribió el libro del Eclesiastés?",
+        "respuesta": "Salomón",
+        "opciones": ["David", "Moisés", "Salomón", "Job"],
+        "referencia": "Eclesiastés 1:1"
+    },
+    {
+        "pregunta": "¿Quién fue el primer rey de Judá después de la división del reino?",
+        "respuesta": "Roboam",
+        "opciones": ["Jeroboam", "Roboam", "Salomón", "David"],
+        "referencia": "1 Reyes 12:17"
+    },
+    {
+        "pregunta": "¿Qué apóstol dijo 'Señor mío y Dios mío' al ver a Jesús resucitado?",
+        "respuesta": "Tomás",
+        "opciones": ["Pedro", "Tomás", "Juan", "Felipe"],
+        "referencia": "Juan 20:28"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que le contó a David la parábola de la ovejita?",
+        "respuesta": "Natán",
+        "opciones": ["Samuel", "Elías", "Natán", "Ezequiel"],
+        "referencia": "2 Samuel 12:1-4"
+    },
+    {
+        "pregunta": "¿Quién se sentó a los pies de Jesús y escuchaba su palabra, mientras su hermana, Marta, estaba ocupada?",
+        "respuesta": "María",
+        "opciones": ["María", "Débora", "Lidia", "Priscila"],
+        "referencia": "Lucas 10:39"
+    },
+    {
+        "pregunta": "¿Quién era el rey de los babilonios que llevó a Judá al cautiverio?",
+        "respuesta": "Nabucodonosor",
+        "opciones": ["Faraón", "Ciro", "Nabucodonosor", "Darío"],
+        "referencia": "2 Reyes 25:1-7"
+    },
+    {
+        "pregunta": "¿Qué profeta fue llevado al cielo en un carro de fuego?",
+        "respuesta": "Elías",
+        "opciones": ["Eliseo", "Elías", "Jeremías", "Isaías"],
+        "referencia": "2 Reyes 2:11"
+    },
+    {
+        "pregunta": "¿Qué se convirtió en una serpiente cuando Moisés la arrojó al suelo?",
+        "respuesta": "Su vara",
+        "opciones": ["Su mano", "Una piedra", "Su vara", "Un manto"],
+        "referencia": "Éxodo 4:3"
+    },
+    {
+        "pregunta": "¿Quién fue el primer hombre creado por Dios?",
+        "respuesta": "Adán",
+        "opciones": ["Adán", "Noé", "Abraham", "Moisés"],
+        "referencia": "Génesis 2:7"
+    },
+    {
+        "pregunta": "¿Quién fue vendido por sus hermanos a unos mercaderes ismaelitas?",
+        "respuesta": "José",
+        "opciones": ["Benjamín", "Judá", "José", "Rubén"],
+        "referencia": "Génesis 37:28"
+    },
+    {
+        "pregunta": "¿Quién fue la madre de Jesús?",
+        "respuesta": "María",
+        "opciones": ["Ana", "Sara", "María", "Eva"],
+        "referencia": "Lucas 1:26-38"
+    },
+    {
+        "pregunta": "¿Quién fue el apóstol que negó a Jesús tres veces?",
+        "respuesta": "Pedro",
+        "opciones": ["Pedro", "Juan", "Judas", "Tomás"],
+        "referencia": "Lucas 22:54-62"
+    },
+    {
+        "pregunta": "¿Quién fue el primer rey de Israel?",
+        "respuesta": "Saúl",
+        "opciones": ["David", "Saúl", "Salomón", "Samuel"],
+        "referencia": "1 Samuel 10:24"
+    },
+    {
+        "pregunta": "¿Quién mató a Goliat?",
+        "respuesta": "David",
+        "opciones": ["Saúl", "Jonatán", "David", "Sansón"],
+        "referencia": "1 Samuel 17:50"
+    },
+    {
+        "pregunta": "¿Qué arma usó David para matar a Goliat?",
+        "respuesta": "Una onda y una piedra",
+        "opciones": ["Una espada", "Una lanza", "Una onda y una piedra", "Un arco y flechas"],
+        "referencia": "1 Samuel 17:49-50"
+    },
+    {
+        "pregunta": "¿Quién escribió la mayoría de los Salmos?",
+        "respuesta": "David",
+        "opciones": ["Salomón", "Moisés", "David", "Asaf"],
+        "referencia": "Salmos 1-150"
+    },
+    {
+        "pregunta": "¿Cuál es el Salmo más largo de la Biblia?",
+        "respuesta": "El Salmo 119",
+        "opciones": ["El Salmo 23", "El Salmo 150", "El Salmo 119", "El Salmo 1"],
+        "referencia": "Salmo 119"
+    },
+    {
+        "pregunta": "¿Quién fue el rey más sabio de Israel?",
+        "respuesta": "Salomón",
+        "opciones": ["David", "Saúl", "Salomón", "Ezequías"],
+        "referencia": "1 Reyes 4:29"
+    },
+    {
+        "pregunta": "¿Quién fue el gobernador romano que condenó a Jesús a la crucifixión?",
+        "respuesta": "Poncio Pilato",
+        "opciones": ["Herodes Antipas", "César Augusto", "Poncio Pilato", "Caiapás"],
+        "referencia": "Mateo 27:26"
+    },
+    {
+        "pregunta": "¿Cuántos libros tiene la Biblia?",
+        "respuesta": "66",
+        "opciones": ["66", "73", "50", "45"],
+        "referencia": "Biblia"
+    },
+    {
+        "pregunta": "¿Quién fue la primera persona que vio a Jesús resucitado?",
+        "respuesta": "María Magdalena",
+        "opciones": ["Pedro", "María Magdalena", "Juan", "Tomás"],
+        "referencia": "Juan 20:11-18"
+    },
+    {
+        "pregunta": "¿Qué se le prometió a Abraham si obedecía a Dios?",
+        "respuesta": "Que sería padre de una gran nación",
+        "opciones": ["Riquezas y honor", "Larga vida", "Que sería padre de una gran nación", "La tierra prometida"],
+        "referencia": "Génesis 12:2"
+    },
+    {
+        "pregunta": "¿Quién fue la madre de Juan el Bautista?",
+        "respuesta": "Elisabet",
+        "opciones": ["Ana", "María", "Elisabet", "Débora"],
+        "referencia": "Lucas 1:57"
+    },
+    {
+        "pregunta": "¿A qué edad murió Moisés?",
+        "respuesta": "120 años",
+        "opciones": ["100 años", "120 años", "110 años", "150 años"],
+        "referencia": "Deuteronomio 34:7"
+    },
+    {
+        "pregunta": "¿Cuál era el oficio de Lucas?",
+        "respuesta": "Médico",
+        "opciones": ["Pescador", "Carpintero", "Médico", "Recaudador de impuestos"],
+        "referencia": "Colosenses 4:14"
+    },
+    {
+        "pregunta": "¿En qué ciudad los creyentes fueron llamados 'cristianos' por primera vez?",
+        "respuesta": "En Antioquía",
+        "opciones": ["En Jerusalén", "En Cesarea", "En Damasco", "En Antioquía"],
+        "referencia": "Hechos 11:26"
+    },
+    {
+        "pregunta": "¿Qué profeta fue llevado al cielo en un carro de fuego?",
+        "respuesta": "Elías",
+        "opciones": ["Eliseo", "Elías", "Jeremías", "Isaías"],
+        "referencia": "2 Reyes 2:11"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre más fuerte de la Biblia?",
+        "respuesta": "Sansón",
+        "opciones": ["Moisés", "Sansón", "David", "Salomón"],
+        "referencia": "Jueces 16:17-30"
+    },
+    {
+        "pregunta": "¿Quién fue el primer sumo sacerdote de Israel?",
+        "respuesta": "Aarón",
+        "opciones": ["Moisés", "Josué", "Aarón", "Elí"],
+        "referencia": "Éxodo 28:1"
+    },
+    {
+        "pregunta": "¿Quién escribió el libro de Proverbios?",
+        "respuesta": "Mayormente Salomón",
+        "opciones": ["David", "Moisés", "Salomón", "Isaías"],
+        "referencia": "Proverbios 1:1"
+    },
+    {
+        "pregunta": "¿Qué se le apareció a Moisés en el monte Horeb?",
+        "respuesta": "Una zarza ardiente",
+        "opciones": ["Un ángel", "Una zarza ardiente", "Una nube", "Fuego del cielo"],
+        "referencia": "Éxodo 3:2"
+    },
+    {
+        "pregunta": "¿Qué libro de la Biblia narra el viaje de los israelitas por el desierto?",
+        "respuesta": "Números",
+        "opciones": ["Génesis", "Éxodo", "Levítico", "Números"],
+        "referencia": "Libro de Números"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre más viejo de la Biblia?",
+        "respuesta": "Matusalén",
+        "opciones": ["Noé", "Adán", "Matusalén", "Set"],
+        "referencia": "Génesis 5:27"
+    },
+    {
+        "pregunta": "¿Quién fue el hermano de Moisés que lo acompañó como su portavoz?",
+        "respuesta": "Aarón",
+        "opciones": ["Aarón", "Josué", "Elí", "Leví"],
+        "referencia": "Éxodo 4:14-16"
+    },
+    {
+        "pregunta": "¿Quién dijo: 'Heme aquí, envíame a mí'?",
+        "respuesta": "Isaías",
+        "opciones": ["Moisés", "Elías", "Samuel", "Isaías"],
+        "referencia": "Isaías 6:8"
+    },
+    {
+        "pregunta": "¿Quién fue el segundo rey de Israel?",
+        "respuesta": "David",
+        "opciones": ["Salomón", "Saúl", "David", "Samuel"],
+        "referencia": "1 Samuel 16:13"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que le contó a David la parábola de la ovejita?",
+        "respuesta": "Natán",
+        "opciones": ["Samuel", "Elías", "Natán", "Ezequiel"],
+        "referencia": "2 Samuel 12:1-4"
+    },
+    {
+        "pregunta": "¿Quién se sentó a los pies de Jesús y escuchaba su palabra, mientras su hermana, Marta, estaba ocupada?",
+        "respuesta": "María",
+        "opciones": ["María", "Débora", "Lidia", "Priscila"],
+        "referencia": "Lucas 10:39"
+    },
+    {
+        "pregunta": "¿Quién era el rey de los babilonios que llevó a Judá al cautiverio?",
+        "respuesta": "Nabucodonosor",
+        "opciones": ["Faraón", "Ciro", "Nabucodonosor", "Darío"],
+        "referencia": "2 Reyes 25:1-7"
+    },
+    {
+        "pregunta": "¿Qué profeta fue llevado al cielo en un carro de fuego?",
+        "respuesta": "Elías",
+        "opciones": ["Eliseo", "Elías", "Jeremías", "Isaías"],
+        "referencia": "2 Reyes 2:11"
+    },
+    {
+        "pregunta": "¿Qué se le prometió a Abraham si obedecía a Dios?",
+        "respuesta": "Que sería padre de una gran nación",
+        "opciones": ["Riquezas y honor", "Larga vida", "Que sería padre de una gran nación", "La tierra prometida"],
+        "referencia": "Génesis 12:2"
+    },
+    {
+        "pregunta": "¿Quién fue la primera persona en la Biblia de la que se menciona que es profeta?",
+        "respuesta": "Abraham",
+        "opciones": ["Moisés", "Noé", "Abraham", "Samuel"],
+        "referencia": "Génesis 20:7"
+    },
+    {
+        "pregunta": "¿Qué se les dio a los pastores como señal del nacimiento de Jesús?",
+        "respuesta": "Un niño envuelto en pañales y acostado en un pesebre",
+        "opciones": ["Un ángel cantando", "Un niño envuelto en pañales y acostado en un pesebre", "Una estrella brillante", "Un cordero"],
+        "referencia": "Lucas 2:12"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que vio la visión de los huesos secos?",
+        "respuesta": "Ezequiel",
+        "opciones": ["Isaías", "Jeremías", "Ezequiel", "Daniel"],
+        "referencia": "Ezequiel 37:1-14"
+    },
+    {
+        "pregunta": "¿Cuál fue la primera plaga de Egipto?",
+        "respuesta": "Las aguas del río Nilo se convirtieron en sangre",
+        "opciones": ["Las ranas", "Las moscas", "La oscuridad", "Las aguas del río Nilo se convirtieron en sangre"],
+        "referencia": "Éxodo 7:19-21"
+    },
+    {
+        "pregunta": "¿Qué libro de la Biblia narra el nacimiento de Jesús?",
+        "respuesta": "Mateo y Lucas",
+        "opciones": ["Juan", "Hechos", "Mateo y Lucas", "Marcos"],
+        "referencia": "Mateo 1:18-2:12, Lucas 1:26-2:20"
+    },
+    {
+        "pregunta": "¿Qué le dijo Jesús a los fariseos que era igual que matar?",
+        "respuesta": "Aborrecer a su hermano",
+        "opciones": ["Aborrecer a su hermano", "Mentir", "Juramentar", "Adulterar"],
+        "referencia": "Mateo 5:21-22"
+    },
+    {
+        "pregunta": "¿Quién fue el primer sumo sacerdote de Israel?",
+        "respuesta": "Aarón",
+        "opciones": ["Moisés", "Josué", "Aarón", "Elí"],
+        "referencia": "Éxodo 28:1"
+    },
+    {
+        "pregunta": "¿Qué se convirtió en una columna de sal?",
+        "respuesta": "La esposa de Lot",
+        "opciones": ["La esposa de Lot", "La mujer de Noé", "La madre de José", "La hermana de Moisés"],
+        "referencia": "Génesis 19:26"
+    },
+    {
+        "pregunta": "¿Quién fue el primer mártir cristiano?",
+        "respuesta": "Esteban",
+        "opciones": ["Pedro", "Esteban", "Santiago", "Jacobo"],
+        "referencia": "Hechos 7:59-60"
+    },
+    {
+        "pregunta": "¿Quién fue la primera persona que vio a Jesús resucitado?",
+        "respuesta": "María Magdalena",
+        "opciones": ["Pedro", "María Magdalena", "Juan", "Tomás"],
+        "referencia": "Juan 20:11-18"
+    },
+    {
+        "pregunta": "¿Cuál fue el primer milagro de Jesús?",
+        "respuesta": "Convertir el agua en vino",
+        "opciones": ["Sanar a un ciego", "Multiplicar los panes", "Convertir el agua en vino", "Caminar sobre el agua"],
+        "referencia": "Juan 2:1-11"
+    },
+    {
+        "pregunta": "¿Quién fue el apóstol que se convirtió en cristiano después de perseguir a la iglesia?",
+        "respuesta": "Pablo (Saulo de Tarso)",
+        "opciones": ["Pedro", "Juan", "Pablo (Saulo de Tarso)", "Jacobo"],
+        "referencia": "Hechos 9:1-19"
+    },
+    {
+        "pregunta": "¿Qué le dijo Jesús a los fariseos que era igual que matar?",
+        "respuesta": "Aborrecer a su hermano",
+        "opciones": ["Aborrecer a su hermano", "Mentir", "Juramentar", "Adulterar"],
+        "referencia": "Mateo 5:21-22"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre que Dios usó para abrir el Mar Rojo?",
+        "respuesta": "Moisés",
+        "opciones": ["Moisés", "Josué", "Aarón", "David"],
+        "referencia": "Éxodo 14:21"
+    },
+    {
+        "pregunta": "¿Qué se convirtió en una serpiente cuando Moisés la arrojó al suelo?",
+        "respuesta": "Su vara",
+        "opciones": ["Su mano", "Una piedra", "Su vara", "Un manto"],
+        "referencia": "Éxodo 4:3"
+    },
+    {
+        "pregunta": "¿Qué animal habló con Balaam?",
+        "respuesta": "Un asna",
+        "opciones": ["Un perro", "Un caballo", "Una oveja", "Un asna"],
+        "referencia": "Números 22:28"
+    },
+    {
+        "pregunta": "¿Qué profeta de la Biblia fue tragado por un gran pez?",
+        "respuesta": "Jonás",
+        "opciones": ["Elías", "Jeremías", "Jonás", "Ezequiel"],
+        "referencia": "Jonás 1:17"
+    },
+    {
+        "pregunta": "¿Cuál es el último libro del Antiguo Testamento?",
+        "respuesta": "Malaquías",
+        "opciones": ["Zacarías", "Ezequiel", "Malaquías", "Joel"],
+        "referencia": "Malaquías 4:6"
+    },
+    {
+        "pregunta": "¿Cuál era el nombre de la mujer que lavó los pies de Jesús con sus lágrimas y los secó con su cabello?",
+        "respuesta": "María, hermana de Lázaro y Marta",
+        "opciones": ["María Magdalena", "María, hermana de Lázaro y Marta", "Marta", "Débora"],
+        "referencia": "Juan 12:3"
+    },
+    {
+        "pregunta": "¿Quién fue la mujer que fue jueza y líder de Israel?",
+        "respuesta": "Débora",
+        "opciones": ["Jael", "Débora", "Rut", "Ester"],
+        "referencia": "Jueces 4:4-5"
+    },
+    {
+        "pregunta": "¿Qué ciudad fue destruida por fuego y azufre por el pecado de sus habitantes?",
+        "respuesta": "Sodoma y Gomorra",
+        "opciones": ["Babilonia", "Jericó", "Sodoma y Gomorra", "Nínive"],
+        "referencia": "Génesis 19:24"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que vio una visión de un canastillo de fruta en el verano?",
+        "respuesta": "Amós",
+        "opciones": ["Isaías", "Jeremías", "Amós", "Jonás"],
+        "referencia": "Amós 8:1-3"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre más viejo de la Biblia?",
+        "respuesta": "Matusalén",
+        "opciones": ["Noé", "Adán", "Matusalén", "Set"],
+        "referencia": "Génesis 5:27"
+    },
+    {
+        "pregunta": "¿Quién fue el primer sumo sacerdote de Israel?",
+        "respuesta": "Aarón",
+        "opciones": ["Moisés", "Josué", "Aarón", "Elí"],
+        "referencia": "Éxodo 28:1"
+    },
+    {
+        "pregunta": "¿Quién escribió el libro de Proverbios?",
+        "respuesta": "Mayormente Salomón",
+        "opciones": ["David", "Moisés", "Salomón", "Isaías"],
+        "referencia": "Proverbios 1:1"
+    },
+    {
+        "pregunta": "¿Quién fue el rey que mandó matar a Juan el Bautista?",
+        "respuesta": "Herodes Antipas",
+        "opciones": ["Herodes Antipas", "César Augusto", "Poncio Pilato", "Caiapás"],
+        "referencia": "Marcos 6:27"
+    },
+    {
+        "pregunta": "¿En qué río fue bautizado Jesús?",
+        "respuesta": "El río Jordán",
+        "opciones": ["El río Nilo", "El río Jordán", "El río Éufrates", "El río Tigris"],
+        "referencia": "Marcos 1:9"
+    },
+    {
+        "pregunta": "¿Quién fue el apóstol que se convirtió en cristiano después de perseguir a la iglesia?",
+        "respuesta": "Pablo (Saulo de Tarso)",
+        "opciones": ["Pedro", "Juan", "Pablo (Saulo de Tarso)", "Jacobo"],
+        "referencia": "Hechos 9:1-19"
+    },
+    {
+        "pregunta": "¿Qué profeta fue llevado al cielo en un carro de fuego?",
+        "respuesta": "Elías",
+        "opciones": ["Eliseo", "Elías", "Jeremías", "Isaías"],
+        "referencia": "2 Reyes 2:11"
+    },
+    {
+        "pregunta": "¿Qué se le apareció a Moisés en el monte Horeb?",
+        "respuesta": "Una zarza ardiente",
+        "opciones": ["Un ángel", "Una zarza ardiente", "Una nube", "Fuego del cielo"],
+        "referencia": "Éxodo 3:2"
+    },
+    {
+        "pregunta": "¿Qué libro de la Biblia narra el viaje de los israelitas por el desierto?",
+        "respuesta": "Números",
+        "opciones": ["Génesis", "Éxodo", "Levítico", "Números"],
+        "referencia": "Libro de Números"
+    },
+    {
+        "pregunta": "¿Quién fue el hermano de Moisés que lo acompañó como su portavoz?",
+        "respuesta": "Aarón",
+        "opciones": ["Aarón", "Josué", "Elí", "Leví"],
+        "referencia": "Éxodo 4:14-16"
+    },
+    {
+        "pregunta": "¿Quién dijo: 'Heme aquí, envíame a mí'?",
+        "respuesta": "Isaías",
+        "opciones": ["Moisés", "Elías", "Samuel", "Isaías"],
+        "referencia": "Isaías 6:8"
+    },
+    {
+        "pregunta": "¿Quién fue el segundo rey de Israel?",
+        "respuesta": "David",
+        "opciones": ["Salomón", "Saúl", "David", "Samuel"],
+        "referencia": "1 Samuel 16:13"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que le contó a David la parábola de la ovejita?",
+        "respuesta": "Natán",
+        "opciones": ["Samuel", "Elías", "Natán", "Ezequiel"],
+        "referencia": "2 Samuel 12:1-4"
+    },
+    {
+        "pregunta": "¿Quién se sentó a los pies de Jesús y escuchaba su palabra, mientras su hermana, Marta, estaba ocupada?",
+        "respuesta": "María",
+        "opciones": ["María", "Débora", "Lidia", "Priscila"],
+        "referencia": "Lucas 10:39"
+    },
+    {
+        "pregunta": "¿Quién era el rey de los babilonios que llevó a Judá al cautiverio?",
+        "respuesta": "Nabucodonosor",
+        "opciones": ["Faraón", "Ciro", "Nabucodonosor", "Darío"],
+        "referencia": "2 Reyes 25:1-7"
+    },
+    {
+        "pregunta": "¿Qué animal habló con Balaam?",
+        "respuesta": "Un asna",
+        "opciones": ["Un perro", "Un caballo", "Una oveja", "Un asna"],
+        "referencia": "Números 22:28"
+    },
+    {
+        "pregunta": "¿Qué profeta de la Biblia fue tragado por un gran pez?",
+        "respuesta": "Jonás",
+        "opciones": ["Elías", "Jeremías", "Jonás", "Ezequiel"],
+        "referencia": "Jonás 1:17"
+    },
+    {
+        "pregunta": "¿Cuál fue el primer milagro de Jesús?",
+        "respuesta": "Convertir el agua en vino",
+        "opciones": ["Sanar a un ciego", "Multiplicar los panes", "Convertir el agua en vino", "Caminar sobre el agua"],
+        "referencia": "Juan 2:1-11"
+    },
+    {
+        "pregunta": "¿Qué se le prometió a Abraham si obedecía a Dios?",
+        "respuesta": "Que sería padre de una gran nación",
+        "opciones": ["Riquezas y honor", "Larga vida", "Que sería padre de una gran nación", "La tierra prometida"],
+        "referencia": "Génesis 12:2"
+    },
+    {
+        "pregunta": "¿Quién fue la primera persona en la Biblia de la que se menciona que es profeta?",
+        "respuesta": "Abraham",
+        "opciones": ["Moisés", "Noé", "Abraham", "Samuel"],
+        "referencia": "Génesis 20:7"
+    },
+    {
+        "pregunta": "¿Quién fue la mujer que fue jueza y líder de Israel?",
+        "respuesta": "Débora",
+        "opciones": ["Jael", "Débora", "Rut", "Ester"],
+        "referencia": "Jueces 4:4-5"
+    },
+    {
+        "pregunta": "¿Qué ciudad fue destruida por fuego y azufre por el pecado de sus habitantes?",
+        "respuesta": "Sodoma y Gomorra",
+        "opciones": ["Babilonia", "Jericó", "Sodoma y Gomorra", "Nínive"],
+        "referencia": "Génesis 19:24"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que vio una visión de un canastillo de fruta en el verano?",
+        "respuesta": "Amós",
+        "opciones": ["Isaías", "Jeremías", "Amós", "Jonás"],
+        "referencia": "Amós 8:1-3"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre más viejo de la Biblia?",
+        "respuesta": "Matusalén",
+        "opciones": ["Noé", "Adán", "Matusalén", "Set"],
+        "referencia": "Génesis 5:27"
+    },
+    {
+        "pregunta": "¿Quién fue el primer sumo sacerdote de Israel?",
+        "respuesta": "Aarón",
+        "opciones": ["Moisés", "Josué", "Aarón", "Elí"],
+        "referencia": "Éxodo 28:1"
+    },
+    {
+        "pregunta": "¿Quién escribió el libro de Proverbios?",
+        "respuesta": "Mayormente Salomón",
+        "opciones": ["David", "Moisés", "Salomón", "Isaías"],
+        "referencia": "Proverbios 1:1"
+    },
+    {
+        "pregunta": "¿Quién fue el rey que mandó matar a Juan el Bautista?",
+        "respuesta": "Herodes Antipas",
+        "opciones": ["Herodes Antipas", "César Augusto", "Poncio Pilato", "Caiapás"],
+        "referencia": "Marcos 6:27"
+    },
+    {
+        "pregunta": "¿En qué río fue bautizado Jesús?",
+        "respuesta": "El río Jordán",
+        "opciones": ["El río Nilo", "El río Jordán", "El río Éufrates", "El río Tigris"],
+        "referencia": "Marcos 1:9"
+    },
+    {
+        "pregunta": "¿Quién fue el apóstol que se convirtió en cristiano después de perseguir a la iglesia?",
+        "respuesta": "Pablo (Saulo de Tarso)",
+        "opciones": ["Pedro", "Juan", "Pablo (Saulo de Tarso)", "Jacobo"],
+        "referencia": "Hechos 9:1-19"
+    },
+    {
+        "pregunta": "¿Qué profeta fue llevado al cielo en un carro de fuego?",
+        "respuesta": "Elías",
+        "opciones": ["Eliseo", "Elías", "Jeremías", "Isaías"],
+        "referencia": "2 Reyes 2:11"
+    },
+    {
+        "pregunta": "¿Qué se convirtió en una serpiente cuando Moisés la arrojó al suelo?",
+        "respuesta": "Su vara",
+        "opciones": ["Su mano", "Una piedra", "Su vara", "Un manto"],
+        "referencia": "Éxodo 4:3"
+    },
+    {
+        "pregunta": "¿Quién fue la madre de Juan el Bautista?",
+        "respuesta": "Elisabet",
+        "opciones": ["Ana", "María", "Elisabet", "Débora"],
+        "referencia": "Lucas 1:57"
+    },
+    {
+        "pregunta": "¿Quién fue la primera persona que vio a Jesús resucitado?",
+        "respuesta": "María Magdalena",
+        "opciones": ["Pedro", "María Magdalena", "Juan", "Tomás"],
+        "referencia": "Juan 20:11-18"
+    },
+    {
+        "pregunta": "¿Cuál fue el primer milagro de Jesús?",
+        "respuesta": "Convertir el agua en vino",
+        "opciones": ["Sanar a un ciego", "Multiplicar los panes", "Convertir el agua en vino", "Caminar sobre el agua"],
+        "referencia": "Juan 2:1-11"
+    },
+    {
+        "pregunta": "¿Quién fue el apóstol que negó a Jesús tres veces?",
+        "respuesta": "Pedro",
+        "opciones": ["Pedro", "Juan", "Judas", "Tomás"],
+        "referencia": "Lucas 22:54-62"
+    },
+    {
+        "pregunta": "¿Quién fue el primer mártir cristiano?",
+        "respuesta": "Esteban",
+        "opciones": ["Pedro", "Esteban", "Santiago", "Jacobo"],
+        "referencia": "Hechos 7:59-60"
+    },
+    {
+        "pregunta": "¿En qué ciudad los creyentes fueron llamados 'cristianos' por primera vez?",
+        "respuesta": "En Antioquía",
+        "opciones": ["En Jerusalén", "En Cesarea", "En Damasco", "En Antioquía"],
+        "referencia": "Hechos 11:26"
+    },
+    {
+        "pregunta": "¿Qué significa la palabra 'Emanuel'?",
+        "respuesta": "Dios con nosotros",
+        "opciones": ["Salvador del mundo", "Dios con nosotros", "Jesucristo", "Señor de los cielos"],
+        "referencia": "Mateo 1:23"
+    },
+    {
+        "pregunta": "¿Quién fue el padre de los creyentes?",
+        "respuesta": "Abraham",
+        "opciones": ["Noé", "Isaac", "Jacob", "Abraham"],
+        "referencia": "Romanos 4:11"
+    },
+    {
+        "pregunta": "¿A qué edad murió Moisés?",
+        "respuesta": "120 años",
+        "opciones": ["100 años", "120 años", "110 años", "150 años"],
+        "referencia": "Deuteronomio 34:7"
+    },
+    {
+        "pregunta": "¿Cuál era el trabajo de José, el padre de Jesús?",
+        "respuesta": "Carpintero",
+        "opciones": ["Pescador", "Carpintero", "Pastor", "Granjero"],
+        "referencia": "Mateo 13:55"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que fue echado al foso de los leones?",
+        "respuesta": "Daniel",
+        "opciones": ["Jonás", "Daniel", "Elías", "Jeremías"],
+        "referencia": "Daniel 6:16"
+    },
+    {
+        "pregunta": "¿Quién fue el primer rey de Judá después de la división del reino?",
+        "respuesta": "Roboam",
+        "opciones": ["Jeroboam", "Roboam", "Salomón", "David"],
+        "referencia": "1 Reyes 12:17"
+    },
+    {
+        "pregunta": "¿Qué se le apareció a Pablo en el camino a Damasco?",
+        "respuesta": "Una luz del cielo",
+        "opciones": ["Un ángel", "Una luz del cielo", "Una visión de Jesús", "Una zarza ardiente"],
+        "referencia": "Hechos 9:3"
+    },
+    {
+        "pregunta": "¿Cuál era el nombre del rey de Israel al que un ángel le dijo que su hijo nacería y que él no podría hablar hasta que el niño naciera?",
+        "respuesta": "Zacarías",
+        "opciones": ["David", "Salomón", "Saúl", "Zacarías"],
+        "referencia": "Lucas 1:13, 20"
+    },
+    {
+        "pregunta": "¿Quién escribió la mayoría de los libros del Nuevo Testamento?",
+        "respuesta": "Pablo",
+        "opciones": ["Juan", "Pedro", "Lucas", "Pablo"],
+        "referencia": "Nuevo Testamento"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que le contó a David la parábola de la ovejita?",
+        "respuesta": "Natán",
+        "opciones": ["Samuel", "Elías", "Natán", "Ezequiel"],
+        "referencia": "2 Samuel 12:1-4"
+    },
+    {
+        "pregunta": "¿Quién se sentó a los pies de Jesús y escuchaba su palabra, mientras su hermana, Marta, estaba ocupada?",
+        "respuesta": "María",
+        "opciones": ["María", "Débora", "Lidia", "Priscila"],
+        "referencia": "Lucas 10:39"
+    },
+    {
+        "pregunta": "¿Quién era el rey de los babilonios que llevó a Judá al cautiverio?",
+        "respuesta": "Nabucodonosor",
+        "opciones": ["Faraón", "Ciro", "Nabucodonosor", "Darío"],
+        "referencia": "2 Reyes 25:1-7"
+    }
+]
