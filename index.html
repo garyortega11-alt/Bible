@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas de la Biblia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loading-bar-container">
+            <div id="loadingBar" class="loading-bar"></div>
+        </div>
+        <p>Cargando...</p>
+    </div>
+    
+    <button id="settingsBtn" class="settings-btn hidden">⚙️</button>
+    <span id="shieldIcon" class="hidden">🛡️</span>
+
+    <div id="homeScreen" class="screen-container hidden">
+        <h1>¡Bienvenido a Preguntas de la Biblia!</h1>
+        <div id="welcomeMessage" style="display: none;">
+            <h2 id="welcomePlayerName"></h2>
+            <p style="font-size: 1.5rem;">¿Qué quieres hacer?</p>
+            <div class="welcome-options">
+                <button id="continueBtn" class="btn-main">Continuar Partida</button>
+                <button id="newGameBtn" class="btn-main">Empezar de Nuevo</button>
+            </div>
+        </div>
+        <div id="nameInputSection">
+            <div class="name-input-container">
+                <input type="text" id="playerNameInput" placeholder="Introduce tu nombre">
+            </div>
+            <p id="nameErrorMsg" style="display: none;"></p>
+            <button id="jugarBtn" class="btn-main">Jugar</button>
+        </div>
+    </div>
+
+    <div id="rulesScreen" class="screen-container hidden">
+        <h1>Reglas del Juego</h1>
+        <div class="rules-content">
+            <p><strong>🌟 Gana una estrella:</strong> Cada respuesta correcta te da una estrella.</p>
+            <p><strong>⬆️ Sube de nivel:</strong> Acumula 5 estrellas, responde la pregunta de ascenso y sube de nivel.</p>
+            <p><strong>🛡️ Escudo de descenso:</strong> Sube de nivel para ganar un escudo que te protege al fallar.</p>
+            <p><strong>⬇️ Bajas de nivel:</strong> Fallar sin un escudo te hace bajar de nivel y perder tus estrellas.</p>
+            <button id="startGameBtn" class="btn-main">Comenzar</button>
+        </div>
+    </div>
+
+    <div id="gameScreen" class="screen-container hidden">
+        <div class="score-info">
+            <h2 id="levelDisplay"></h2>
+            <h2 id="totalScoreDisplay">Puntuación: 0</h2>
+        </div>
+        <div id="starsDisplay">
+        </div>
+        <div id="preguntaContainer" class="pregunta-container">
+            <span id="feedbackEmoji"></span>
+            <span id="thinkingEmoji">🤔</span>
+            <h3 id="preguntaTexto" class="pregunta-texto"></h3>
+            <div id="opcionesContainer" class="opciones-container">
+            </div>
+        </div>
+    </div>
+
+    <div id="confettiScreen" class="confetti-screen hidden">
+    </div>
+
+    <div id="popupContainer" class="popup-overlay hidden">
+        <div id="popupContent" class="popup-content"></div>
+    </div>
+    
+    <div id="promotionPopup" class="popup-overlay hidden promotion-popup">
+        <div class="popup-card">
+            <span class="popup-icon">🏆</span>
+            <h2 class="popup-title">¡Ascenso de Nivel!</h2>
+            <p class="popup-subtitle" id="promotionMessage"></p>
+            <p class="popup-message">¡Felicidades, has demostrado tu conocimiento!</p>
+            <button class="btn-main" onclick="closePopup('promotionPopup')">Continuar</button>
+        </div>
+    </div>
+    
+    <div id="promotionFailPopup" class="popup-overlay hidden promotion-fail-popup">
+        <div class="popup-card">
+            <span class="popup-icon">🟡</span>
+            <h2 class="popup-title">Intento Fallido</h2>
+            <p class="popup-subtitle" id="promotionFailMessage"></p>
+            <p class="popup-message">No te rindas, vuelve a intentarlo.</p>
+            <button class="btn-main" onclick="closePopup('promotionFailPopup')">Continuar</button>
+        </div>
+    </div>
+
+    <div id="demotionPopup" class="popup-overlay hidden demotion-popup">
+        <div class="popup-card">
+            <span class="popup-icon">📉</span>
+            <h2 class="popup-title">¡Descenso de Nivel!</h2>
+            <p class="popup-subtitle" id="demotionMessage"></p>
+            <p class="popup-message">No te desanimes. Sigue fortaleciendo tu conocimiento de la Palabra.</p>
+            <button class="btn-main" onclick="closePopup('demotionPopup')">Continuar</button>
+        </div>
+    </div>
+    
+    <div id="shieldEffectPopup" class="hidden">
+        <span id="shieldEffectIcon">🛡️</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
