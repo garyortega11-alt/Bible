@@ -1,0 +1,65 @@
+[
+  {
+    "question": "¿Quién fue el primer rey de Israel?",
+    "options": [
+      {
+        "text": "Saúl",
+        "correct": true
+      },
+      {
+        "text": "David",
+        "correct": false
+      },
+      {
+        "text": "Salomón",
+        "correct": false
+      },
+      {
+        "text": "Samuel",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "¿En qué monte Moisés recibió los Diez Mandamientos?",
+    "options": [
+      {
+        "text": "Monte Sinaí",
+        "correct": true
+      },
+      {
+        "text": "Monte Carmelo",
+        "correct": false
+      },
+      {
+        "text": "Monte de los Olivos",
+        "correct": false
+      },
+      {
+        "text": "Monte Hermón",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "¿Qué libro de la Biblia narra la historia del Éxodo?",
+    "options": [
+      {
+        "text": "Génesis",
+        "correct": false
+      },
+      {
+        "text": "Números",
+        "correct": false
+      },
+      {
+        "text": "Éxodo",
+        "correct": true
+      },
+      {
+        "text": "Deuteronomio",
+        "correct": false
+      }
+    ]
+  }
+]
