@@ -1,0 +1,2589 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas de la Biblia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --correct-color: #2ecc71;
+            --incorrect-color: #e74c3c;
+            --button-hover-color: #34495e;
+            --pop-up-color: #f39c12;
+            --preloader-color: #f1c40f;
+            --loading-bar-color: var(--correct-color);
+            --button-base-color: #2980b9;
+        }
+        
+        /* NUEVA REGLA PARA OCULTAR ELEMENTOS */
+        .hidden {
+            display: none !important;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 2vh;
+            box-sizing: border-box;
+            text-align: center;
+            /* Nuevo: Capa de color semitransparente sobre la imagen de fondo */
+            background: linear-gradient(rgba(52, 152, 219, 0.9), rgba(52, 152, 219, 0.9)), 
+                        url('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/seamless-pattern-with-paper-books-home-library-book-stacks-glasses-vector.jpg');
+            background-repeat: repeat;
+            background-size: 100px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .screen-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            max-width: 800px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+        
+        .screen-container.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 200;
+            transition: opacity 1s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #preloader .loading-bar-container {
+            width: 80%;
+            max-width: 400px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #preloader .loading-bar {
+            width: 0;
+            height: 100%;
+            background-color: var(--loading-bar-color);
+            transition: width 0.3s ease-in-out;
+        }
+
+        #preloader p {
+            font-size: 2rem;
+            color: white;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .game-screen {
+            padding: 2vh;
+            box-sizing: border-box;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .score-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 2vh;
+            flex-wrap: wrap;
+        }
+        
+        .timer-container {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .timer-container.running-out {
+            background-color: var(--incorrect-color);
+            animation: pulse-red 1s infinite;
+        }
+        
+        @keyframes pulse-red {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        #levelDisplay, #totalScoreDisplay {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin: 0 1vh;
+        }
+
+        #starsDisplay {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            font-size: clamp(2.5rem, 7vw, 4rem);
+            margin-bottom: 2vh;
+        }
+
+        .star-icon {
+            display: inline-block;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        /* NUEVA POSICIÓN PARA EL ESCUDO Y AJUSTES DE ESTILO */
+        #shieldIcon {
+            position: fixed;
+            top: 2vh;
+            left: 2vh; /* Movido a la izquierda */
+            font-size: clamp(2rem, 5vw, 3rem);
+            transition: opacity 0.5s ease-in-out;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+        }
+        
+        #shieldIcon.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .pregunta-container {
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            padding: 3vh;
+            margin-bottom: 2vh;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transition: transform 0.2s ease-in-out;
+        }
+        
+        .pregunta-container.shake-animation {
+            animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+        }
+
+        @keyframes shake {
+            10%, 90% {
+                transform: translate3d(-1px, 0, 0);
+            }
+            20%, 80% {
+                transform: translate3d(2px, 0, 0);
+            }
+            30%, 50%, 70% {
+                transform: translate3d(-4px, 0, 0);
+            }
+            40%, 60% {
+                transform: translate3d(4px, 0, 0);
+            }
+        }
+
+        /* NUEVO: Contenedor del temporizador de ascenso */
+        .promotion-timer-container {
+            background-color: var(--correct-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            margin-bottom: 2vh;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            min-width: 100px;
+            height: 40px; /* Tamaño fijo para evitar saltos */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .promotion-timer-container.running-out {
+            background-color: var(--incorrect-color);
+            animation: pulse-red 1s infinite;
+        }
+
+        #feedbackEmoji, #thinkingEmoji {
+            position: absolute;
+            top: -2vh;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: clamp(2rem, 8vw, 6rem);
+            z-index: 10;
+            display: none;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                transform: translateX(-50%) scale(1.2);
+            }
+            100% {
+                transform: translateX(-50%) scale(1);
+            }
+        }
+
+        #thinkingEmoji {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                transform: translateX(-50%) scale(1.1);
+            }
+            100% {
+                transform: translateX(-50%) scale(1);
+            }
+        }
+
+        .pregunta-texto {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 2vh;
+        }
+
+        .opciones-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5vh;
+            width: 100%;
+        }
+
+        .opcion-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 2vh;
+            font-size: clamp(1.2rem, 3.5vw, 2.2rem);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            position: relative;
+            box-shadow: 0 4px 0 #1b2631;
+        }
+
+        .opcion-btn:hover {
+            background-color: var(--button-hover-color);
+        }
+        
+        .opcion-btn:active {
+            transform: translateY(4px);
+            box-shadow: 0 0 0 #1b2631;
+        }
+
+        .opcion-btn.correcta {
+            background-color: var(--correct-color);
+            box-shadow: 0 4px 0 #209d5c;
+        }
+
+        .opcion-btn.incorrecta {
+            background-color: var(--incorrect-color);
+            box-shadow: 0 4px 0 #c0392b;
+        }
+
+        .opcion-btn .tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(1vh);
+            background-color: var(--incorrect-color);
+            color: white;
+            padding: 1vh 2vh;
+            border-radius: 6px;
+            white-space: normal;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+            z-index: 10;
+            font-size: clamp(0.8rem, 2vw, 1.2rem);
+            max-width: 90%;
+        }
+
+        .opcion-btn .tooltip.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-1vh);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 8vw, 5rem);
+            margin-bottom: 3vh;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 0;
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 5vw, 3rem);
+            margin-bottom: 2vh;
+        }
+        
+        .rules-content {
+            background-color: rgba(0, 0, 0, 0.4); 
+            padding: 3vh; 
+            border-radius: 10px; 
+            max-width: 600px;
+            margin-bottom: 2vh; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2vh;
+        }
+
+        .rules-content p {
+            margin: 0;
+        }
+
+        .btn-main {
+            background-color: var(--correct-color);
+            color: white;
+            padding: 2vh 4vh;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 0 #209d5c;
+            position: relative;
+            z-index: 0;
+        }
+
+        .btn-main:hover {
+            background-color: #27ae60;
+            transform: translateY(-2px);
+        }
+
+        .btn-main:active {
+            transform: translateY(4px);
+            box-shadow: 0 0 0 #1b2631;
+        }
+
+        .confetti-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 999;
+        }
+        
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--color);
+            animation: confetti-fall var(--duration) linear forwards;
+            top: -10px;
+            left: var(--left);
+            opacity: 0;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(100vh) rotate(720deg);
+            }
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease-in-out;
+        }
+        
+        .popup-overlay.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .popup-content {
+            background-color: var(--secondary-color);
+            padding: 4vh;
+            border-radius: 15px;
+            max-width: 80%;
+            color: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            animation: fadeInScale 0.5s cubic-bezier(.17,.84,.44,1) forwards;
+            text-align: center;
+        }
+        
+        .exit-popup .popup-content, .new-game-popup .popup-content, .settings-popup .popup-content {
+            background-color: var(--secondary-color);
+        }
+        
+        .exit-popup .button-container, .new-game-popup .button-container, .settings-popup .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5vh;
+            margin-top: 2vh;
+        }
+        
+        .exit-popup button, .new-game-popup button, .settings-popup button {
+            width: 100%;
+            background-color: #3498db;
+            color: white;
+            padding: 1.5vh 3vh;
+            font-size: clamp(1rem, 3vw, 1.8rem);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .exit-popup button:hover, .new-game-popup button:hover, .settings-popup button:hover {
+            background-color: #2980b9;
+        }
+        
+        .exit-popup button.cancel-btn, .new-game-popup button.cancel-btn, .settings-popup button.cancel-btn {
+            background-color: #e74c3c;
+        }
+        
+        .exit-popup button.cancel-btn:hover, .new-game-popup button.cancel-btn:hover, .settings-popup button.cancel-btn:hover {
+            background-color: #c0392b;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* POP-UPS DE ASCENSO Y DESCENSO */
+        .popup-card {
+            background-color: var(--secondary-color);
+            padding: 4vh;
+            border-radius: 15px;
+            max-width: 80%;
+            color: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        
+        .popup-icon {
+            font-size: clamp(6rem, 15vw, 12rem);
+            margin-bottom: 2vh;
+        }
+
+        .popup-title {
+            font-size: clamp(2rem, 6vw, 4rem);
+            margin-bottom: 1vh;
+            font-weight: bold;
+        }
+        
+        .popup-subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            margin-bottom: 2vh;
+        }
+
+        .popup-message {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            margin-bottom: 3vh;
+        }
+        
+        /* ESTILOS ESPECÍFICOS PARA LOS FONDOS DE LOS POP-UPS */
+        /* Nuevo estilo para el fondo del pop-up de ascenso (victoria) */
+        .promotion-popup .popup-card {
+            background-color: #2c9a4e; /* Fondo verde para la victoria */
+        }
+        
+        .popup-card.promotion-popup .popup-title {
+            color: #fff;
+            text-shadow: 0 0 10px #fff;
+        }
+
+        /* Nuevo estilo para el fondo del pop-up de ascenso (fallo) */
+        .promotion-fail-popup .popup-card {
+            background-color: var(--pop-up-color); /* Fondo naranja para el fallo */
+        }
+        
+        .popup-card.promotion-fail-popup .popup-title {
+            color: #fff;
+            text-shadow: 0 0 10px #fff;
+        }
+        
+        .demotion-popup .popup-card {
+             background-color: var(--secondary-color); /* Fondo oscuro para el descenso (sin cambios) */
+        }
+
+        .popup-card.demotion-popup .popup-title {
+            color: var(--incorrect-color);
+            text-shadow: 0 0 10px var(--incorrect-color);
+        }
+        
+        .popup-card .btn-main {
+            background-color: var(--primary-color);
+            box-shadow: 0 4px 0 #2980b9;
+        }
+        
+        .popup-card .btn-main:hover {
+            background-color: #2980b9;
+        }
+        
+        .popup-card .btn-main:active {
+            transform: translateY(4px);
+            box-shadow: 0 0 0 #1b2631;
+        }
+
+        .end-game-popup .popup-content {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 4vh;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            max-width: 80%;
+        }
+
+        .end-game-popup h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            margin-bottom: 2vh;
+        }
+
+        .end-game-popup p {
+            font-size: clamp(1.2rem, 4vw, 2.5rem);
+            line-height: 1.5;
+            margin-top: 0;
+        }
+
+        #endGameStats {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5vh;
+            margin-top: 4vh;
+            font-size: clamp(1.2rem, 4vw, 2.5rem);
+            font-weight: bold;
+        }
+
+        #endGameStats span {
+            display: block;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2vh;
+            border-radius: 8px;
+        }
+
+        .welcome-options button {
+            margin-top: 1vh;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        /* NUEVA POSICIÓN PARA EL BOTÓN DE AJUSTES */
+        .settings-btn {
+            position: fixed;
+            top: 2vh;
+            right: 2vh;
+            background: none;
+            border: none;
+            font-size: clamp(2rem, 5vw, 3rem);
+            cursor: pointer;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, text-shadow 0.2s ease;
+            z-index: 100;
+        }
+        
+        .settings-btn:hover {
+            transform: rotate(45deg);
+        }
+        
+        .settings-btn.hidden {
+            display: none;
+        }
+        
+        .settings-popup-content .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+            text-align: left;
+        }
+        
+        .settings-popup-content .control-group {
+            display: flex;
+            align-items: center;
+            gap: 1.5vh;
+        }
+
+        .settings-popup-content .control-group label {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+        }
+        
+        .settings-popup-content .control-group input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            outline: none;
+            transition: opacity 0.2s;
+        }
+
+        .settings-popup-content .control-group input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--correct-color);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .settings-popup-content .control-group input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: var(--correct-color);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .settings-popup-content .exit-btn-wrapper {
+            margin-top: 3vh;
+        }
+
+        /* Estilos para la caja de nombre moderna */
+        #nameInputSection {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2vh;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .name-input-container {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 1vh 2vh;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #playerNameInput {
+            width: 100%;
+            padding: 1.5vh 1vh;
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: white;
+            background: transparent;
+            border: none;
+            outline: none;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #playerNameInput::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Nuevo: Estilos para el mensaje de error */
+        #nameErrorMsg {
+            color: var(--incorrect-color);
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            margin-top: -1vh;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            animation: fadeOut 3s forwards;
+            pointer-events: none;
+        }
+        
+        #nameErrorMsg.visible {
+            opacity: 1;
+            animation: fadeInOut 2.5s forwards;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* NUEVOS ESTILOS PARA EL EFECTO DEL ESCUDO */
+        #shieldEffectPopup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 150;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #shieldEffectPopup.visible {
+            opacity: 1;
+        }
+        
+        #shieldEffectIcon {
+            font-size: clamp(10rem, 20vw, 25rem);
+            color: #fff;
+            text-shadow: 0 0 20px #fff, 0 0 30px #4caf50, 0 0 40px #4caf50;
+            animation: shieldPulse 1.5s infinite;
+        }
+
+        @keyframes shieldPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loading-bar-container">
+            <div id="loadingBar" class="loading-bar"></div>
+        </div>
+        <p>Cargando...</p>
+    </div>
+    
+    <button id="settingsBtn" class="settings-btn hidden">⚙️</button>
+    <span id="shieldIcon" class="hidden">🛡️</span>
+
+    <div id="homeScreen" class="screen-container hidden">
+        <h1>¡Bienvenido a Preguntas de la Biblia!</h1>
+        <div id="welcomeMessage" class="hidden">
+            <h2 id="welcomePlayerName"></h2>
+            <p style="font-size: 1.5rem;">¿Qué quieres hacer?</p>
+            <div class="welcome-options">
+                <button id="continueBtn" class="btn-main">Continuar Partida</button>
+                <button id="newGameBtn" class="btn-main">Empezar de Nuevo</button>
+            </div>
+        </div>
+        <div id="nameInputSection">
+            <div class="name-input-container">
+                <input type="text" id="playerNameInput" placeholder="Introduce tu nombre">
+            </div>
+            <p id="nameErrorMsg" class="hidden"></p>
+            <button id="jugarBtn" class="btn-main">Jugar</button>
+        </div>
+    </div>
+
+    <div id="rulesScreen" class="screen-container hidden">
+        <h1>Reglas del Juego</h1>
+        <div class="rules-content">
+            <p><strong>🌟 Gana una estrella:</strong> Cada respuesta correcta te da una estrella.</p>
+            <p><strong>⬆️ Sube de nivel:</strong> Acumula 5 estrellas, responde la pregunta de ascenso y sube de nivel.</p>
+            <p><strong>🛡️ Escudo de descenso:</strong> Sube de nivel para ganar un escudo que te protege al fallar.</p>
+            <p><strong>⬇️ Bajas de nivel:</strong> Fallar sin un escudo te hace bajar de nivel y perder tus estrellas.</p>
+            <button id="startGameBtn" class="btn-main">Comenzar</button>
+        </div>
+    </div>
+
+    <div id="gameScreen" class="screen-container hidden">
+        <div class="score-info">
+            <h2 id="levelDisplay"></h2>
+            <h2 id="totalScoreDisplay">Puntuación: 0</h2>
+        </div>
+        <div id="starsDisplay">
+        </div>
+        <div id="promotionTimerContainer" class="promotion-timer-container hidden">
+            Tiempo: <span id="promotionTimerDisplay"></span>s
+        </div>
+        <div id="preguntaContainer" class="pregunta-container">
+            <span id="feedbackEmoji"></span>
+            <span id="thinkingEmoji">🤔</span>
+            <h3 id="preguntaTexto" class="pregunta-texto"></h3>
+            <div id="opcionesContainer" class="opciones-container">
+            </div>
+        </div>
+    </div>
+
+    <div id="confettiScreen" class="confetti-screen hidden">
+    </div>
+
+    <div id="popupContainer" class="popup-overlay hidden">
+        <div id="popupContent" class="popup-content"></div>
+    </div>
+    
+    <div id="promotionPopup" class="popup-overlay hidden promotion-popup">
+        <div class="popup-card">
+            <span class="popup-icon">🏆</span>
+            <h2 class="popup-title">¡Ascenso de Nivel!</h2>
+            <p class="popup-subtitle" id="promotionMessage"></p>
+            <p class="popup-message">¡Felicidades, has demostrado tu conocimiento!</p>
+            <button class="btn-main" onclick="closePopup('promotionPopup')">Continuar</button>
+        </div>
+    </div>
+    
+    <div id="promotionFailPopup" class="popup-overlay hidden promotion-fail-popup">
+        <div class="popup-card">
+            <span class="popup-icon">🟡</span>
+            <h2 class="popup-title" id="promotionFailTitle">Intento Fallido</h2>
+            <p class="popup-subtitle" id="promotionFailMessage"></p>
+            <p class="popup-message" id="promotionFailReason"></p>
+            <button class="btn-main" onclick="closePopup('promotionFailPopup')">Continuar</button>
+        </div>
+    </div>
+
+    <div id="demotionPopup" class="popup-overlay hidden demotion-popup">
+        <div class="popup-card">
+            <span class="popup-icon">📉</span>
+            <h2 class="popup-title">¡Descenso de Nivel!</h2>
+            <p class="popup-subtitle" id="demotionMessage"></p>
+            <p class="popup-message">No te desanimes. Sigue fortaleciendo tu conocimiento de la Palabra.</p>
+            <button class="btn-main" onclick="closePopup('demotionPopup')">Continuar</button>
+        </div>
+    </div>
+    
+    <div id="shieldEffectPopup" class="hidden">
+        <span id="shieldEffectIcon">🛡️</span>
+    </div>
+
+    <script>
+        // Módulo de Datos
+        const questionsData = [
+    {
+        "pregunta": "¿Qué comió Adán y Eva en el Jardín del Edén?",
+        "opciones": [
+            "El fruto del árbol de la ciencia del bien y del mal.",
+            "Una manzana",
+            "Un higo",
+            "Un racimo de uvas"
+        ],
+        "respuestaCorrecta": "El fruto del árbol de la ciencia del bien y del mal.",
+        "referencia": "Génesis 2:16-17"
+    },
+    {
+        "pregunta": "¿Qué animal engañó a Eva?",
+        "opciones": [
+            "El mono",
+            "La serpiente",
+            "El león",
+            "El zorro"
+        ],
+        "respuestaCorrecta": "La serpiente",
+        "referencia": "Génesis 3:1-5"
+    },
+    {
+        "pregunta": "¿Quién mató a su hermano por celos?",
+        "opciones": [
+            "Abel",
+            "Caín",
+            "Set",
+            "Noé"
+        ],
+        "respuestaCorrecta": "Caín",
+        "referencia": "Génesis 4:8"
+    },
+    {
+        "pregunta": "¿Cuántos días y noches llovió durante el diluvio?",
+        "opciones": [
+            "7 días y 7 noches",
+            "30 días y 30 noches",
+            "40 días y 40 noches",
+            "150 días y 150 noches"
+        ],
+        "respuestaCorrecta": "40 días y 40 noches",
+        "referencia": "Génesis 7:12"
+    },
+    {
+        "pregunta": "¿Quién construyó el arca por mandato de Dios?",
+        "opciones": [
+            "Abraham",
+            "Moisés",
+            "Noé",
+            "Jacob"
+        ],
+        "respuestaCorrecta": "Noé",
+        "referencia": "Génesis 6:14"
+    },
+    {
+        "pregunta": "¿Cuál fue la señal del pacto de Dios con Noé?",
+        "opciones": [
+            "Un arcoíris",
+            "Una paloma",
+            "Una nube",
+            "Una estrella"
+        ],
+        "respuestaCorrecta": "Un arcoíris",
+        "referencia": "Génesis 9:13"
+    },
+    {
+        "pregunta": "¿Quién es conocido como el padre de la fe?",
+        "opciones": [
+            "Moisés",
+            "Noé",
+            "Abraham",
+            "Isaac"
+        ],
+        "respuestaCorrecta": "Abraham",
+        "referencia": "Génesis 15:6"
+    },
+    {
+        "pregunta": "¿Qué ciudad fue destruida por fuego y azufre?",
+        "opciones": [
+            "Nínive",
+            "Babilonia",
+            "Sodoma y Gomorra",
+            "Jericó"
+        ],
+        "respuestaCorrecta": "Sodoma y Gomorra",
+        "referencia": "Génesis 19:24-25"
+    },
+    {
+        "pregunta": "¿Quién se convirtió en una estatua de sal?",
+        "opciones": [
+            "La esposa de Lot",
+            "La esposa de Abraham",
+            "La esposa de Moisés",
+            "La esposa de Noé"
+        ],
+        "respuestaCorrecta": "La esposa de Lot",
+        "referencia": "Génesis 19:26"
+    },
+    {
+        "pregunta": "¿Cuál fue el segundo nombre de Jacob?",
+        "opciones": [
+            "José",
+            "Israel",
+            "Judá",
+            "Isaac"
+        ],
+        "respuestaCorrecta": "Israel",
+        "referencia": "Génesis 32:28"
+    },
+    {
+        "pregunta": "¿Cuántos hijos tuvo Jacob?",
+        "opciones": [
+            "7",
+            "10",
+            "12",
+            "13"
+        ],
+        "respuestaCorrecta": "12",
+        "referencia": "Génesis 35:22"
+    },
+    {
+        "pregunta": "¿Quién fue vendido por sus hermanos como esclavo?",
+        "opciones": [
+            "Benjamín",
+            "José",
+            "Judá",
+            "Esaú"
+        ],
+        "respuestaCorrecta": "José",
+        "referencia": "Génesis 37:28"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre que interpretó los sueños del faraón?",
+        "opciones": [
+            "Moisés",
+            "José",
+            "Jacob",
+            "Daniel"
+        ],
+        "respuestaCorrecta": "José",
+        "referencia": "Génesis 41:25-36"
+    },
+    {
+        "pregunta": "¿En qué se convirtió la vara de Moisés?",
+        "opciones": [
+            "En un árbol",
+            "En una espada",
+            "En una serpiente",
+            "En un pájaro"
+        ],
+        "respuestaCorrecta": "En una serpiente",
+        "referencia": "Éxodo 4:3"
+    },
+    {
+        "pregunta": "¿Quién guió a los israelitas fuera de Egipto?",
+        "opciones": [
+            "Josué",
+            "Aarón",
+            "Moisés",
+            "Elías"
+        ],
+        "respuestaCorrecta": "Moisés",
+        "referencia": "Éxodo 3:10"
+    },
+    {
+        "pregunta": "¿Cuál fue la primera plaga de Egipto?",
+        "opciones": [
+            "Tinieblas",
+            "Moscas",
+            "El agua se convirtió en sangre",
+            "Langostas"
+        ],
+        "respuestaCorrecta": "El agua se convirtió en sangre",
+        "referencia": "Éxodo 7:20"
+    },
+    {
+        "pregunta": "¿Qué ocurrió en el Mar Rojo?",
+        "opciones": [
+            "Se abrió en dos y el pueblo de Israel cruzó.",
+            "Se convirtió en tierra seca",
+            "Se congeló",
+            "Se llenó de peces"
+        ],
+        "respuestaCorrecta": "Se abrió en dos y el pueblo de Israel cruzó.",
+        "referencia": "Éxodo 14:21-22"
+    },
+    {
+        "pregunta": "¿Cuántas tablas de la ley recibió Moisés?",
+        "opciones": [
+            "Una",
+            "Dos",
+            "Tres",
+            "Diez"
+        ],
+        "respuestaCorrecta": "Dos",
+        "referencia": "Éxodo 34:1"
+    },
+    {
+        "pregunta": "¿Qué significa la palabra 'maná'?",
+        "opciones": [
+            "Pan del cielo",
+            "El alimento de Dios",
+            "¿Qué es esto?",
+            "El don de Dios"
+        ],
+        "respuestaCorrecta": "¿Qué es esto?",
+        "referencia": "Éxodo 16:15"
+    },
+    {
+        "pregunta": "¿Qué ciudad cayó con el sonido de trompetas y gritos?",
+        "opciones": [
+            "Jerusalén",
+            "Babilonia",
+            "Jericó",
+            "Nazaret"
+        ],
+        "respuestaCorrecta": "Jericó",
+        "referencia": "Josué 6:20"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre más fuerte de la Biblia?",
+        "opciones": [
+            "David",
+            "Goliat",
+            "Sansón",
+            "Salomón"
+        ],
+        "respuestaCorrecta": "Sansón",
+        "referencia": "Jueces 16:17"
+    },
+    {
+        "pregunta": "¿Quién mató a Goliat?",
+        "opciones": [
+            "Saúl",
+            "David",
+            "Salomón",
+            "Sansón"
+        ],
+        "respuestaCorrecta": "David",
+        "referencia": "1 Samuel 17:50"
+    },
+    {
+        "pregunta": "¿Quién fue el primer rey de Israel?",
+        "opciones": [
+            "David",
+            "Salomón",
+            "Saúl",
+            "Samuel"
+        ],
+        "respuestaCorrecta": "Saúl",
+        "referencia": "1 Samuel 10:24"
+    },
+    {
+        "pregunta": "¿Qué profeta fue llevado al cielo en un carro de fuego?",
+        "opciones": [
+            "Elías",
+            "Eliseo",
+            "Isaías",
+            "Jeremías"
+        ],
+        "respuestaCorrecta": "Elías",
+        "referencia": "2 Reyes 2:11"
+    },
+    {
+        "pregunta": "¿Qué profeta fue arrojado a un foso de leones?",
+        "opciones": [
+            "Elías",
+            "Jonás",
+            "Daniel",
+            "Jeremías"
+        ],
+        "respuestaCorrecta": "Daniel",
+        "referencia": "Daniel 6:16"
+    },
+    {
+        "pregunta": "¿Quién fue tragado por un gran pez?",
+        "opciones": [
+            "Jonás",
+            "Pedro",
+            "Pablo",
+            "Juan"
+        ],
+        "respuestaCorrecta": "Jonás",
+        "referencia": "Jonás 1:17"
+    },
+    {
+        "pregunta": "¿Quién fue la madre de Jesús?",
+        "opciones": [
+            "Ana",
+            "Isabel",
+            "María",
+            "Marta"
+        ],
+        "respuestaCorrecta": "María",
+        "referencia": "Mateo 1:18"
+    },
+    {
+        "pregunta": "¿Dónde nació Jesús?",
+        "opciones": [
+            "Nazaret",
+            "Jerusalén",
+            "Belén",
+            "Galilea"
+        ],
+        "respuestaCorrecta": "Belén",
+        "referencia": "Lucas 2:4-7"
+    },
+    {
+        "pregunta": "¿Cuántos apóstoles tenía Jesús?",
+        "opciones": [
+            "7",
+            "10",
+            "12",
+            "15"
+        ],
+        "respuestaCorrecta": "12",
+        "referencia": "Mateo 10:2-4"
+    },
+    {
+        "pregunta": "¿Quién bautizó a Jesús?",
+        "opciones": [
+            "Pedro",
+            "Juan el Bautista",
+            "Juan",
+            "Elías"
+        ],
+        "respuestaCorrecta": "Juan el Bautista",
+        "referencia": "Mateo 3:13-17"
+    },
+    {
+        "pregunta": "¿Cuál fue el primer milagro de Jesús?",
+        "opciones": [
+            "Multiplicar los panes y los peces",
+            "Sanar al ciego",
+            "Caminar sobre el agua",
+            "Convertir el agua en vino"
+        ],
+        "respuestaCorrecta": "Convertir el agua en vino",
+        "referencia": "Juan 2:1-11"
+    },
+    {
+        "pregunta": "¿Qué comió Juan el Bautista en el desierto?",
+        "opciones": [
+            "Pan y pescado",
+            "Miel silvestre y langostas",
+            "Maná",
+            "Uvas y agua"
+        ],
+        "respuestaCorrecta": "Miel silvestre y langostas",
+        "referencia": "Mateo 3:4"
+    },
+    {
+        "pregunta": "¿Quién caminó sobre el agua?",
+        "opciones": [
+            "Solo Jesús",
+            "Jesús y Pedro",
+            "Elías",
+            "Pedro y Juan"
+        ],
+        "respuestaCorrecta": "Jesús y Pedro",
+        "referencia": "Mateo 14:29"
+    },
+    {
+        "pregunta": "¿Quién traicionó a Jesús?",
+        "opciones": [
+            "Pedro",
+            "Judas Iscariote",
+            "Tomás",
+            "Simón el cananista"
+        ],
+        "respuestaCorrecta": "Judas Iscariote",
+        "referencia": "Mateo 26:14-16"
+    },
+    {
+        "pregunta": "¿Qué gobernador romano sentenció a Jesús a morir?",
+        "opciones": [
+            "Herodes",
+            "César Augusto",
+            "Poncio Pilato",
+            "Nerón"
+        ],
+        "respuestaCorrecta": "Poncio Pilato",
+        "referencia": "Juan 19:16"
+    },
+    {
+        "pregunta": "¿Quién fue el discípulo que negó a Jesús tres veces?",
+        "opciones": [
+            "Judas",
+            "Tomás",
+            "Pedro",
+            "Mateo"
+        ],
+        "respuestaCorrecta": "Pedro",
+        "referencia": "Lucas 22:61-62"
+    },
+    {
+        "pregunta": "¿Qué significa la palabra 'Cristo'?",
+        "opciones": [
+            "Salvador",
+            "El ungido",
+            "Dios con nosotros",
+            "Rey de reyes"
+        ],
+        "respuestaCorrecta": "El ungido",
+        "referencia": "Juan 1:41"
+    },
+    {
+        "pregunta": "¿Cuál fue el último libro del Nuevo Testamento?",
+        "opciones": [
+            "Hechos",
+            "Romanos",
+            "Apocalipsis",
+            "Génesis"
+        ],
+        "respuestaCorrecta": "Apocalipsis",
+        "referencia": "Apocalipsis 1:1"
+    },
+    {
+        "pregunta": "¿Quién escribió la mayor parte del Nuevo Testamento?",
+        "opciones": [
+            "Pedro",
+            "Pablo",
+            "Juan",
+            "Mateo"
+        ],
+        "respuestaCorrecta": "Pablo",
+        "referencia": "Generalmente aceptado"
+    },
+    {
+        "pregunta": "¿En qué se convirtió Saulo de Tarso?",
+        "opciones": [
+            "En el apóstol Pablo",
+            "En el apóstol Pedro",
+            "En un fariseo",
+            "En un rey de Israel"
+        ],
+        "respuestaCorrecta": "En el apóstol Pablo",
+        "referencia": "Hechos 9:1-19"
+    },
+    {
+        "pregunta": "¿En qué día de la semana fue resucitado Jesús?",
+        "opciones": [
+            "Sábado",
+            "Domingo",
+            "Lunes",
+            "Viernes"
+        ],
+        "respuestaCorrecta": "Domingo",
+        "referencia": "Mateo 28:1"
+    },
+    {
+        "pregunta": "¿Cuántos libros tiene el Antiguo Testamento?",
+        "opciones": [
+            "39",
+            "27",
+            "66",
+            "46"
+        ],
+        "respuestaCorrecta": "39",
+        "referencia": "Consenso teológico"
+    },
+    {
+        "pregunta": "¿Cuántos libros tiene el Nuevo Testamento?",
+        "opciones": [
+            "39",
+            "27",
+            "66",
+            "46"
+        ],
+        "respuestaCorrecta": "27",
+        "referencia": "Consenso teológico"
+    },
+    {
+        "pregunta": "¿Quién fue el primer mártir cristiano?",
+        "opciones": [
+            "Pedro",
+            "Esteban",
+            "Santiago",
+            "Pablo"
+        ],
+        "respuestaCorrecta": "Esteban",
+        "referencia": "Hechos 7:59-60"
+    },
+    {
+        "pregunta": "¿Cuál es el libro más largo de la Biblia?",
+        "opciones": [
+            "Génesis",
+            "Isaías",
+            "Salmos",
+            "Jeremías"
+        ],
+        "respuestaCorrecta": "Salmos",
+        "referencia": "Salmos 119"
+    },
+    {
+        "pregunta": "¿Quién fue el hombre que caminó con Dios y no murió?",
+        "opciones": [
+            "Noé",
+            "Elías",
+            "Enoc",
+            "Moisés"
+        ],
+        "respuestaCorrecta": "Enoc",
+        "referencia": "Génesis 5:24"
+    },
+    {
+        "pregunta": "¿Quién fue el padre de Moisés?",
+        "opciones": [
+            "Aarón",
+            "Levi",
+            "Amram",
+            "Jacobo"
+        ],
+        "respuestaCorrecta": "Amram",
+        "referencia": "Éxodo 6:20"
+    },
+    {
+        "pregunta": "¿Cómo se llama el monte donde Moisés recibió los Diez Mandamientos?",
+        "opciones": [
+            "Monte de los Olivos",
+            "Monte Sinaí",
+            "Monte Carmelo",
+            "Monte Sión"
+        ],
+        "respuestaCorrecta": "Monte Sinaí",
+        "referencia": "Éxodo 19:20"
+    },
+    {
+        "pregunta": "¿Cuántos hermanos tenía José?",
+        "opciones": [
+            "10",
+            "11",
+            "12",
+            "13"
+        ],
+        "respuestaCorrecta": "11",
+        "referencia": "Génesis 37:2"
+    },
+    {
+        "pregunta": "¿Cuál fue el castigo de la esposa de Lot por mirar hacia atrás?",
+        "opciones": [
+            "Se convirtió en piedra",
+            "Se convirtió en una estatua de sal",
+            "Fue cegada",
+            "Se convirtió en un animal"
+        ],
+        "respuestaCorrecta": "Se convirtió en una estatua de sal",
+        "referencia": "Génesis 19:26"
+    },
+    {
+        "pregunta": "¿Cuál fue el castigo de los habitantes de Sodoma y Gomorra?",
+        "opciones": [
+            "Fueron tragados por la tierra",
+            "Fueron convertidos en piedra",
+            "Fuego y azufre",
+            "Se inundaron"
+        ],
+        "respuestaCorrecta": "Fuego y azufre",
+        "referencia": "Génesis 19:24-25"
+    },
+    {
+        "pregunta": "¿Qué tipo de árbol le fue prohibido a Adán y Eva comer?",
+        "opciones": [
+            "El árbol de la vida",
+            "El manzano",
+            "El olivo",
+            "El árbol de la ciencia del bien y del mal"
+        ],
+        "respuestaCorrecta": "El árbol de la ciencia del bien y del mal",
+        "referencia": "Génesis 2:17"
+    },
+    {
+        "pregunta": "¿Quién soñó con siete vacas gordas y siete vacas flacas?",
+        "opciones": [
+            "José",
+            "Jacob",
+            "Faraón",
+            "Moisés"
+        ],
+        "respuestaCorrecta": "Faraón",
+        "referencia": "Génesis 41:1-4"
+    },
+    {
+        "pregunta": "¿Qué fue lo que Jesús dijo que era la sal de la tierra?",
+        "opciones": [
+            "El pueblo de Israel",
+            "Los fariseos",
+            "Los creyentes",
+            "Los apóstoles"
+        ],
+        "respuestaCorrecta": "Los creyentes",
+        "referencia": "Mateo 5:13"
+    },
+    {
+        "pregunta": "¿Cuál de los evangelios no es sinóptico?",
+        "opciones": [
+            "Mateo",
+            "Marcos",
+            "Lucas",
+            "Juan"
+        ],
+        "respuestaCorrecta": "Juan",
+        "referencia": "Consenso teológico"
+    },
+    {
+        "pregunta": "¿Qué fue lo que Jesús dijo que era la luz del mundo?",
+        "opciones": [
+            "El sol",
+            "La luna",
+            "La ciudad en un monte",
+            "Los creyentes"
+        ],
+        "respuestaCorrecta": "Los creyentes",
+        "referencia": "Mateo 5:14"
+    },
+    {
+        "pregunta": "¿Quién fue el profeta que le dijo al rey David que había pecado?",
+        "opciones": [
+            "Samuel",
+            "Natán",
+            "Isaías",
+            "Elías"
+        ],
+        "respuestaCorrecta": "Natán",
+        "referencia": "2 Samuel 12:7"
+    },
+    {
+        "pregunta": "¿Quién fue la mujer que se rió cuando un ángel le dijo que tendría un hijo en su vejez?",
+        "opciones": [
+            "María",
+            "Rebeca",
+            "Sara",
+            "Raquel"
+        ],
+        "respuestaCorrecta": "Sara",
+        "referencia": "Génesis 18:12"
+    },
+    {
+        "pregunta": "¿Quién escribió la mayor parte del libro de Proverbios?",
+        "opciones": [
+            "Salomón",
+            "David",
+            "Moisés",
+            "Job"
+        ],
+        "respuestaCorrecta": "Salomón",
+        "referencia": "Proverbios 1:1"
+    }
+];
+
+        // Nuevo: Grupo de preguntas exclusivo para los ascensos
+        const promotionQuestionsData = [
+            {
+                "pregunta": "¿Qué rey babilónico ordenó echar a Sadrac, Mesac y Abed-nego a un horno de fuego?",
+                "opciones": [
+                    "Darío",
+                    "Nabucodonosor",
+                    "Baltasar",
+                    "Asuero"
+                ],
+                "respuestaCorrecta": "Nabucodonosor",
+                "referencia": "Daniel 3:19"
+            },
+            {
+                "pregunta": "¿Qué profeta comió un rollo que era dulce como la miel en su boca?",
+                "opciones": [
+                    "Isaías",
+                    "Ezequiel",
+                    "Jeremías",
+                    "Jonás"
+                ],
+                "respuestaCorrecta": "Ezequiel",
+                "referencia": "Ezequiel 3:1-3"
+            },
+            {
+                "pregunta": "¿Cuál era el nombre original de Jerusalén en los días de Abraham?",
+                "opciones": [
+                    "Siquem",
+                    "Betel",
+                    "Hebrón",
+                    "Salem"
+                ],
+                "respuestaCorrecta": "Salem",
+                "referencia": "Génesis 14:18"
+            },
+            {
+                "pregunta": "¿Qué juez de Israel derrotó a los madianitas con solo 300 hombres?",
+                "opciones": [
+                    "Sansón",
+                    "Josué",
+                    "Samuel",
+                    "Gedeón"
+                ],
+                "respuestaCorrecta": "Gedeón",
+                "referencia": "Jueces 7:7"
+            },
+            {
+                "pregunta": "¿Cuál de las hermanas de Lázaro se sentó a los pies de Jesús para escucharle?",
+                "opciones": [
+                    "María",
+                    "Salomé",
+                    "Elisabet",
+                    "Marta"
+                ],
+                "respuestaCorrecta": "María",
+                "referencia": "Lucas 10:38-42"
+            },
+            {
+                "pregunta": "¿Qué discípulo dudó de la resurrección de Jesús hasta que vio sus heridas?",
+                "opciones": [
+                    "Pedro",
+                    "Juan",
+                    "Tomás",
+                    "Mateo"
+                ],
+                "respuestaCorrecta": "Tomás",
+                "referencia": "Juan 20:24-29"
+            },
+            {
+                "pregunta": "En el Sermón del Monte, ¿qué comparó Jesús con una ciudad sobre un monte?",
+                "opciones": [
+                    "La sal de la tierra",
+                    "El reino de los cielos",
+                    "La luz del mundo",
+                    "Los profetas"
+                ],
+                "respuestaCorrecta": "La luz del mundo",
+                "referencia": "Mateo 5:14"
+            },
+            {
+                "pregunta": "¿Qué sumo sacerdote profetizó, sin saberlo, la muerte de Jesús por la nación?",
+                "opciones": [
+                    "Anás",
+                    "Caifás",
+                    "Gamaliel",
+                    "Zacarías"
+                ],
+                "respuestaCorrecta": "Caifás",
+                "referencia": "Juan 11:49-51"
+            },
+            {
+                "pregunta": "¿En qué ciudad de Cilicia nació el apóstol Pablo?",
+                "opciones": [
+                    "Jerusalén",
+                    "Antioquía",
+                    "Damasco",
+                    "Tarso"
+                ],
+                "respuestaCorrecta": "Tarso",
+                "referencia": "Hechos 22:3"
+            },
+            {
+                "pregunta": "¿Quién fue la madre de Samuel que lo dedicó al servicio del Señor en su niñez?",
+                "opciones": [
+                    "Ana",
+                    "Lidia",
+                    "Débora",
+                    "Noemí"
+                ],
+                "respuestaCorrecta": "Ana",
+                "referencia": "1 Samuel 1:20-28"
+            }
+        ];
+
+        // Módulo de Estado del Juego
+        const divisiones = ['Discípulo', 'Maestro', 'Experto'];
+        const subnivelesPorDivision = [5, 5, 10];
+        const starsToPromote = 5;
+
+        let gameState = {
+            playerName: "Jugador",
+            currentDivision: 0,
+            currentSublevel: 1,
+            divisionStars: 0,
+            totalScore: 0,
+            currentQuestionIndex: 0,
+            questions: [],
+            isPromotionQuestion: false,
+            hasDemotionShield: false,
+            usedQuestions: [],
+            usedPromotionQuestions: [],
+            isTimerRunning: false,
+            timer: null,
+            timeElapsed: 0,
+            // NUEVO: Variables para el temporizador de ascenso
+            promotionTimer: null,
+            promotionTimeLeft: 30,
+        };
+
+        // Módulo de Audio y Sonido
+        const audio = {
+            correct: new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/winner-game-sound-404167.mp3'),
+            incorrect: new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/fail-144746.mp3'),
+            promotion: [
+                new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/11l-victory_trumpet-1749704501065-358769.mp3'),
+                new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/11l-victory_trumpet-1749704498589-358767.mp3'),
+                new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/11l-victory_trumpet-1749704496881-358778.mp3')
+            ],
+            // Nuevos efectos de sonido
+            shieldUsed: new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/bubble-pops-and-ding-type-3-235798.mp3'),
+            promotionFail: new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/brass-fail-11-a-207140.mp3'),
+            demotionSound: new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/negative-484803.mp3'),
+            // NUEVO: Sonido de reloj
+            promotionClock: new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/slow-cinematic-clock-ticking-tension-2-323078.mp3'),
+
+            volume: parseFloat(localStorage.getItem('audioVolume')) || 1,
+            isMuted: localStorage.getItem('isAudioMuted') === 'true',
+            init() {
+                this.updateVolume(this.volume);
+                if (this.isMuted) {
+                    this.mute();
+                }
+            },
+            playCorrect() {
+                if (!this.isMuted) {
+                    this.correct.volume = this.volume;
+                    this.correct.currentTime = 0;
+                    this.correct.play();
+                }
+            },
+            playIncorrect() {
+                if (!this.isMuted) {
+                    this.incorrect.volume = this.volume;
+                    this.incorrect.currentTime = 0;
+                    this.incorrect.play();
+                }
+            },
+            playPromotion() {
+                if (!this.isMuted) {
+                    const randomPromotionSound = this.promotion[Math.floor(Math.random() * this.promotion.length)];
+                    randomPromotionSound.volume = this.volume;
+                    randomPromotionSound.currentTime = 0;
+                    randomPromotionSound.play();
+                }
+            },
+            playShieldUsed() {
+                if (!this.isMuted) {
+                    this.shieldUsed.volume = this.volume;
+                    this.shieldUsed.currentTime = 0;
+                    this.shieldUsed.play();
+                }
+            },
+            playPromotionFail() {
+                if (!this.isMuted) {
+                    this.promotionFail.volume = this.volume;
+                    this.promotionFail.currentTime = 0;
+                    this.promotionFail.play();
+                }
+            },
+            playDemotion() {
+                if (!this.isMuted) {
+                    // Ahora se utiliza el mismo sonido que en promotionFail
+                    this.promotionFail.volume = this.volume;
+                    this.promotionFail.currentTime = 0;
+                    this.promotionFail.play();
+                }
+            },
+            // NUEVO: Funciones para manejar el sonido del reloj
+            playPromotionClock() {
+                if (!this.isMuted) {
+                    this.promotionClock.volume = this.volume;
+                    this.promotionClock.currentTime = 0;
+                    this.promotionClock.loop = true;
+                    this.promotionClock.play();
+                }
+            },
+            stopPromotionClock() {
+                this.promotionClock.pause();
+                this.promotionClock.currentTime = 0;
+            },
+            updateVolume(newVolume) {
+                this.volume = newVolume;
+                this.correct.volume = newVolume;
+                this.incorrect.volume = newVolume;
+                this.promotion.forEach(sound => sound.volume = newVolume);
+                this.shieldUsed.volume = newVolume;
+                this.promotionFail.volume = newVolume;
+                this.demotionSound.volume = newVolume;
+                this.promotionClock.volume = newVolume;
+                localStorage.setItem('audioVolume', newVolume);
+            },
+            toggleMute() {
+                this.isMuted = !this.isMuted;
+                localStorage.setItem('isAudioMuted', this.isMuted);
+                if (this.isMuted) {
+                    this.mute();
+                } else {
+                    this.unmute();
+                }
+            },
+            mute() {
+                this.correct.volume = 0;
+                this.incorrect.volume = 0;
+                this.promotion.forEach(sound => sound.volume = 0);
+                this.shieldUsed.volume = 0;
+                this.promotionFail.volume = 0;
+                this.demotionSound.volume = 0;
+                this.promotionClock.volume = 0;
+            },
+            unmute() {
+                this.correct.volume = this.volume;
+                this.incorrect.volume = this.volume;
+                this.promotion.forEach(sound => sound.volume = this.volume);
+                this.shieldUsed.volume = this.volume;
+                this.promotionFail.volume = this.volume;
+                this.demotionSound.volume = this.volume;
+                this.promotionClock.volume = this.volume;
+            }
+        };
+
+        // Módulo de Lógica del Juego
+        const gameActions = {
+            startGame() {
+                gameState.currentDivision = 0;
+                gameState.currentSublevel = 1;
+                gameState.divisionStars = 0;
+                gameState.totalScore = 0;
+                gameState.currentQuestionIndex = 0;
+                gameState.hasDemotionShield = false;
+                gameState.usedQuestions = [];
+                gameState.usedPromotionQuestions = []; // Reiniciar preguntas de ascenso usadas
+                gameActions.loadNewQuestionSet();
+
+                ui.showScreen(ui.elements.gameScreen);
+                ui.updateGameUI();
+                ui.displayQuestion();
+            },
+            loadNewQuestionSet() {
+                let questionSet, usedQuestionsArray;
+
+                if (gameState.isPromotionQuestion) {
+                    questionSet = promotionQuestionsData;
+                    usedQuestionsArray = gameState.usedPromotionQuestions;
+                    if (usedQuestionsArray.length === questionSet.length) {
+                        usedQuestionsArray.length = 0;
+                    }
+                } else {
+                    questionSet = questionsData;
+                    usedQuestionsArray = gameState.usedQuestions;
+                    if (usedQuestionsArray.length === questionSet.length) {
+                        usedQuestionsArray.length = 0;
+                    }
+                }
+
+                let randomIndex;
+                do {
+                    randomIndex = Math.floor(Math.random() * questionSet.length);
+                } while (usedQuestionsArray.includes(randomIndex));
+                usedQuestionsArray.push(randomIndex);
+                gameState.currentQuestionIndex = randomIndex;
+                gameState.questions = questionSet;
+            },
+            handleAnswer(selectedOption, buttonElement) {
+                ui.elements.opcionesContainer.classList.add('disabled-container');
+                gameActions.stopTimer();
+                // NUEVO: Detener el temporizador de ascenso y el sonido del reloj
+                gameActions.stopPromotionTimer();
+                audio.stopPromotionClock();
+
+                const currentQuestion = gameState.questions[gameState.currentQuestionIndex];
+                const isCorrect = selectedOption === currentQuestion.respuestaCorrecta;
+
+                Array.from(ui.elements.opcionesContainer.children).forEach(btn => btn.disabled = true);
+                
+                if (isCorrect) {
+                    if (gameState.isPromotionQuestion) {
+                        audio.playPromotion();
+                        gameActions.promotePlayer();
+                    } else {
+                        audio.playCorrect();
+                        gameState.divisionStars++;
+                    }
+                    
+                    buttonElement.classList.add('correcta');
+                    ui.showFeedbackEmoji('🥳');
+                    
+                    const points = 100;
+                    gameState.totalScore += points;
+
+                    ui.updateGameUI();
+                    
+                    if (!gameState.isPromotionQuestion) { 
+                         gameActions.checkPromotion();
+                        setTimeout(() => {
+                           gameActions.loadNextQuestion();
+                        }, 1500);
+                    } else {
+                        setTimeout(() => {
+                             gameActions.loadNextQuestion();
+                        }, 3000); 
+                    }
+
+                } else {
+                    if (gameState.isPromotionQuestion) {
+                        gameActions.handlePromotionFail('incorrecta', buttonElement, currentQuestion);
+                    } else if (gameState.divisionStars > 0) {
+                        audio.playIncorrect();
+                        gameState.divisionStars--;
+                        ui.updateGameUI();
+                        setTimeout(() => gameActions.loadNextQuestion(), 2500);
+                    } else if (gameState.divisionStars === 0 && gameState.hasDemotionShield) {
+                        audio.playShieldUsed();
+                        ui.showShieldEffect();
+                        gameState.hasDemotionShield = false;
+                        ui.updateGameUI(); 
+                        setTimeout(() => gameActions.loadNextQuestion(), 2500);
+                    } else {
+                         // Lógica modificada: Si el jugador está en el primer nivel (Discípulo I) y pierde sus estrellas, no hay fin de juego.
+                        if (gameState.currentDivision === 0 && gameState.currentSublevel === 1) {
+                            audio.playIncorrect();
+                            gameState.divisionStars = 0; // Se reinician las estrellas
+                            ui.updateGameUI();
+                            setTimeout(() => gameActions.loadNextQuestion(), 2500);
+                        } else {
+                            gameActions.demotePlayer();
+                        }
+                    }
+
+                    if(buttonElement) {
+                        buttonElement.classList.add('incorrecta');
+                    }
+                    ui.showFeedbackEmoji('😟');
+                    ui.elements.preguntaContainer.classList.add('shake-animation');
+                    
+                    if (!gameState.isPromotionQuestion) {
+                        const correctButton = Array.from(ui.elements.opcionesContainer.children).find(btn => btn.textContent === currentQuestion.respuestaCorrecta);
+                        if (correctButton) {
+                            correctButton.classList.add('correcta');
+                        }
+                        const tooltipSpan = buttonElement ? buttonElement.querySelector('.tooltip') : null;
+                        if (tooltipSpan) {
+                             tooltipSpan.textContent = `Incorrecto: ${currentQuestion.respuestaCorrecta}. (Referencia: ${currentQuestion.referencia})`;
+                             tooltipSpan.classList.add('show');
+                        }
+                    }
+                }
+            },
+            // NUEVO: Función para manejar el tiempo de ascenso agotado
+            handlePromotionTimeout() {
+                gameActions.stopPromotionTimer();
+                audio.stopPromotionClock();
+                ui.elements.opcionesContainer.classList.add('disabled-container');
+                Array.from(ui.elements.opcionesContainer.children).forEach(btn => btn.disabled = true);
+                
+                gameActions.handlePromotionFail('timeout');
+            },
+            // NUEVA FUNCIÓN: Centraliza la lógica de fallo en el ascenso
+            handlePromotionFail(failType, buttonElement = null, currentQuestion = null) {
+                audio.playPromotionFail();
+                audio.stopPromotionClock();
+                gameState.isPromotionQuestion = false;
+                if (gameState.divisionStars > 0) {
+                    gameState.divisionStars--;
+                }
+                ui.updateGameUI();
+                
+                if (failType === 'incorrecta') {
+                    // Muestra la respuesta correcta y el tooltip en la opción incorrecta
+                    const correctButton = Array.from(ui.elements.opcionesContainer.children).find(btn => btn.textContent === currentQuestion.respuestaCorrecta);
+                    if (correctButton) {
+                        correctButton.classList.add('correcta');
+                    }
+                    const tooltipSpan = buttonElement ? buttonElement.querySelector('.tooltip') : null;
+                    if (tooltipSpan) {
+                         tooltipSpan.textContent = `Incorrecto: ${currentQuestion.respuestaCorrecta}. (Referencia: ${currentQuestion.referencia})`;
+                         tooltipSpan.classList.add('show');
+                    }
+                    ui.showPopup(`¡Fallaste la pregunta de ascenso!`, 'promotion-fail', 'incorrecta');
+                } else if (failType === 'timeout') {
+                    ui.showPopup(`¡Fallaste la pregunta de ascenso!`, 'promotion-fail', 'timeout');
+                }
+                
+                setTimeout(() => gameActions.loadNextQuestion(), 2500);
+            },
+            checkPromotion() {
+                if (gameState.divisionStars >= starsToPromote) {
+                    gameState.isPromotionQuestion = true;
+                }
+            },
+            promotePlayer() {
+                const currentDivisionName = divisiones[gameState.currentDivision];
+                const maxSublevels = subnivelesPorDivision[gameState.currentDivision];
+                audio.stopPromotionClock();
+
+                if (gameState.currentSublevel < maxSublevels) {
+                    gameState.currentSublevel++;
+                    gameState.hasDemotionShield = true;
+                    ui.createConfetti();
+                    ui.showPopup(`¡Ascendiste a ${currentDivisionName} ${ui.toRoman(gameState.currentSublevel)}!`, 'promotion');
+                } else if (gameState.currentDivision < divisiones.length - 1) {
+                    gameState.currentDivision++;
+                    gameState.currentSublevel = 1;
+                    gameState.hasDemotionShield = true;
+                    ui.createConfetti();
+                    ui.showPopup(`¡Felicitaciones! Has ascendido a la división de ${divisiones[gameState.currentDivision]} ${ui.toRoman(gameState.currentSublevel)}!`, 'promotion');
+                } else {
+                    ui.createConfetti();
+                    ui.endGame('¡Has alcanzado la cima! ¡Felicidades!');
+                    return;
+                }
+                
+                gameState.divisionStars = 0;
+                gameState.isPromotionQuestion = false;
+                ui.updateGameUI();
+            },
+            demotePlayer() {
+                audio.playDemotion(); // Llamada al nuevo sonido de descenso
+                audio.stopPromotionClock();
+                const currentDivisionName = divisiones[gameState.currentDivision];
+                
+                if (gameState.currentSublevel > 1) {
+                    gameState.currentSublevel--;
+                    gameState.divisionStars = starsToPromote - 1;
+                    ui.showPopup(`¡Has descendido a ${currentDivisionName} ${ui.toRoman(gameState.currentSublevel)}!`, 'demotion');
+                } else if (gameState.currentDivision > 0) {
+                    gameState.currentDivision--;
+                    gameState.currentSublevel = subnivelesPorDivision[gameState.currentDivision];
+                    gameState.divisionStars = starsToPromote - 1;
+                    ui.showPopup(`¡Has descendido a ${divisiones[gameState.currentDivision]} ${ui.toRoman(gameState.currentSublevel)}!`, 'demotion');
+                } else {
+                    // Lógica modificada: ya no hay fin de juego aquí
+                    gameState.divisionStars = 0;
+                    ui.updateGameUI();
+                    setTimeout(() => gameActions.loadNextQuestion(), 2500);
+                    return;
+                }
+                gameState.hasDemotionShield = false;
+                ui.updateGameUI();
+            },
+            loadNextQuestion() {
+                ui.elements.preguntaContainer.classList.remove('shake-animation');
+                gameActions.loadNewQuestionSet();
+                ui.displayQuestion();
+            },
+            saveProgress() {
+                const progressData = {
+                    playerName: gameState.playerName,
+                    currentDivision: gameState.currentDivision,
+                    currentSublevel: gameState.currentSublevel,
+                    divisionStars: gameState.divisionStars,
+                    totalScore: gameState.totalScore,
+                    hasDemotionShield: gameState.hasDemotionShield,
+                    usedQuestions: gameState.usedQuestions,
+                    usedPromotionQuestions: gameState.usedPromotionQuestions
+                };
+                localStorage.setItem('bibleGameProgress', JSON.stringify(progressData));
+            },
+            loadProgress() {
+                const savedProgress = localStorage.getItem('bibleGameProgress');
+                if (savedProgress) {
+                    const progressData = JSON.parse(savedProgress);
+                    Object.assign(gameState, progressData);
+                    ui.updateGameUI();
+                    ui.displayQuestion();
+                    ui.showScreen(ui.elements.gameScreen);
+                    return true;
+                }
+                return false;
+            },
+            restartGameKeepingName() {
+                gameState.currentDivision = 0;
+                gameState.currentSublevel = 1;
+                gameState.divisionStars = 0;
+                gameState.totalScore = 0;
+                gameState.currentQuestionIndex = 0;
+                gameState.hasDemotionShield = false;
+                gameState.usedQuestions = [];
+                gameState.usedPromotionQuestions = [];
+                gameActions.loadNewQuestionSet();
+
+                ui.updateGameUI();
+                ui.displayQuestion();
+                ui.showScreen(ui.elements.gameScreen);
+            },
+            startTimer() {
+                gameActions.stopTimer();
+                gameState.timeElapsed = 0;
+                gameState.isTimerRunning = true;
+                ui.elements.thinkingEmoji.style.display = 'none';
+
+                gameState.timer = setInterval(() => {
+                    gameState.timeElapsed++;
+                    if (gameState.timeElapsed >= 10 && !ui.elements.opcionesContainer.classList.contains('disabled-container')) {
+                        ui.elements.thinkingEmoji.style.display = 'block';
+                    }
+                }, 1000);
+            },
+            stopTimer() {
+                clearInterval(gameState.timer);
+                gameState.isTimerRunning = false;
+                ui.elements.thinkingEmoji.style.display = 'none';
+            },
+            // NUEVO: Inicia el temporizador de 30 segundos para la pregunta de ascenso
+            startPromotionTimer() {
+                gameActions.stopPromotionTimer(); // Asegurar que no haya otro temporizador corriendo
+                gameState.promotionTimeLeft = 30;
+                ui.elements.promotionTimerDisplay.textContent = gameState.promotionTimeLeft;
+                ui.elements.promotionTimerContainer.classList.remove('hidden', 'running-out');
+
+                gameState.promotionTimer = setInterval(() => {
+                    gameState.promotionTimeLeft--;
+                    ui.elements.promotionTimerDisplay.textContent = gameState.promotionTimeLeft;
+                    
+                    if (gameState.promotionTimeLeft <= 10) {
+                        ui.elements.promotionTimerContainer.classList.add('running-out');
+                    }
+                    
+                    if (gameState.promotionTimeLeft <= 0) {
+                        gameActions.handlePromotionTimeout();
+                    }
+                }, 1000);
+            },
+            // NUEVO: Detiene el temporizador de ascenso
+            stopPromotionTimer() {
+                clearInterval(gameState.promotionTimer);
+                ui.elements.promotionTimerContainer.classList.add('hidden');
+                ui.elements.promotionTimerContainer.classList.remove('running-out');
+            }
+        };
+
+        // Módulo de Interfaz de Usuario
+        const ui = {
+            elements: {
+                preloader: document.getElementById('preloader'),
+                loadingBar: document.getElementById('loadingBar'),
+                homeScreen: document.getElementById('homeScreen'),
+                playerNameInput: document.getElementById('playerNameInput'),
+                gameScreen: document.getElementById('gameScreen'),
+                jugarBtn: document.getElementById('jugarBtn'),
+                preguntaTexto: document.getElementById('preguntaTexto'),
+                opcionesContainer: document.getElementById('opcionesContainer'),
+                feedbackEmoji: document.getElementById('feedbackEmoji'),
+                starsDisplay: document.getElementById('starsDisplay'),
+                confettiScreen: document.getElementById('confettiScreen'),
+                thinkingEmoji: document.getElementById('thinkingEmoji'),
+                totalScoreDisplay: document.getElementById('totalScoreDisplay'),
+                levelDisplay: document.getElementById('levelDisplay'),
+                welcomeMessage: document.getElementById('welcomeMessage'),
+                welcomePlayerName: document.getElementById('welcomePlayerName'),
+                continueBtn: document.getElementById('continueBtn'),
+                newGameBtn: document.getElementById('newGameBtn'),
+                nameInputSection: document.getElementById('nameInputSection'),
+                popupContainer: document.getElementById('popupContainer'),
+                popupContent: document.getElementById('popupContent'),
+                preguntaContainer: document.getElementById('preguntaContainer'),
+                shieldIcon: document.getElementById('shieldIcon'),
+                settingsBtn: document.getElementById('settingsBtn'),
+                rulesScreen: document.getElementById('rulesScreen'),
+                startGameBtn: document.getElementById('startGameBtn'),
+                nameErrorMsg: document.getElementById('nameErrorMsg'),
+                shieldEffectPopup: document.getElementById('shieldEffectPopup'),
+                
+                promotionPopup: document.getElementById('promotionPopup'),
+                promotionMessage: document.getElementById('promotionMessage'),
+                demotionPopup: document.getElementById('demotionPopup'),
+                demotionMessage: document.getElementById('demotionMessage'),
+                promotionFailPopup: document.getElementById('promotionFailPopup'),
+                promotionFailTitle: document.getElementById('promotionFailTitle'),
+                promotionFailMessage: document.getElementById('promotionFailMessage'),
+                promotionFailReason: document.getElementById('promotionFailReason'),
+
+                // NUEVOS ELEMENTOS DEL DOM
+                promotionTimerContainer: document.getElementById('promotionTimerContainer'),
+                promotionTimerDisplay: document.getElementById('promotionTimerDisplay'),
+            },
+            animatePreloader() {
+                this.elements.preloader.style.display = 'flex';
+                this.elements.loadingBar.style.width = '0%';
+                let currentWidth = 0;
+                const targetWidth = 100;
+                const duration = 1000;
+                const interval = 10;
+                const step = (targetWidth / (duration / interval));
+
+                const animate = () => {
+                    if (currentWidth < targetWidth) {
+                        currentWidth += step;
+                        this.elements.loadingBar.style.width = `${currentWidth}%`;
+                        requestAnimationFrame(animate);
+                    } else {
+                        setTimeout(() => {
+                            this.elements.preloader.style.opacity = '0';
+                            this.elements.preloader.addEventListener('transitionend', () => {
+                                this.elements.preloader.classList.add('hidden');
+                                this.showHomeScreenLogic();
+                            }, { once: true });
+                        }, 500);
+                    }
+                };
+                animate();
+            },
+            toRoman(num) {
+                const roman = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'];
+                return roman[num] || num;
+            },
+            showScreen(screenToShow) {
+                const allScreens = [this.elements.homeScreen, this.elements.rulesScreen, this.elements.gameScreen];
+                allScreens.forEach(screen => {
+                    screen.classList.add('hidden');
+                    screen.classList.remove('visible');
+                });
+                
+                screenToShow.classList.remove('hidden');
+                setTimeout(() => {
+                    screenToShow.classList.add('visible');
+                }, 10);
+                
+                if (screenToShow === this.elements.gameScreen) {
+                    this.elements.settingsBtn.classList.remove('hidden');
+                    this.elements.shieldIcon.classList.toggle('hidden', !gameState.hasDemotionShield);
+                } else {
+                    this.elements.settingsBtn.classList.add('hidden');
+                    this.elements.shieldIcon.classList.add('hidden');
+                }
+            },
+            showHomeScreenLogic() {
+                if (localStorage.getItem('bibleGameProgress')) {
+                    this.elements.nameInputSection.classList.add('hidden');
+                    this.elements.welcomeMessage.classList.remove('hidden');
+                    const savedData = JSON.parse(localStorage.getItem('bibleGameProgress'));
+                    this.elements.welcomePlayerName.textContent = `¡Bienvenido de nuevo, ${savedData.playerName}!`;
+                    gameState.playerName = savedData.playerName;
+                } else {
+                    this.elements.nameInputSection.classList.remove('hidden');
+                    this.elements.welcomeMessage.classList.add('hidden');
+                }
+                this.showScreen(this.elements.homeScreen);
+            },
+            displayQuestion() {
+                ui.elements.feedbackEmoji.classList.add('hidden');
+                ui.elements.opcionesContainer.classList.remove('disabled-container');
+                
+                const currentQuestion = gameState.questions[gameState.currentQuestionIndex];
+                
+                ui.elements.preguntaTexto.textContent = currentQuestion.pregunta;
+
+                if (gameState.isPromotionQuestion) {
+                     ui.elements.preguntaTexto.innerHTML = `
+                        <span style="color: yellow; text-shadow: 1px 1px 2px black;">¡Pregunta de Ascenso!</span>
+                        <br>${currentQuestion.pregunta}
+                    `;
+                    // NUEVO: Iniciar el temporizador de ascenso
+                    gameActions.startPromotionTimer();
+                    // NUEVO: Reproducir el sonido del reloj de ascenso
+                    audio.playPromotionClock();
+                } else {
+                    ui.elements.preguntaTexto.textContent = currentQuestion.pregunta;
+                    // NUEVO: Ocultar el temporizador de ascenso en preguntas normales
+                    gameActions.stopPromotionTimer();
+                    audio.stopPromotionClock();
+                }
+                
+                ui.elements.opcionesContainer.innerHTML = '';
+                const shuffledOptions = [...currentQuestion.opciones].sort(() => Math.random() - 0.5);
+                shuffledOptions.forEach(opcion => {
+                    const button = document.createElement('button');
+                    button.className = 'opcion-btn';
+                    button.textContent = opcion;
+                    button.addEventListener('click', () => {
+                        gameActions.stopTimer();
+                        gameActions.handleAnswer(opcion, button);
+                    });
+                    const tooltip = document.createElement('span');
+                    tooltip.className = 'tooltip';
+                    button.appendChild(tooltip);
+                    ui.elements.opcionesContainer.appendChild(button);
+                });
+                ui.elements.opcionesContainer.classList.remove('disabled-container');
+                gameActions.startTimer();
+            },
+            updateGameUI() {
+                const divisionName = divisiones[gameState.currentDivision];
+                const sublevelRoman = ui.toRoman(gameState.currentSublevel);
+                ui.elements.levelDisplay.textContent = `${divisionName} ${sublevelRoman}`;
+                ui.elements.totalScoreDisplay.textContent = `Puntuación: ${gameState.totalScore}`;
+                ui.elements.starsDisplay.innerHTML = '';
+                
+                const starsToDisplay = gameState.isPromotionQuestion ? '⬆️' : '🌟'.repeat(gameState.divisionStars);
+                
+                const starElement = document.createElement('span');
+                starElement.innerHTML = starsToDisplay;
+                starElement.className = 'star-icon';
+                ui.elements.starsDisplay.appendChild(starElement);
+
+                ui.elements.shieldIcon.classList.toggle('hidden', !gameState.hasDemotionShield);
+            },
+            showFeedbackEmoji(emoji) {
+                ui.elements.feedbackEmoji.textContent = emoji;
+                ui.elements.feedbackEmoji.classList.remove('hidden');
+                setTimeout(() => {
+                    ui.elements.feedbackEmoji.classList.add('hidden');
+                }, 1000);
+            },
+            // Función mejorada para mostrar pop-ups específicos
+            showPopup(title, popupId, failType = null) {
+                this.elements.promotionPopup.classList.add('hidden');
+                this.elements.demotionPopup.classList.add('hidden');
+                this.elements.promotionFailPopup.classList.add('hidden');
+                audio.stopPromotionClock();
+
+                if (popupId === 'promotion') {
+                    this.elements.promotionMessage.textContent = title;
+                    this.elements.promotionPopup.classList.remove('hidden');
+                    this.elements.promotionPopup.classList.add('visible');
+                } else if (popupId === 'demotion') {
+                    this.elements.demotionMessage.textContent = title;
+                    this.elements.demotionPopup.classList.remove('hidden');
+                    this.elements.demotionPopup.classList.add('visible');
+                } else if (popupId === 'promotion-fail') {
+                    this.elements.promotionFailTitle.textContent = title;
+                    if (failType === 'incorrecta') {
+                        this.elements.promotionFailMessage.textContent = 'Tu respuesta fue incorrecta.';
+                        this.elements.promotionFailReason.textContent = 'No te desanimes, ¡vuelve a intentarlo!';
+                    } else if (failType === 'timeout') {
+                        this.elements.promotionFailMessage.textContent = '¡Se te acabó el tiempo!';
+                        this.elements.promotionFailReason.textContent = 'Debes responder antes de que el temporizador llegue a cero.';
+                    }
+                    this.elements.promotionFailPopup.classList.remove('hidden');
+                    this.elements.promotionFailPopup.classList.add('visible');
+                }
+            },
+            showShieldEffect() {
+                this.elements.shieldEffectPopup.classList.remove('hidden');
+                this.elements.shieldEffectPopup.classList.add('visible');
+                setTimeout(() => {
+                    this.elements.shieldEffectPopup.classList.remove('visible');
+                    this.elements.shieldEffectPopup.classList.add('hidden');
+                }, 1500); 
+            },
+            showNoNameError() {
+                this.elements.nameErrorMsg.textContent = "¡Por favor, introduce tu nombre para comenzar!";
+                this.elements.nameErrorMsg.classList.remove('hidden');
+                this.elements.nameErrorMsg.classList.add('visible');
+            },
+            showExitPopup() {
+                gameActions.stopTimer();
+                // NUEVO: Detener el temporizador de ascenso y el sonido del reloj al salir
+                gameActions.stopPromotionTimer();
+                audio.stopPromotionClock();
+
+                const exitPopupContent = `
+                    <h3>¿Estás seguro de que quieres salir?</h3>
+                    <p>Puedes guardar tu progreso para continuar más tarde.</p>
+                    <div class="button-container">
+                        <button id="saveExitBtn">Guardar y Salir</button>
+                        <button id="exitWithoutSaveBtn">Salir sin Guardar</button>
+                        <button id="cancelExitBtn" class="cancel-btn">Cancelar</button>
+                    </div>
+                `;
+                ui.elements.popupContent.innerHTML = exitPopupContent;
+                ui.elements.popupContainer.className = 'popup-overlay visible exit-popup';
+
+                document.getElementById('saveExitBtn').addEventListener('click', () => {
+                    gameActions.saveProgress();
+                    ui.elements.popupContainer.classList.remove('visible');
+                    ui.elements.popupContainer.classList.add('hidden');
+                    ui.showHomeScreenLogic();
+                });
+
+                document.getElementById('exitWithoutSaveBtn').addEventListener('click', () => {
+                    localStorage.removeItem('bibleGameProgress');
+                    ui.elements.popupContainer.classList.remove('visible');
+                    ui.elements.popupContainer.classList.add('hidden');
+                    ui.showHomeScreenLogic();
+                });
+
+                document.getElementById('cancelExitBtn').addEventListener('click', () => {
+                    ui.elements.popupContainer.classList.remove('visible');
+                    ui.elements.popupContainer.classList.add('hidden');
+                    // NUEVO: Reanudar el temporizador si se cancela la salida y se estaba en un nivel normal
+                    if (!gameState.isPromotionQuestion) {
+                        gameActions.startTimer();
+                    } else {
+                        gameActions.startPromotionTimer();
+                        audio.playPromotionClock();
+                    }
+                });
+            },
+            showNewGamePopup() {
+                const newGamePopupContent = `
+                    <h3>¿Estás seguro de que quieres empezar una nueva partida?</h3>
+                    <p>Tu partida actual se perderá.</p>
+                    <div class="button-container">
+                        <button id="confirmNewGameBtn">Sí, Empezar</button>
+                        <button id="cancelNewGameBtn" class="cancel-btn">Cancelar</button>
+                    </div>
+                `;
+                ui.elements.popupContent.innerHTML = newGamePopupContent;
+                ui.elements.popupContainer.className = 'popup-overlay visible new-game-popup';
+
+                document.getElementById('confirmNewGameBtn').addEventListener('click', () => {
+                    localStorage.removeItem('bibleGameProgress');
+                    ui.elements.popupContainer.classList.remove('visible');
+                    ui.elements.popupContainer.classList.add('hidden');
+                    ui.showScreen(ui.elements.rulesScreen);
+                });
+
+                document.getElementById('cancelNewGameBtn').addEventListener('click', () => {
+                    ui.elements.popupContainer.classList.remove('visible');
+                    ui.elements.popupContainer.classList.add('hidden');
+                });
+            },
+            showSettingsPopup() {
+                gameActions.stopTimer();
+                // NUEVO: Detener el temporizador de ascenso y el sonido del reloj al abrir los ajustes
+                gameActions.stopPromotionTimer();
+                audio.stopPromotionClock();
+
+                const settingsPopupContent = `
+                    <h3>Ajustes</h3>
+                    <div class="settings-popup-content">
+                        <div class="controls">
+                            <div class="control-group">
+                                <label for="volumeRange">Volumen</label>
+                                <input type="range" id="volumeRange" min="0" max="1" step="0.1" value="${audio.volume}">
+                            </div>
+                            <div class="control-group">
+                                <label for="muteToggle">Silenciar</label>
+                                <input type="checkbox" id="muteToggle" ${audio.isMuted ? 'checked' : ''}>
+                            </div>
+                        </div>
+                        <div class="exit-btn-wrapper">
+                            <button id="exitGameBtn" class="btn-main">Salir del Juego</button>
+                        </div>
+                    </div>
+                    <button id="closeSettingsBtn" style="margin-top: 3vh;">Cerrar</button>
+                `;
+                ui.elements.popupContent.innerHTML = settingsPopupContent;
+                ui.elements.popupContainer.className = 'popup-overlay visible settings-popup';
+
+                const volumeRange = document.getElementById('volumeRange');
+                const muteToggle = document.getElementById('muteToggle');
+                const exitGameBtn = document.getElementById('exitGameBtn');
+                const closeSettingsBtn = document.getElementById('closeSettingsBtn');
+
+                volumeRange.value = audio.volume;
+                muteToggle.checked = audio.isMuted;
+                
+                volumeRange.addEventListener('input', (e) => {
+                    audio.updateVolume(e.target.value);
+                    if (e.target.value > 0) {
+                        muteToggle.checked = false;
+                        audio.isMuted = false;
+                        localStorage.setItem('isAudioMuted', 'false');
+                    } else {
+                        muteToggle.checked = true;
+                        audio.isMuted = true;
+                        localStorage.setItem('isAudioMuted', 'true');
+                    }
+                });
+
+                muteToggle.addEventListener('change', () => {
+                    audio.toggleMute();
+                    if (audio.isMuted) {
+                        volumeRange.value = 0;
+                    } else {
+                        volumeRange.value = audio.volume;
+                    }
+                });
+
+                exitGameBtn.addEventListener('click', () => {
+                    ui.elements.popupContainer.classList.remove('visible');
+                    ui.elements.popupContainer.classList.add('hidden');
+                    ui.showExitPopup();
+                });
+
+                closeSettingsBtn.addEventListener('click', () => {
+                    ui.elements.popupContainer.classList.remove('visible');
+                    ui.elements.popupContainer.classList.add('hidden');
+                    // NUEVO: Reanudar el temporizador si se cancela y se estaba en un nivel normal
+                    if (!gameState.isPromotionQuestion) {
+                        gameActions.startTimer();
+                    } else {
+                        gameActions.startPromotionTimer();
+                        audio.playPromotionClock();
+                    }
+                });
+            },
+            createConfetti() {
+                const confettiColors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722'];
+                const confettiCount = 100;
+
+                for (let i = 0; i < confettiCount; i++) {
+                    const piece = document.createElement('div');
+                    piece.className = 'confetti-piece';
+                    const randomColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+                    piece.style.setProperty('--color', randomColor);
+                    piece.style.setProperty('--left', `${Math.random() * 100}vw`);
+                    piece.style.setProperty('--duration', `${Math.random() * 2 + 1}s`);
+                    ui.elements.confettiScreen.appendChild(piece);
+                }
+
+                ui.elements.confettiScreen.classList.remove('hidden');
+                setTimeout(() => {
+            ui.elements.confettiScreen.classList.add('hidden');
+            ui.elements.confettiScreen.innerHTML = '';
+                }, 3000);
+            },
+            endGame(message) {
+                // NUEVO: Asegurarse de detener el temporizador de ascenso y el sonido del reloj si el juego termina
+                gameActions.stopPromotionTimer();
+                audio.stopPromotionClock();
+                
+                const endGamePopup = `
+                    <div class="end-game-popup">
+                        <h1>¡Fin del Juego!</h1>
+                        <p>${message}</p>
+                        <div id="endGameStats">
+                            <span>Puntuación Final: ${gameState.totalScore}</span>
+                            <span>División Alcanzada: ${divisiones[gameState.currentDivision]} ${ui.toRoman(gameState.currentSublevel)}</span>
+                        </div>
+                        <button id="endGameRestartBtn" class="btn-main" style="margin-top: 4vh;">Volver a Jugar</button>
+                    </div>
+                `;
+                ui.elements.popupContent.innerHTML = endGamePopup;
+                ui.elements.popupContainer.classList.remove('hidden');
+                ui.elements.popupContainer.classList.add('visible');
+                
+                document.getElementById('endGameRestartBtn').addEventListener('click', () => {
+                    localStorage.removeItem('bibleGameProgress');
+                    ui.elements.popupContainer.classList.remove('visible');
+                    ui.elements.popupContainer.classList.add('hidden');
+                    ui.showHomeScreenLogic();
+                });
+            }
+        };
+        
+        // Función global para cerrar pop-ups
+        function closePopup(popupId) {
+            document.getElementById(popupId).classList.remove('visible');
+            document.getElementById(popupId).classList.add('hidden');
+            gameActions.loadNextQuestion();
+        }
+
+        // Event Listeners para la navegación y el juego
+        document.addEventListener('DOMContentLoaded', () => {
+            audio.init();
+            ui.animatePreloader();
+        });
+
+        ui.elements.jugarBtn.addEventListener('click', () => {
+            const playerName = ui.elements.playerNameInput.value.trim();
+            if (playerName) {
+                gameState.playerName = playerName;
+                gameActions.saveProgress();
+                ui.showScreen(ui.elements.rulesScreen);
+            } else {
+                ui.showNoNameError();
+            }
+        });
+
+        ui.elements.startGameBtn.addEventListener('click', () => {
+            gameActions.startGame();
+        });
+
+        ui.elements.continueBtn.addEventListener('click', () => {
+            if (gameActions.loadProgress()) {
+                ui.showScreen(ui.elements.gameScreen);
+            } else {
+                alert("No se encontró una partida guardada.");
+            }
+        });
+
+        ui.elements.newGameBtn.addEventListener('click', () => {
+            ui.showNewGamePopup();
+        });
+        
+        ui.elements.settingsBtn.addEventListener('click', () => {
+            ui.showSettingsPopup();
+        });
+
+        // Nuevo Event Listener para guardar el progreso al cerrar la página
+        window.addEventListener('beforeunload', () => {
+            gameActions.saveProgress();
+        });
+    </script>
+</body>
+</html>
