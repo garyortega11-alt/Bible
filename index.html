@@ -19,8 +19,49 @@
             --loading-bar-color: var(--correct-color);
             --button-base-color: #2980b9;
         }
+
+        /* Temas Visuales (Skins) */
+        .default-skin {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --correct-color: #2ecc71;
+            --incorrect-color: #e74c3c;
+            --button-hover-color: #34495e;
+            --pop-up-color: #f39c12;
+            --preloader-color: #f1c40f;
+            --loading-bar-color: var(--correct-color);
+            --button-base-color: #2980b9;
+            background: linear-gradient(rgba(52, 152, 219, 0.9), rgba(52, 152, 219, 0.9)), 
+                        url('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/seamless-pattern-with-paper-books-home-library-book-stacks-glasses-vector.jpg');
+        }
+
+        .golden-skin {
+            --primary-color: #f1c40f;
+            --secondary-color: #e67e22;
+            --correct-color: #27ae60;
+            --incorrect-color: #c0392b;
+            --button-hover-color: #d35400;
+            --pop-up-color: #f39c12;
+            --loading-bar-color: var(--correct-color);
+            --button-base-color: #d35400;
+            background: linear-gradient(rgba(241, 196, 15, 0.9), rgba(241, 196, 15, 0.9)), 
+                        url('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/antique-golden-page.jpg');
+        }
+
+        .purple-skin {
+            --primary-color: #8e44ad;
+            --secondary-color: #5c356e;
+            --correct-color: #3498db;
+            --incorrect-color: #c0392b;
+            --button-hover-color: #4a2958;
+            --pop-up-color: #e74c3c;
+            --loading-bar-color: var(--correct-color);
+            --button-base-color: #7d3c98;
+            background: linear-gradient(rgba(142, 68, 173, 0.9), rgba(142, 68, 173, 0.9)), 
+                        url('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/dark-purple.jpg');
+        }
         
-        /* NUEVA REGLA PARA OCULTAR ELEMENTOS */
+        /* REGLA PARA OCULTAR ELEMENTOS */
         .hidden {
             display: none !important;
         }
@@ -37,13 +78,19 @@
             padding: 2vh;
             box-sizing: border-box;
             text-align: center;
-            /* Nuevo: Capa de color semitransparente sobre la imagen de fondo */
-            background: linear-gradient(rgba(52, 152, 219, 0.9), rgba(52, 152, 219, 0.9)), 
-                        url('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/seamless-pattern-with-paper-books-home-library-book-stacks-glasses-vector.jpg');
             background-repeat: repeat;
             background-size: 100px 100px;
             position: relative;
             overflow: hidden;
+            transition: background 0.5s ease-in-out;
+        }
+        
+        body.golden-skin {
+            background-size: cover;
+        }
+
+        body.purple-skin {
+            background-size: cover;
         }
 
         .screen-container {
@@ -174,21 +221,77 @@
             display: inline-block;
             transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
         }
-
-        /* NUEVA POSICIÓN PARA EL ESCUDO Y AJUSTES DE ESTILO */
-        #shieldIcon {
+        
+        /* NUEVOS ESTILOS PARA LOS BOTONES EN LA ESQUINA SUPERIOR DERECHA */
+        .top-right-buttons {
             position: fixed;
             top: 2vh;
-            left: 2vh; /* Movido a la izquierda */
-            font-size: clamp(2rem, 5vw, 3rem);
-            transition: opacity 0.5s ease-in-out;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            right: 2vh;
+            display: flex;
+            align-items: center;
+            gap: 1vh;
             z-index: 100;
         }
         
-        #shieldIcon.hidden {
-            opacity: 0;
-            pointer-events: none;
+        .top-right-buttons .btn-icon {
+            background: none;
+            border: none;
+            font-size: clamp(2rem, 5vw, 3rem);
+            cursor: pointer;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease;
+        }
+
+        .top-right-buttons .btn-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .top-right-buttons #settingsBtn:hover {
+            transform: rotate(45deg);
+        }
+
+        .top-right-buttons .btn-icon.hidden {
+            display: none;
+        }
+
+        /* NUEVO: ESTILO DEL CONTADOR DE MONEDAS */
+        #coinDisplay {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 5px 15px;
+            border-radius: 8px;
+        }
+        
+        #shopDisplay {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 5px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #shopDisplay:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .coin-icon {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: #f1c40f; /* Color dorado */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .shop-icon {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
 
         .pregunta-container {
@@ -235,7 +338,7 @@
             transition: all 0.3s ease-in-out;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             min-width: 100px;
-            height: 40px; /* Tamaño fijo para evitar saltos */
+            height: 40px; 
             display: flex;
             align-items: center;
             justify-content: center;
@@ -307,7 +410,7 @@
             transition: all 0.3s ease;
             text-align: left;
             position: relative;
-            box-shadow: 0 4px 0 #1b2631;
+            box-shadow: 0 4px 0 var(--button-hover-color);
         }
 
         .opcion-btn:hover {
@@ -316,7 +419,7 @@
         
         .opcion-btn:active {
             transform: translateY(4px);
-            box-shadow: 0 0 0 #1b2631;
+            box-shadow: 0 0 0 var(--button-hover-color);
         }
 
         .opcion-btn.correcta {
@@ -471,7 +574,7 @@
             text-align: center;
         }
         
-        .exit-popup .popup-content, .new-game-popup .popup-content, .settings-popup .popup-content {
+        .exit-popup .popup-content, .new-game-popup .popup-content, .settings-popup .popup-content, .shop-popup .popup-content {
             background-color: var(--secondary-color);
         }
         
@@ -550,9 +653,8 @@
         }
         
         /* ESTILOS ESPECÍFICOS PARA LOS FONDOS DE LOS POP-UPS */
-        /* Nuevo estilo para el fondo del pop-up de ascenso (victoria) */
         .promotion-popup .popup-card {
-            background-color: #2c9a4e; /* Fondo verde para la victoria */
+            background-color: #2c9a4e; 
         }
         
         .popup-card.promotion-popup .popup-title {
@@ -560,9 +662,8 @@
             text-shadow: 0 0 10px #fff;
         }
 
-        /* Nuevo estilo para el fondo del pop-up de ascenso (fallo) */
         .promotion-fail-popup .popup-card {
-            background-color: var(--pop-up-color); /* Fondo naranja para el fallo */
+            background-color: var(--pop-up-color); 
         }
         
         .popup-card.promotion-fail-popup .popup-title {
@@ -571,7 +672,7 @@
         }
         
         .demotion-popup .popup-card {
-             background-color: var(--secondary-color); /* Fondo oscuro para el descenso (sin cambios) */
+             background-color: var(--secondary-color); 
         }
 
         .popup-card.demotion-popup .popup-title {
@@ -633,30 +734,8 @@
             width: 100%;
             max-width: 300px;
         }
-
-        /* NUEVA POSICIÓN PARA EL BOTÓN DE AJUSTES */
-        .settings-btn {
-            position: fixed;
-            top: 2vh;
-            right: 2vh;
-            background: none;
-            border: none;
-            font-size: clamp(2rem, 5vw, 3rem);
-            cursor: pointer;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s ease, text-shadow 0.2s ease;
-            z-index: 100;
-        }
         
-        .settings-btn:hover {
-            transform: rotate(45deg);
-        }
-        
-        .settings-btn.hidden {
-            display: none;
-        }
-        
+        /* ESTILOS DEL POPUP DE AJUSTES */
         .settings-popup-content .controls {
             display: flex;
             flex-direction: column;
@@ -774,6 +853,7 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.7);
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             z-index: 150;
@@ -793,6 +873,14 @@
             animation: shieldPulse 1.5s infinite;
         }
 
+        #shieldEffectText {
+            font-size: clamp(2rem, 5vw, 4rem);
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-top: -2vh;
+        }
+
         @keyframes shieldPulse {
             0%, 100% {
                 transform: scale(1);
@@ -801,9 +889,277 @@
                 transform: scale(1.1);
             }
         }
+        
+        /* === NUEVOS ESTILOS PARA LAS MONEDAS Y COMODINES === */
+
+        .game-screen-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 2vh;
+        }
+        
+        .top-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 1vh;
+        }
+        
+        .top-info .left-side, .top-info .right-side {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Estilo para el contenedor de comodines */
+        .wildcard-system {
+            display: flex;
+            justify-content: center;
+            gap: 1.5vh;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 1vh;
+        }
+
+        .wildcard-btn {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 2px solid #fff;
+            color: white;
+            padding: 1.5vh 1vh;
+            border-radius: 10px;
+            font-size: clamp(1rem, 3vw, 1.8rem);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            flex: 1;
+            max-width: 120px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        
+        /* Estilos de los pop-ups de comodines */
+        .wildcard-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 101;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .wildcard-popup-overlay.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .wildcard-popup-content {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 3vh;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            max-width: 350px;
+            animation: fadeInScale 0.3s cubic-bezier(.17,.84,.44,1) forwards;
+        }
+
+        .wildcard-popup-content h3 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 1vh;
+        }
+
+        .wildcard-popup-content p {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            margin-bottom: 2vh;
+        }
+
+        .wildcard-popup-content .wildcard-icon {
+            font-size: clamp(4rem, 10vw, 8rem);
+        }
+
+        .wildcard-popup-content .btn-main {
+            padding: 1.5vh 3vh;
+        }
+
+        .wildcard-btn:hover {
+            background-color: var(--button-hover-color);
+            border-color: #f1c40f;
+            transform: scale(1.05);
+        }
+        
+        .wildcard-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            border-color: #aaa;
+            transform: none;
+        }
+        
+        .wildcard-btn .wildcard-icon {
+            font-size: clamp(2rem, 5vw, 3rem);
+        }
+        
+        .wildcard-btn .wildcard-cost {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+        }
+
+        /* Animación para el comodín de pista */
+        @keyframes correct-flash {
+            0%, 100% { background-color: rgba(0, 0, 0, 0.4); }
+            50% { background-color: var(--correct-color); }
+        }
+
+        .opcion-btn.correct-flash {
+            animation: correct-flash 1s 3;
+        }
+        
+        /* ESTILOS DEL POP-UP DE LA TIENDA */
+        .shop-popup .popup-content {
+            background-color: var(--secondary-color);
+            padding: 4vh;
+            text-align: left;
+        }
+
+        .shop-items {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5vh;
+            margin-top: 2vh;
+        }
+
+        .shop-item {
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            padding: 2vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5vh;
+            transition: transform 0.2s;
+        }
+
+        .shop-item:hover {
+            transform: translateY(-5px);
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .item-info {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            flex: 1;
+        }
+        
+        .item-info h4 {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            margin: 0 0 5px 0;
+        }
+        
+        .item-info p {
+            font-size: clamp(0.9rem, 2.2vw, 1.4rem);
+            margin: 0;
+            color: #bdc3c7;
+        }
+
+        .buy-btn {
+            background-color: var(--correct-color);
+            color: white;
+            border: none;
+            padding: 1.5vh 2.5vh;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: clamp(1rem, 2.5vw, 1.6rem);
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 0 #209d5c;
+        }
+
+        .buy-btn:hover {
+            background-color: #27ae60;
+        }
+
+        .buy-btn:disabled {
+            background-color: #7f8c8d;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        
+        .buy-btn .price {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .shop-close-btn {
+            width: 100%;
+            margin-top: 3vh;
+        }
+        
+        /* ESTILOS DEL POP-UP DE SKINS */
+        .skins-popup .popup-content {
+            background-color: var(--secondary-color);
+            padding: 4vh;
+            text-align: left;
+        }
+        
+        .skin-items {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5vh;
+            margin-top: 2vh;
+        }
+        
+        .skin-item {
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            padding: 2vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .skin-item.selected {
+            border-color: var(--correct-color);
+            box-shadow: 0 0 10px var(--correct-color);
+        }
+
+        .skin-item:hover {
+            transform: scale(1.02);
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .skin-info h4 {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            margin: 0 0 5px 0;
+        }
+
+        .skin-preview {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+        }
+
     </style>
 </head>
-<body>
+<body class="default-skin">
 
     <div id="preloader">
         <div class="loading-bar-container">
@@ -812,8 +1168,11 @@
         <p>Cargando...</p>
     </div>
     
-    <button id="settingsBtn" class="settings-btn hidden">⚙️</button>
-    <span id="shieldIcon" class="hidden">🛡️</span>
+    <div class="top-right-buttons">
+        <button id="shopBtn" class="btn-icon hidden">🛒</button>
+        <span id="shieldCountDisplay" class="coin-display hidden">🛡️ <span id="shieldCount">0</span></span>
+        <button id="settingsBtn" class="btn-icon hidden">⚙️</button>
+    </div>
 
     <div id="homeScreen" class="screen-container hidden">
         <h1>¡Bienvenido a Preguntas de la Biblia!</h1>
@@ -846,21 +1205,44 @@
     </div>
 
     <div id="gameScreen" class="screen-container hidden">
-        <div class="score-info">
-            <h2 id="levelDisplay"></h2>
-            <h2 id="totalScoreDisplay">Puntuación: 0</h2>
+        <div class="game-screen-header">
+            <div class="top-info">
+                <div class="left-side">
+                    <h2 id="levelDisplay"></h2>
+                </div>
+                <div class="right-side">
+                    <h2 id="coinDisplay"><span class="coin-icon">🪙</span> <span id="totalCoinsDisplay">0</span></h2>
+                </div>
+            </div>
+            <div id="starsDisplay">
+            </div>
         </div>
-        <div id="starsDisplay">
-        </div>
+        
         <div id="promotionTimerContainer" class="promotion-timer-container hidden">
             Tiempo: <span id="promotionTimerDisplay"></span>s
         </div>
+
         <div id="preguntaContainer" class="pregunta-container">
             <span id="feedbackEmoji"></span>
             <span id="thinkingEmoji">🤔</span>
             <h3 id="preguntaTexto" class="pregunta-texto"></h3>
             <div id="opcionesContainer" class="opciones-container">
             </div>
+        </div>
+
+        <div class="wildcard-system">
+            <button id="wildcard5050Btn" class="wildcard-btn" data-cost="10">
+                <span class="wildcard-icon">✂️</span>
+                <span class="wildcard-cost"><span class="coin-icon">🪙</span> 10</span>
+            </button>
+            <button id="wildcardSkipBtn" class="wildcard-btn" data-cost="15">
+                <span class="wildcard-icon">🔄</span>
+                <span class="wildcard-cost"><span class="coin-icon">🪙</span> 15</span>
+            </button>
+            <button id="wildcardHintBtn" class="wildcard-btn" data-cost="20">
+                <span class="wildcard-icon">💡</span>
+                <span class="wildcard-cost"><span class="coin-icon">🪙</span> 20</span>
+            </button>
         </div>
     </div>
 
@@ -903,6 +1285,61 @@
     
     <div id="shieldEffectPopup" class="hidden">
         <span id="shieldEffectIcon">🛡️</span>
+        <span id="shieldEffectText"></span>
+    </div>
+
+    <div id="wildcardPopup" class="wildcard-popup-overlay hidden">
+        <div class="wildcard-popup-content">
+            <span id="wildcardPopupIcon" class="wildcard-icon"></span>
+            <h3 id="wildcardPopupTitle"></h3>
+            <p id="wildcardPopupMessage"></p>
+            <button class="btn-main" onclick="closeWildcardPopup()">Aceptar</button>
+        </div>
+    </div>
+    
+    <div id="shopPopup" class="popup-overlay hidden shop-popup">
+        <div class="popup-content">
+            <h3>Tienda de Objetos</h3>
+            <div class="shop-items">
+                <div class="shop-item" data-item="shield">
+                    <div class="item-info">
+                        <h4>Escudo de Descenso</h4>
+                        <p>Te protege de un descenso de nivel al fallar una pregunta.</p>
+                    </div>
+                    <button class="buy-btn" data-cost="50">
+                        <span class="price"><span class="coin-icon">🪙</span> 50</span>
+                    </button>
+                </div>
+                <div class="shop-item" data-item="skin" data-skin="golden">
+                    <div class="item-info">
+                        <h4>Tema Dorado</h4>
+                        <p>Cambia la apariencia del juego a un esquema dorado.</p>
+                    </div>
+                    <button class="buy-btn" data-cost="100">
+                        <span class="price"><span class="coin-icon">🪙</span> 100</span>
+                    </button>
+                </div>
+                <div class="shop-item" data-item="skin" data-skin="purple">
+                    <div class="item-info">
+                        <h4>Tema Púrpura</h4>
+                        <p>Cambia la apariencia del juego a un esquema púrpura.</p>
+                    </div>
+                    <button class="buy-btn" data-cost="100">
+                        <span class="price"><span class="coin-icon">🪙</span> 100</span>
+                    </button>
+                </div>
+            </div>
+            <button id="closeShopBtn" class="btn-main shop-close-btn">Cerrar</button>
+        </div>
+    </div>
+    
+    <div id="skinsPopup" class="popup-overlay hidden skins-popup">
+        <div class="popup-content">
+            <h3>Temas Visuales</h3>
+            <div class="skin-items">
+            </div>
+            <button id="closeSkinsBtn" class="btn-main shop-close-btn">Cerrar</button>
+        </div>
     </div>
 
     <script>
@@ -1559,7 +1996,6 @@
     }
 ];
 
-        // Nuevo: Grupo de preguntas exclusivo para los ascensos
         const promotionQuestionsData = [
             {
                 "pregunta": "¿Qué rey babilónico ordenó echar a Sadrac, Mesac y Abed-nego a un horno de fuego?",
@@ -1672,6 +2108,12 @@
                 "referencia": "1 Samuel 1:20-28"
             }
         ];
+        
+        const skins = {
+            "default": { name: "Tema Predeterminado", class: "default-skin", image: "https://via.placeholder.com/50/3498db/ffffff?text=D" },
+            "golden": { name: "Tema Dorado", class: "golden-skin", image: "https://via.placeholder.com/50/f1c40f/ffffff?text=G", unlocked: false },
+            "purple": { name: "Tema Púrpura", class: "purple-skin", image: "https://via.placeholder.com/50/8e44ad/ffffff?text=P", unlocked: false }
+        };
 
         // Módulo de Estado del Juego
         const divisiones = ['Discípulo', 'Maestro', 'Experto'];
@@ -1683,19 +2125,24 @@
             currentDivision: 0,
             currentSublevel: 1,
             divisionStars: 0,
-            totalScore: 0,
+            totalCoins: 20, 
             currentQuestionIndex: 0,
             questions: [],
             isPromotionQuestion: false,
-            hasDemotionShield: false,
+            // NUEVO: Se cambia el nombre a 'shieldCount'
+            shieldCount: 0, 
             usedQuestions: [],
             usedPromotionQuestions: [],
             isTimerRunning: false,
             timer: null,
             timeElapsed: 0,
-            // NUEVO: Variables para el temporizador de ascenso
             promotionTimer: null,
             promotionTimeLeft: 30,
+            wildcard5050Used: false,
+            wildcardSkipUsed: false,
+            wildcardHintUsed: false,
+            unlockedSkins: ["default"],
+            activeSkin: "default"
         };
 
         // Módulo de Audio y Sonido
@@ -1707,12 +2154,15 @@
                 new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/11l-victory_trumpet-1749704498589-358767.mp3'),
                 new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/11l-victory_trumpet-1749704496881-358778.mp3')
             ],
-            // Nuevos efectos de sonido
             shieldUsed: new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/bubble-pops-and-ding-type-3-235798.mp3'),
             promotionFail: new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/brass-fail-11-a-207140.mp3'),
             demotionSound: new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/negative-484803.mp3'),
-            // NUEVO: Sonido de reloj
             promotionClock: new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/slow-cinematic-clock-ticking-tension-2-323078.mp3'),
+            wildcard5050: new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/bush-cut-103503.mp3'),
+            wildcardSkip: new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/coin-upaif-14631.mp3'),
+            wildcardHint: new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/scale-e6-14577.mp3'),
+            buyItem: new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/cash-register-ring-8307.mp3'),
+            equipSkin: new Audio('https://raw.githubusercontent.com/garyortega11-alt/Bible/main/assets/efectos/item-equip-2115.mp3'),
 
             volume: parseFloat(localStorage.getItem('audioVolume')) || 1,
             isMuted: localStorage.getItem('isAudioMuted') === 'true',
@@ -1760,13 +2210,11 @@
             },
             playDemotion() {
                 if (!this.isMuted) {
-                    // Ahora se utiliza el mismo sonido que en promotionFail
-                    this.promotionFail.volume = this.volume;
-                    this.promotionFail.currentTime = 0;
-                    this.promotionFail.play();
+                    this.demotionSound.volume = this.volume;
+                    this.demotionSound.currentTime = 0;
+                    this.demotionSound.play();
                 }
             },
-            // NUEVO: Funciones para manejar el sonido del reloj
             playPromotionClock() {
                 if (!this.isMuted) {
                     this.promotionClock.volume = this.volume;
@@ -1779,6 +2227,41 @@
                 this.promotionClock.pause();
                 this.promotionClock.currentTime = 0;
             },
+            playWildcard5050() {
+                if (!this.isMuted) {
+                    this.wildcard5050.volume = this.volume;
+                    this.wildcard5050.currentTime = 0;
+                    this.wildcard5050.play();
+                }
+            },
+            playWildcardSkip() {
+                if (!this.isMuted) {
+                    this.wildcardSkip.volume = this.volume;
+                    this.wildcardSkip.currentTime = 0;
+                    this.wildcardSkip.play();
+                }
+            },
+            playWildcardHint() {
+                if (!this.isMuted) {
+                    this.wildcardHint.volume = this.volume;
+                    this.wildcardHint.currentTime = 0;
+                    this.wildcardHint.play();
+                }
+            },
+            playBuyItem() {
+                if (!this.isMuted) {
+                    this.buyItem.volume = this.volume;
+                    this.buyItem.currentTime = 0;
+                    this.buyItem.play();
+                }
+            },
+            playEquipSkin() {
+                if (!this.isMuted) {
+                    this.equipSkin.volume = this.volume;
+                    this.equipSkin.currentTime = 0;
+                    this.equipSkin.play();
+                }
+            },
             updateVolume(newVolume) {
                 this.volume = newVolume;
                 this.correct.volume = newVolume;
@@ -1788,6 +2271,11 @@
                 this.promotionFail.volume = newVolume;
                 this.demotionSound.volume = newVolume;
                 this.promotionClock.volume = newVolume;
+                this.wildcard5050.volume = newVolume;
+                this.wildcardSkip.volume = newVolume;
+                this.wildcardHint.volume = newVolume;
+                this.buyItem.volume = newVolume;
+                this.equipSkin.volume = newVolume;
                 localStorage.setItem('audioVolume', newVolume);
             },
             toggleMute() {
@@ -1807,6 +2295,11 @@
                 this.promotionFail.volume = 0;
                 this.demotionSound.volume = 0;
                 this.promotionClock.volume = 0;
+                this.wildcard5050.volume = 0;
+                this.wildcardSkip.volume = 0;
+                this.wildcardHint.volume = 0;
+                this.buyItem.volume = 0;
+                this.equipSkin.volume = 0;
             },
             unmute() {
                 this.correct.volume = this.volume;
@@ -1816,6 +2309,11 @@
                 this.promotionFail.volume = this.volume;
                 this.demotionSound.volume = this.volume;
                 this.promotionClock.volume = this.volume;
+                this.wildcard5050.volume = this.volume;
+                this.wildcardSkip.volume = this.volume;
+                this.wildcardHint.volume = this.volume;
+                this.buyItem.volume = this.volume;
+                this.equipSkin.volume = this.volume;
             }
         };
 
@@ -1825,11 +2323,13 @@
                 gameState.currentDivision = 0;
                 gameState.currentSublevel = 1;
                 gameState.divisionStars = 0;
-                gameState.totalScore = 0;
+                gameState.totalCoins = 20; 
                 gameState.currentQuestionIndex = 0;
-                gameState.hasDemotionShield = false;
+                // NUEVO: Se inicia con 1 escudo
+                gameState.shieldCount = 1; 
                 gameState.usedQuestions = [];
-                gameState.usedPromotionQuestions = []; // Reiniciar preguntas de ascenso usadas
+                gameState.usedPromotionQuestions = [];
+                gameActions.resetWildcards();
                 gameActions.loadNewQuestionSet();
 
                 ui.showScreen(ui.elements.gameScreen);
@@ -1838,6 +2338,8 @@
             },
             loadNewQuestionSet() {
                 let questionSet, usedQuestionsArray;
+                
+                gameActions.resetWildcards();
 
                 if (gameState.isPromotionQuestion) {
                     questionSet = promotionQuestionsData;
@@ -1864,7 +2366,6 @@
             handleAnswer(selectedOption, buttonElement) {
                 ui.elements.opcionesContainer.classList.add('disabled-container');
                 gameActions.stopTimer();
-                // NUEVO: Detener el temporizador de ascenso y el sonido del reloj
                 gameActions.stopPromotionTimer();
                 audio.stopPromotionClock();
 
@@ -1879,15 +2380,15 @@
                         gameActions.promotePlayer();
                     } else {
                         audio.playCorrect();
-                        gameState.divisionStars++;
+                        if (gameState.divisionStars < starsToPromote) {
+                             gameState.divisionStars++;
+                        }
+                        gameState.totalCoins += 5; 
                     }
                     
                     buttonElement.classList.add('correcta');
                     ui.showFeedbackEmoji('🥳');
                     
-                    const points = 100;
-                    gameState.totalScore += points;
-
                     ui.updateGameUI();
                     
                     if (!gameState.isPromotionQuestion) { 
@@ -1907,19 +2408,19 @@
                     } else if (gameState.divisionStars > 0) {
                         audio.playIncorrect();
                         gameState.divisionStars--;
+                        gameState.totalCoins = Math.max(0, gameState.totalCoins - 2); 
                         ui.updateGameUI();
                         setTimeout(() => gameActions.loadNextQuestion(), 2500);
-                    } else if (gameState.divisionStars === 0 && gameState.hasDemotionShield) {
+                    } else if (gameState.divisionStars === 0 && gameState.shieldCount > 0) {
                         audio.playShieldUsed();
-                        ui.showShieldEffect();
-                        gameState.hasDemotionShield = false;
+                        gameState.shieldCount--;
+                        ui.showShieldEffect("¡Escudo activado!");
                         ui.updateGameUI(); 
                         setTimeout(() => gameActions.loadNextQuestion(), 2500);
                     } else {
-                         // Lógica modificada: Si el jugador está en el primer nivel (Discípulo I) y pierde sus estrellas, no hay fin de juego.
                         if (gameState.currentDivision === 0 && gameState.currentSublevel === 1) {
                             audio.playIncorrect();
-                            gameState.divisionStars = 0; // Se reinician las estrellas
+                            gameState.divisionStars = 0; 
                             ui.updateGameUI();
                             setTimeout(() => gameActions.loadNextQuestion(), 2500);
                         } else {
@@ -1946,7 +2447,6 @@
                     }
                 }
             },
-            // NUEVO: Función para manejar el tiempo de ascenso agotado
             handlePromotionTimeout() {
                 gameActions.stopPromotionTimer();
                 audio.stopPromotionClock();
@@ -1955,18 +2455,13 @@
                 
                 gameActions.handlePromotionFail('timeout');
             },
-            // NUEVA FUNCIÓN: Centraliza la lógica de fallo en el ascenso
             handlePromotionFail(failType, buttonElement = null, currentQuestion = null) {
                 audio.playPromotionFail();
                 audio.stopPromotionClock();
                 gameState.isPromotionQuestion = false;
-                if (gameState.divisionStars > 0) {
-                    gameState.divisionStars--;
-                }
                 ui.updateGameUI();
                 
                 if (failType === 'incorrecta') {
-                    // Muestra la respuesta correcta y el tooltip en la opción incorrecta
                     const correctButton = Array.from(ui.elements.opcionesContainer.children).find(btn => btn.textContent === currentQuestion.respuestaCorrecta);
                     if (correctButton) {
                         correctButton.classList.add('correcta');
@@ -1992,16 +2487,18 @@
                 const currentDivisionName = divisiones[gameState.currentDivision];
                 const maxSublevels = subnivelesPorDivision[gameState.currentDivision];
                 audio.stopPromotionClock();
+                gameState.totalCoins += 50;
 
                 if (gameState.currentSublevel < maxSublevels) {
                     gameState.currentSublevel++;
-                    gameState.hasDemotionShield = true;
+                    // Nuevo: Gana un escudo al ascender
+                    gameState.shieldCount++;
                     ui.createConfetti();
                     ui.showPopup(`¡Ascendiste a ${currentDivisionName} ${ui.toRoman(gameState.currentSublevel)}!`, 'promotion');
                 } else if (gameState.currentDivision < divisiones.length - 1) {
                     gameState.currentDivision++;
                     gameState.currentSublevel = 1;
-                    gameState.hasDemotionShield = true;
+                    gameState.shieldCount++;
                     ui.createConfetti();
                     ui.showPopup(`¡Felicitaciones! Has ascendido a la división de ${divisiones[gameState.currentDivision]} ${ui.toRoman(gameState.currentSublevel)}!`, 'promotion');
                 } else {
@@ -2015,7 +2512,7 @@
                 ui.updateGameUI();
             },
             demotePlayer() {
-                audio.playDemotion(); // Llamada al nuevo sonido de descenso
+                audio.playDemotion();
                 audio.stopPromotionClock();
                 const currentDivisionName = divisiones[gameState.currentDivision];
                 
@@ -2029,13 +2526,12 @@
                     gameState.divisionStars = starsToPromote - 1;
                     ui.showPopup(`¡Has descendido a ${divisiones[gameState.currentDivision]} ${ui.toRoman(gameState.currentSublevel)}!`, 'demotion');
                 } else {
-                    // Lógica modificada: ya no hay fin de juego aquí
                     gameState.divisionStars = 0;
                     ui.updateGameUI();
                     setTimeout(() => gameActions.loadNextQuestion(), 2500);
                     return;
                 }
-                gameState.hasDemotionShield = false;
+                gameState.shieldCount = 0;
                 ui.updateGameUI();
             },
             loadNextQuestion() {
@@ -2049,10 +2545,12 @@
                     currentDivision: gameState.currentDivision,
                     currentSublevel: gameState.currentSublevel,
                     divisionStars: gameState.divisionStars,
-                    totalScore: gameState.totalScore,
-                    hasDemotionShield: gameState.hasDemotionShield,
+                    totalCoins: gameState.totalCoins,
+                    shieldCount: gameState.shieldCount,
                     usedQuestions: gameState.usedQuestions,
-                    usedPromotionQuestions: gameState.usedPromotionQuestions
+                    usedPromotionQuestions: gameState.usedPromotionQuestions,
+                    unlockedSkins: gameState.unlockedSkins,
+                    activeSkin: gameState.activeSkin
                 };
                 localStorage.setItem('bibleGameProgress', JSON.stringify(progressData));
             },
@@ -2062,6 +2560,7 @@
                     const progressData = JSON.parse(savedProgress);
                     Object.assign(gameState, progressData);
                     ui.updateGameUI();
+                    ui.applySkin(gameState.activeSkin);
                     ui.displayQuestion();
                     ui.showScreen(ui.elements.gameScreen);
                     return true;
@@ -2072,11 +2571,12 @@
                 gameState.currentDivision = 0;
                 gameState.currentSublevel = 1;
                 gameState.divisionStars = 0;
-                gameState.totalScore = 0;
+                gameState.totalCoins = 20;
                 gameState.currentQuestionIndex = 0;
-                gameState.hasDemotionShield = false;
+                gameState.shieldCount = 1;
                 gameState.usedQuestions = [];
                 gameState.usedPromotionQuestions = [];
+                gameActions.resetWildcards();
                 gameActions.loadNewQuestionSet();
 
                 ui.updateGameUI();
@@ -2101,9 +2601,8 @@
                 gameState.isTimerRunning = false;
                 ui.elements.thinkingEmoji.style.display = 'none';
             },
-            // NUEVO: Inicia el temporizador de 30 segundos para la pregunta de ascenso
             startPromotionTimer() {
-                gameActions.stopPromotionTimer(); // Asegurar que no haya otro temporizador corriendo
+                gameActions.stopPromotionTimer();
                 gameState.promotionTimeLeft = 30;
                 ui.elements.promotionTimerDisplay.textContent = gameState.promotionTimeLeft;
                 ui.elements.promotionTimerContainer.classList.remove('hidden', 'running-out');
@@ -2121,11 +2620,120 @@
                     }
                 }, 1000);
             },
-            // NUEVO: Detiene el temporizador de ascenso
             stopPromotionTimer() {
                 clearInterval(gameState.promotionTimer);
                 ui.elements.promotionTimerContainer.classList.add('hidden');
                 ui.elements.promotionTimerContainer.classList.remove('running-out');
+            },
+            useWildcard(type) {
+                const cost = parseInt(document.getElementById(`wildcard${type}Btn`).dataset.cost);
+                
+                if (gameState.totalCoins < cost) {
+                    ui.showWildcardPopup('¡Monedas Insuficientes!', 'No tienes suficientes monedas para usar este comodín.', '🚫');
+                    return;
+                }
+                
+                if (gameState.isPromotionQuestion) {
+                    ui.showWildcardPopup('¡No Disponible!', 'No puedes usar comodines en las preguntas de ascenso.', '⛔');
+                    return;
+                }
+
+                gameState.totalCoins -= cost;
+                ui.updateGameUI();
+                
+                gameActions.setWildcardUsed(type, true);
+
+                switch(type) {
+                    case '5050':
+                        audio.playWildcard5050();
+                        gameActions.wildcard5050();
+                        break;
+                    case 'Skip':
+                        audio.playWildcardSkip();
+                        gameActions.wildcardSkip();
+                        break;
+                    case 'Hint':
+                        audio.playWildcardHint();
+                        gameActions.wildcardHint();
+                        break;
+                }
+            },
+            wildcard5050() {
+                const currentQuestion = gameState.questions[gameState.currentQuestionIndex];
+                const correctOption = currentQuestion.respuestaCorrecta;
+                const incorrectOptions = currentQuestion.opciones.filter(opt => opt !== correctOption);
+                
+                const optionsToHide = [];
+                while(optionsToHide.length < 2) {
+                    const randomIncorrect = incorrectOptions[Math.floor(Math.random() * incorrectOptions.length)];
+                    if (!optionsToHide.includes(randomIncorrect)) {
+                        optionsToHide.push(randomIncorrect);
+                    }
+                }
+                
+                Array.from(ui.elements.opcionesContainer.children).forEach(btn => {
+                    if (optionsToHide.includes(btn.textContent)) {
+                        btn.style.opacity = '0.3';
+                        btn.disabled = true;
+                    }
+                });
+            },
+            wildcardSkip() {
+                gameActions.loadNextQuestion();
+            },
+            wildcardHint() {
+                const currentQuestion = gameState.questions[gameState.currentQuestionIndex];
+                ui.showWildcardPopup('¡Comodín de Pista!', `La respuesta está en la referencia: ${currentQuestion.referencia}`, '💡');
+            },
+            resetWildcards() {
+                gameState.wildcard5050Used = false;
+                gameState.wildcardSkipUsed = false;
+                gameState.wildcardHintUsed = false;
+                ui.updateWildcardButtons();
+            },
+            setWildcardUsed(type, value) {
+                switch(type) {
+                    case '5050':
+                        gameState.wildcard5050Used = value;
+                        break;
+                    case 'Skip':
+                        gameState.wildcardSkipUsed = value;
+                        break;
+                    case 'Hint':
+                        gameState.wildcardHintUsed = value;
+                        break;
+                }
+                ui.updateWildcardButtons();
+            },
+            buyItem(item, cost) {
+                if (gameState.totalCoins >= cost) {
+                    gameState.totalCoins -= cost;
+                    audio.playBuyItem();
+                    ui.updateGameUI();
+                    
+                    if (item === 'shield') {
+                        gameState.shieldCount++;
+                        ui.showShieldEffect(`+1`, true);
+                    } else {
+                        gameState.unlockedSkins.push(item);
+                    }
+
+                    gameActions.saveProgress();
+                    ui.showShop(); // Recargar la tienda para actualizar el estado
+                    return true;
+                }
+                return false;
+            },
+            equipSkin(skinName) {
+                if (gameState.unlockedSkins.includes(skinName)) {
+                    gameState.activeSkin = skinName;
+                    audio.playEquipSkin();
+                    ui.applySkin(skinName);
+                    gameActions.saveProgress();
+                    ui.showSkinsPopup(); // Recargar el pop-up de skins
+                    return true;
+                }
+                return false;
             }
         };
 
@@ -2144,7 +2752,6 @@
                 starsDisplay: document.getElementById('starsDisplay'),
                 confettiScreen: document.getElementById('confettiScreen'),
                 thinkingEmoji: document.getElementById('thinkingEmoji'),
-                totalScoreDisplay: document.getElementById('totalScoreDisplay'),
                 levelDisplay: document.getElementById('levelDisplay'),
                 welcomeMessage: document.getElementById('welcomeMessage'),
                 welcomePlayerName: document.getElementById('welcomePlayerName'),
@@ -2154,7 +2761,6 @@
                 popupContainer: document.getElementById('popupContainer'),
                 popupContent: document.getElementById('popupContent'),
                 preguntaContainer: document.getElementById('preguntaContainer'),
-                shieldIcon: document.getElementById('shieldIcon'),
                 settingsBtn: document.getElementById('settingsBtn'),
                 rulesScreen: document.getElementById('rulesScreen'),
                 startGameBtn: document.getElementById('startGameBtn'),
@@ -2170,9 +2776,27 @@
                 promotionFailMessage: document.getElementById('promotionFailMessage'),
                 promotionFailReason: document.getElementById('promotionFailReason'),
 
-                // NUEVOS ELEMENTOS DEL DOM
                 promotionTimerContainer: document.getElementById('promotionTimerContainer'),
                 promotionTimerDisplay: document.getElementById('promotionTimerDisplay'),
+
+                totalCoinsDisplay: document.getElementById('totalCoinsDisplay'),
+                wildcard5050Btn: document.getElementById('wildcard5050Btn'),
+                wildcardSkipBtn: document.getElementById('wildcardSkipBtn'),
+                wildcardHintBtn: document.getElementById('wildcardHintBtn'),
+                wildcardPopup: document.getElementById('wildcardPopup'),
+                wildcardPopupIcon: document.getElementById('wildcardPopupIcon'),
+                wildcardPopupTitle: document.getElementById('wildcardPopupTitle'),
+                wildcardPopupMessage: document.getElementById('wildcardPopupMessage'),
+                
+                // NUEVOS ELEMENTOS DE LA TIENDA Y ESCUDO
+                shopBtn: document.getElementById('shopBtn'),
+                shopPopup: document.getElementById('shopPopup'),
+                shieldCountDisplay: document.getElementById('shieldCountDisplay'),
+                shieldCount: document.getElementById('shieldCount'),
+                shieldEffectText: document.getElementById('shieldEffectText'),
+                
+                // NUEVOS ELEMENTOS DE SKINS
+                skinsPopup: document.getElementById('skinsPopup')
             },
             animatePreloader() {
                 this.elements.preloader.style.display = 'flex';
@@ -2218,10 +2842,12 @@
                 
                 if (screenToShow === this.elements.gameScreen) {
                     this.elements.settingsBtn.classList.remove('hidden');
-                    this.elements.shieldIcon.classList.toggle('hidden', !gameState.hasDemotionShield);
+                    this.elements.shopBtn.classList.remove('hidden');
+                    this.elements.shieldCountDisplay.classList.toggle('hidden', gameState.shieldCount === 0);
                 } else {
                     this.elements.settingsBtn.classList.add('hidden');
-                    this.elements.shieldIcon.classList.add('hidden');
+                    this.elements.shopBtn.classList.add('hidden');
+                    this.elements.shieldCountDisplay.classList.add('hidden');
                 }
             },
             showHomeScreenLogic() {
@@ -2231,6 +2857,8 @@
                     const savedData = JSON.parse(localStorage.getItem('bibleGameProgress'));
                     this.elements.welcomePlayerName.textContent = `¡Bienvenido de nuevo, ${savedData.playerName}!`;
                     gameState.playerName = savedData.playerName;
+                    gameState.activeSkin = savedData.activeSkin || "default";
+                    ui.applySkin(gameState.activeSkin);
                 } else {
                     this.elements.nameInputSection.classList.remove('hidden');
                     this.elements.welcomeMessage.classList.add('hidden');
@@ -2241,6 +2869,11 @@
                 ui.elements.feedbackEmoji.classList.add('hidden');
                 ui.elements.opcionesContainer.classList.remove('disabled-container');
                 
+                Array.from(ui.elements.opcionesContainer.children).forEach(btn => {
+                    btn.style.opacity = '1';
+                    btn.disabled = false;
+                });
+                
                 const currentQuestion = gameState.questions[gameState.currentQuestionIndex];
                 
                 ui.elements.preguntaTexto.textContent = currentQuestion.pregunta;
@@ -2250,13 +2883,10 @@
                         <span style="color: yellow; text-shadow: 1px 1px 2px black;">¡Pregunta de Ascenso!</span>
                         <br>${currentQuestion.pregunta}
                     `;
-                    // NUEVO: Iniciar el temporizador de ascenso
                     gameActions.startPromotionTimer();
-                    // NUEVO: Reproducir el sonido del reloj de ascenso
                     audio.playPromotionClock();
                 } else {
                     ui.elements.preguntaTexto.textContent = currentQuestion.pregunta;
-                    // NUEVO: Ocultar el temporizador de ascenso en preguntas normales
                     gameActions.stopPromotionTimer();
                     audio.stopPromotionClock();
                 }
@@ -2283,7 +2913,7 @@
                 const divisionName = divisiones[gameState.currentDivision];
                 const sublevelRoman = ui.toRoman(gameState.currentSublevel);
                 ui.elements.levelDisplay.textContent = `${divisionName} ${sublevelRoman}`;
-                ui.elements.totalScoreDisplay.textContent = `Puntuación: ${gameState.totalScore}`;
+                ui.elements.totalCoinsDisplay.textContent = gameState.totalCoins;
                 ui.elements.starsDisplay.innerHTML = '';
                 
                 const starsToDisplay = gameState.isPromotionQuestion ? '⬆️' : '🌟'.repeat(gameState.divisionStars);
@@ -2293,7 +2923,17 @@
                 starElement.className = 'star-icon';
                 ui.elements.starsDisplay.appendChild(starElement);
 
-                ui.elements.shieldIcon.classList.toggle('hidden', !gameState.hasDemotionShield);
+                // NUEVO: Actualiza el contador de escudos
+                ui.elements.shieldCount.textContent = gameState.shieldCount;
+                ui.elements.shieldCountDisplay.classList.toggle('hidden', gameState.shieldCount === 0);
+            },
+            updateWildcardButtons() {
+                const isPromoQuestion = gameState.isPromotionQuestion;
+                ui.elements.wildcard5050Btn.disabled = isPromoQuestion || gameState.wildcard5050Used || gameState.totalCoins < 10;
+                ui.elements.wildcardSkipBtn.disabled = isPromoQuestion || gameState.wildcardSkipUsed || gameState.totalCoins < 15;
+                ui.elements.wildcardHintBtn.disabled = isPromoQuestion || gameState.wildcardHintUsed || gameState.totalCoins < 20;
+
+                document.querySelector('.wildcard-system').classList.toggle('hidden', isPromoQuestion);
             },
             showFeedbackEmoji(emoji) {
                 ui.elements.feedbackEmoji.textContent = emoji;
@@ -2302,7 +2942,6 @@
                     ui.elements.feedbackEmoji.classList.add('hidden');
                 }, 1000);
             },
-            // Función mejorada para mostrar pop-ups específicos
             showPopup(title, popupId, failType = null) {
                 this.elements.promotionPopup.classList.add('hidden');
                 this.elements.demotionPopup.classList.add('hidden');
@@ -2330,9 +2969,25 @@
                     this.elements.promotionFailPopup.classList.add('visible');
                 }
             },
-            showShieldEffect() {
+            showWildcardPopup(title, message, icon) {
+                ui.elements.wildcardPopupTitle.textContent = title;
+                ui.elements.wildcardPopupMessage.textContent = message;
+                ui.elements.wildcardPopupIcon.textContent = icon;
+                ui.elements.wildcardPopup.classList.remove('hidden');
+                ui.elements.wildcardPopup.classList.add('visible');
+            },
+            showShieldEffect(text = "¡Escudo activado!", showPlusIcon = false) {
                 this.elements.shieldEffectPopup.classList.remove('hidden');
                 this.elements.shieldEffectPopup.classList.add('visible');
+                this.elements.shieldEffectText.textContent = text;
+                
+                const shieldIcon = this.elements.shieldEffectPopup.querySelector('#shieldEffectIcon');
+                if (showPlusIcon) {
+                    shieldIcon.textContent = '🛡️'; // Asegurarse de que el icono sea el escudo
+                } else {
+                    shieldIcon.textContent = '🛡️';
+                }
+
                 setTimeout(() => {
                     this.elements.shieldEffectPopup.classList.remove('visible');
                     this.elements.shieldEffectPopup.classList.add('hidden');
@@ -2345,7 +3000,6 @@
             },
             showExitPopup() {
                 gameActions.stopTimer();
-                // NUEVO: Detener el temporizador de ascenso y el sonido del reloj al salir
                 gameActions.stopPromotionTimer();
                 audio.stopPromotionClock();
 
@@ -2378,7 +3032,6 @@
                 document.getElementById('cancelExitBtn').addEventListener('click', () => {
                     ui.elements.popupContainer.classList.remove('visible');
                     ui.elements.popupContainer.classList.add('hidden');
-                    // NUEVO: Reanudar el temporizador si se cancela la salida y se estaba en un nivel normal
                     if (!gameState.isPromotionQuestion) {
                         gameActions.startTimer();
                     } else {
@@ -2413,7 +3066,6 @@
             },
             showSettingsPopup() {
                 gameActions.stopTimer();
-                // NUEVO: Detener el temporizador de ascenso y el sonido del reloj al abrir los ajustes
                 gameActions.stopPromotionTimer();
                 audio.stopPromotionClock();
 
@@ -2432,6 +3084,7 @@
                         </div>
                         <div class="exit-btn-wrapper">
                             <button id="exitGameBtn" class="btn-main">Salir del Juego</button>
+                            <button id="showSkinsBtn" class="btn-main">Skins</button>
                         </div>
                     </div>
                     <button id="closeSettingsBtn" style="margin-top: 3vh;">Cerrar</button>
@@ -2442,6 +3095,7 @@
                 const volumeRange = document.getElementById('volumeRange');
                 const muteToggle = document.getElementById('muteToggle');
                 const exitGameBtn = document.getElementById('exitGameBtn');
+                const showSkinsBtn = document.getElementById('showSkinsBtn');
                 const closeSettingsBtn = document.getElementById('closeSettingsBtn');
 
                 volumeRange.value = audio.volume;
@@ -2475,10 +3129,15 @@
                     ui.showExitPopup();
                 });
 
+                showSkinsBtn.addEventListener('click', () => {
+                    ui.elements.popupContainer.classList.remove('visible');
+                    ui.elements.popupContainer.classList.add('hidden');
+                    ui.showSkinsPopup();
+                });
+
                 closeSettingsBtn.addEventListener('click', () => {
                     ui.elements.popupContainer.classList.remove('visible');
                     ui.elements.popupContainer.classList.add('hidden');
-                    // NUEVO: Reanudar el temporizador si se cancela y se estaba en un nivel normal
                     if (!gameState.isPromotionQuestion) {
                         gameActions.startTimer();
                     } else {
@@ -2486,6 +3145,136 @@
                         audio.playPromotionClock();
                     }
                 });
+            },
+            showShop() {
+                gameActions.stopTimer();
+                gameActions.stopPromotionTimer();
+                audio.stopPromotionClock();
+                
+                const shopItemsContainer = ui.elements.shopPopup.querySelector('.shop-items');
+                shopItemsContainer.innerHTML = `
+                    <div class="shop-item" data-item="shield">
+                        <div class="item-info">
+                            <h4>Escudo de Descenso</h4>
+                            <p>Te protege de un descenso de nivel al fallar una pregunta.</p>
+                        </div>
+                        <button class="buy-btn" data-cost="50">
+                            <span class="price"><span class="coin-icon">🪙</span> 50</span>
+                        </button>
+                    </div>
+                `;
+
+                // Agregar los skins a la tienda
+                for (const skinKey in skins) {
+                    if (skinKey !== "default" && !gameState.unlockedSkins.includes(skinKey)) {
+                        const skinItem = document.createElement('div');
+                        skinItem.className = 'shop-item';
+                        skinItem.dataset.item = 'skin';
+                        skinItem.dataset.skin = skinKey;
+                        skinItem.innerHTML = `
+                            <div class="item-info">
+                                <h4>${skins[skinKey].name}</h4>
+                                <p>Cambia la apariencia del juego a un esquema de color único.</p>
+                            </div>
+                            <button class="buy-btn" data-cost="100">
+                                <span class="price"><span class="coin-icon">🪙</span> 100</span>
+                            </button>
+                        `;
+                        shopItemsContainer.appendChild(skinItem);
+                    }
+                }
+
+                ui.elements.shopPopup.classList.remove('hidden');
+                ui.elements.shopPopup.classList.add('visible');
+                
+                // Event Listeners para los botones de compra
+                shopItemsContainer.querySelectorAll('.buy-btn').forEach(button => {
+                    const cost = parseInt(button.dataset.cost);
+                    const itemElement = button.closest('.shop-item');
+                    const itemType = itemElement.dataset.item;
+                    const itemName = itemElement.dataset.skin;
+
+                    if (gameState.totalCoins < cost) {
+                        button.disabled = true;
+                    }
+
+                    button.addEventListener('click', () => {
+                        const success = gameActions.buyItem(itemType === 'skin' ? itemName : 'shield', cost);
+                        if (!success) {
+                            alert("No tienes suficientes monedas para comprar este artículo.");
+                        }
+                    });
+                });
+                
+                ui.elements.shopPopup.querySelector('#closeShopBtn').addEventListener('click', () => {
+                    ui.elements.shopPopup.classList.remove('visible');
+                    ui.elements.shopPopup.classList.add('hidden');
+                    if (!gameState.isPromotionQuestion) {
+                        gameActions.startTimer();
+                    } else {
+                        gameActions.startPromotionTimer();
+                        audio.playPromotionClock();
+                    }
+                });
+            },
+            showSkinsPopup() {
+                gameActions.stopTimer();
+                gameActions.stopPromotionTimer();
+                audio.stopPromotionClock();
+
+                const skinsContainer = ui.elements.skinsPopup.querySelector('.skin-items');
+                skinsContainer.innerHTML = '';
+
+                // Obtener todos los skins disponibles
+                const allSkins = Object.keys(skins);
+                
+                allSkins.forEach(skinKey => {
+                    if (gameState.unlockedSkins.includes(skinKey)) {
+                        const skinData = skins[skinKey];
+                        const skinItem = document.createElement('div');
+                        skinItem.className = `skin-item`;
+                        if (gameState.activeSkin === skinKey) {
+                            skinItem.classList.add('selected');
+                        }
+                        skinItem.dataset.skin = skinKey;
+                        skinItem.innerHTML = `
+                            <div class="skin-info">
+                                <h4>${skinData.name}</h4>
+                            </div>
+                            <div class="skin-preview" style="background-color: var(--primary-color);"></div>
+                        `;
+                        
+                        const tempDiv = document.createElement('div');
+                        tempDiv.className = skinData.class;
+                        document.body.appendChild(tempDiv);
+                        const primaryColor = getComputedStyle(tempDiv).getPropertyValue('--primary-color');
+                        skinItem.querySelector('.skin-preview').style.backgroundColor = primaryColor;
+                        document.body.removeChild(tempDiv);
+
+                        skinItem.addEventListener('click', () => {
+                            gameActions.equipSkin(skinKey);
+                        });
+                        skinsContainer.appendChild(skinItem);
+                    }
+                });
+
+                ui.elements.skinsPopup.classList.remove('hidden');
+                ui.elements.skinsPopup.classList.add('visible');
+
+                ui.elements.skinsPopup.querySelector('#closeSkinsBtn').addEventListener('click', () => {
+                    ui.elements.skinsPopup.classList.remove('visible');
+                    ui.elements.skinsPopup.classList.add('hidden');
+                    ui.showSettingsPopup();
+                });
+            },
+            applySkin(skinName) {
+                const body = document.body;
+                // Elimina todas las clases de skin existentes
+                for (const skinKey in skins) {
+                    body.classList.remove(skins[skinKey].class);
+                }
+                // Añade la clase del skin activo
+                body.classList.add(skins[skinName].class);
             },
             createConfetti() {
                 const confettiColors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722'];
@@ -2503,12 +3292,11 @@
 
                 ui.elements.confettiScreen.classList.remove('hidden');
                 setTimeout(() => {
-            ui.elements.confettiScreen.classList.add('hidden');
-            ui.elements.confettiScreen.innerHTML = '';
+                    ui.elements.confettiScreen.classList.add('hidden');
+                    ui.elements.confettiScreen.innerHTML = '';
                 }, 3000);
             },
             endGame(message) {
-                // NUEVO: Asegurarse de detener el temporizador de ascenso y el sonido del reloj si el juego termina
                 gameActions.stopPromotionTimer();
                 audio.stopPromotionClock();
                 
@@ -2517,7 +3305,7 @@
                         <h1>¡Fin del Juego!</h1>
                         <p>${message}</p>
                         <div id="endGameStats">
-                            <span>Puntuación Final: ${gameState.totalScore}</span>
+                            <span>Monedas Finales: ${gameState.totalCoins}</span>
                             <span>División Alcanzada: ${divisiones[gameState.currentDivision]} ${ui.toRoman(gameState.currentSublevel)}</span>
                         </div>
                         <button id="endGameRestartBtn" class="btn-main" style="margin-top: 4vh;">Volver a Jugar</button>
@@ -2540,6 +3328,12 @@
         function closePopup(popupId) {
             document.getElementById(popupId).classList.remove('visible');
             document.getElementById(popupId).classList.add('hidden');
+            gameActions.loadNextQuestion();
+        }
+
+        function closeWildcardPopup() {
+            ui.elements.wildcardPopup.classList.remove('visible');
+            ui.elements.wildcardPopup.classList.add('hidden');
             gameActions.loadNextQuestion();
         }
 
@@ -2580,7 +3374,14 @@
             ui.showSettingsPopup();
         });
 
-        // Nuevo Event Listener para guardar el progreso al cerrar la página
+        ui.elements.shopBtn.addEventListener('click', () => {
+            ui.showShop();
+        });
+        
+        ui.elements.wildcard5050Btn.addEventListener('click', () => gameActions.useWildcard('5050'));
+        ui.elements.wildcardSkipBtn.addEventListener('click', () => gameActions.useWildcard('Skip'));
+        ui.elements.wildcardHintBtn.addEventListener('click', () => gameActions.useWildcard('Hint'));
+
         window.addEventListener('beforeunload', () => {
             gameActions.saveProgress();
         });
