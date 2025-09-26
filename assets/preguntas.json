@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "question": "¿Quién fue arrojado al foso de los leones por negarse a dejar de orar?",
+    "options": ["Jonás", "Daniel", "Elías", "Jeremías"],
+    "answer": "Daniel",
+    "category": "Antiguo Testamento",
+    "reference": "Daniel 6:16"
+  },
+  {
+    "id": 2,
+    "question": "¿Cuántos panes y cuántos peces usó Jesús para alimentar a la multitud de 5000 hombres?",
+    "options": ["7 panes y 5 peces", "5 panes y 2 peces", "10 panes y 4 peces", "6 panes y 3 peces"],
+    "answer": "5 panes y 2 peces",
+    "category": "Nuevo Testamento",
+    "reference": "Mateo 14:17"
+  },
+  {
+    "id": 3,
+    "question": "¿Quién fue el hombre que, según la Biblia, construyó el Arca?",
+    "options": ["Abraham", "Moisés", "Noé", "Set"],
+    "answer": "Noé",
+    "category": "Génesis",
+    "reference": "Génesis 6:14"
+  },
+  {
+    "id": 4,
+    "question": "¿Cuál fue la señal del pacto que Dios hizo con Noé para no volver a destruir la Tierra con un diluvio?",
+    "options": ["El fuego", "El arcoíris", "La paloma", "La zarza ardiente"],
+    "answer": "El arcoíris",
+    "category": "Génesis",
+    "reference": "Génesis 9:13"
+  },
+  {
+    "id": 5,
+    "question": "¿En qué monte le fueron entregados los Diez Mandamientos a Moisés?",
+    "options": ["Monte de los Olivos", "Monte Carmelo", "Monte Sinaí", "Monte Nebo"],
+    "answer": "Monte Sinaí",
+    "category": "Éxodo",
+    "reference": "Éxodo 24:12"
+  },
+  {
+    "id": 6,
+    "question": "¿Cuál de los siguientes no fue un regalo que los magos le dieron a Jesús al nacer?",
+    "options": ["Oro", "Incienso", "Mirra", "Plata"],
+    "answer": "Plata",
+    "category": "Nuevo Testamento",
+    "reference": "Mateo 2:11"
+  }
+]
