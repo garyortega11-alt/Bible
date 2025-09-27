@@ -1,0 +1,135 @@
+<div class="shop-header">
+    <h2>Tienda de Personalización</h2>
+    <div class="coin-display">
+        Saldo actual: <span id="current-shop-coins">##INITIAL_COINS##</span> 🪙
+    </div>
+</div>
+
+<div class="shop-grid">
+    
+    <div class="shop-item" data-item="red-skin" data-price="50" data-style-class="red-skin-class">
+        <div class="item-visual red-skin-class"></div>
+        <h4>Piel de Fuego</h4>
+        <p>Un color rojo intenso para destacar.</p>
+        <button class="buy-button">50 🪙</button>
+    </div>
+
+    <div class="shop-item" data-item="blue-skin" data-price="100" data-style-class="blue-skin-class">
+        <div class="item-visual blue-skin-class"></div>
+        <h4>Piel de Agua</h4>
+        <p>Un color azul relajante y misterioso.</p>
+        <button class="buy-button">100 🪙</button>
+    </div>
+    
+    <div class="shop-item coming-soon" data-item="dark-skin" data-price="200" data-style-class="dark-skin-class">
+        <div class="item-visual dark-skin-class"></div>
+        <h4>Piel Oscura</h4>
+        <p>Solo para jugadores nivel experto.</p>
+        <button class="buy-button">¡Pronto!</button>
+    </div>
+
+</div>
+
+<script>
+    // Se asume que las variables (currentCoins, purchasedSkins, handleShopPurchase, showTooltip) 
+    // son inyectadas como globales por el script de index.html antes de que este se ejecute.
+
+    /**
+     * Actualiza el display de monedas de la tienda y el estado (disabled) de los botones.
+     */
+    window.updateShopDisplayCoins = function(newCoins) {
+         // 1. Actualiza el número de monedas en el encabezado de la tienda
+         const coinsDisplay = document.getElementById('current-shop-coins');
+         if (coinsDisplay) {
+            coinsDisplay.textContent = newCoins;
+         }
+         
+         // 2. Actualiza el estado de cada botón (habilita/deshabilita)
+         document.querySelectorAll('.shop-item').forEach(item => {
+            const button = item.querySelector('.buy-button');
+            const itemPrice = parseInt(item.getAttribute('data-price'));
+            
+            // Solo actualiza si no ha sido comprado y no es 'Pronto'
+            if (!button.classList.contains('item-purchased') && !item.classList.contains('coming-soon')) { 
+                 const isDisabled = (newCoins < itemPrice);
+                 button.disabled = isDisabled;
+                 button.textContent = `${itemPrice} 🪙`;
+            }
+         });
+    }
+
+    window.addEventListener('load', () => {
+        
+        // Usar la variable inyectada (currentCoins)
+        const initialCoins = typeof currentCoins !== 'undefined' ? currentCoins : 0;
+        
+        // 1. SINCRONIZACIÓN INICIAL DEL SALDO
+        document.getElementById('current-shop-coins').textContent = initialCoins;
+
+        // 2. ASIGNAR EVENTOS y ESTADO INICIAL
+        document.querySelectorAll('.shop-item').forEach(item => {
+            const button = item.querySelector('.buy-button');
+            const itemKey = item.getAttribute('data-item');
+            const itemPrice = parseInt(item.getAttribute('data-price'));
+            
+            // Usar la variable inyectada (purchasedSkins)
+            const localPurchasedSkins = typeof purchasedSkins !== 'undefined' ? purchasedSkins : [];
+
+            const isPurchased = localPurchasedSkins.includes(itemKey);
+            
+            // Configuración inicial de los botones
+            if (isPurchased) {
+                button.textContent = "¡Comprado!";
+                button.disabled = true;
+                button.classList.add('item-purchased');
+            } else if (item.classList.contains('coming-soon')) {
+                button.textContent = "¡Pronto!";
+                button.disabled = true;
+            } else {
+                 button.disabled = (initialCoins < itemPrice);
+                 button.textContent = `${itemPrice} 🪙`;
+            }
+            
+            // 3. Asignar el evento de compra
+            button.addEventListener('click', function() {
+                
+                if (typeof handleShopPurchase === 'function') {
+                    
+                    // Leer el saldo ACTUALIZADO del display
+                    const currentCoinsValue = parseInt(document.getElementById('current-shop-coins').textContent);
+                    
+                    // 🚨 VERIFICACIÓN DE TOOLTIP (SOLUCIÓN DEL PRIMER PROBLEMA)
+                    if (currentCoinsValue < itemPrice) {
+                        if(typeof showTooltip === 'function') {
+                             // Llama a la función global showTooltip con el tipo 'error'
+                             showTooltip(`¡Monedas insuficientes! Necesitas ${itemPrice} 🪙.`, 'error');
+                        }
+                        button.disabled = true;
+                        return; // Detiene la ejecución de la compra
+                    }
+                    
+                    // Si hay saldo suficiente, llama a la función de compra de index.html
+                    const success = handleShopPurchase(itemKey, itemPrice, item.getAttribute('data-style-class'));
+                        
+                    if (success) {
+                        // Actualiza el estado visual del botón después de la compra
+                        button.textContent = "¡Comprado!";
+                        button.disabled = true;
+                        button.classList.add('item-purchased');
+                        
+                        // Sincroniza el display con el saldo actualizado después de la compra
+                        window.updateShopDisplayCoins(parseInt(localStorage.getItem('currentCoins')) || 0);
+                    }
+                    
+                } else {
+                    if(typeof showTooltip === 'function') {
+                         showTooltip("Error: La lógica de compra no está disponible.", 'error');
+                    }
+                }
+            });
+        });
+        
+        // Forzar la actualización de los botones con el saldo inicial
+        window.updateShopDisplayCoins(initialCoins);
+    });
+</script>
