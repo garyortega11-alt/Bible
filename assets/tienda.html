@@ -1,0 +1,266 @@
+<div id="shop-content-wrapper">
+    <button id="shop-close-button" onclick="hideShopModal()">&#215;</button>
+    
+    <h2>Tienda Celestial 🌠</h2>
+    <p id="shop-coins-display">Monedas Actuales: <span id="current-shop-coins">Cargando...</span> 🪙</p>
+
+    <div class="shop-category">
+        <h3>Personalización y Extras</h3>
+    </div>
+    
+    <div class="shop-grid">
+        
+        <div class="shop-item" data-item="theme-desert" data-price="150" data-style-class="theme-desert">
+            <div class="item-icon color-sample theme-desert-sample"></div>
+            <p>**Arena del Desierto**</p>
+            <p class="item-description">Un tono cálido y arenoso. (Fondo Beige)</p>
+            <button class="buy-button">Comprar (150 🪙)</button>
+        </div>
+        
+        <div class="shop-item" data-item="theme-royal" data-price="400" data-style-class="theme-royal">
+            <div class="item-icon color-sample theme-royal-sample"></div>
+            <p>**Púrpura Real**</p>
+            <p class="item-description">La majestuosidad de la realeza. (Fondo Morado Profundo)</p>
+            <button class="buy-button">Comprar (400 🪙)</button>
+        </div>
+        
+        <div class="shop-item" data-item="theme-egypt" data-price="750" data-style-class="theme-egypt">
+            <div class="item-icon color-sample theme-egypt-sample"></div>
+            <p>**Misterio Egipcio**</p>
+            <p class="item-description">El oro y el azul profundo de los faraones. (Fondo Oscuro/Oro)</p>
+            <button class="buy-button">Comprar (750 🪙)</button>
+        </div>
+        
+        </div>
+
+</div>
+
+<style>
+    /* 1. MODAL MÁS PEQUEÑO Y FLOTANTE CON ESTILO GAMIFICADO */
+    #shop-container.modal-content {
+        /* Fondo más oscuro y con gradiente sutil para darle profundidad */
+        background: linear-gradient(145deg, #38385a, #2b2b45); 
+        color: white;
+        border: 5px solid #FFC107; /* Borde dorado fuerte */
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), 0 0 15px rgba(255, 193, 7, 0.5) inset; /* Sombra y brillo interno */
+        padding: 15px 15px 25px; /* Reducción de padding */
+        max-width: 400px !important; /* ANCHO MÁXIMO PARA MOSTRAR COMO TARJETA FLOTANTE */
+        width: 90%; 
+        position: relative;
+    }
+    
+    /* 2. BOTÓN DE CERRAR 'X' */
+    #shop-close-button {
+        position: absolute;
+        top: -15px; /* Lo saca del contenedor superior */
+        right: -15px; /* Lo saca del contenedor lateral */
+        background-color: #dc3545; /* Fondo rojo para destacar */
+        border: 4px solid #fff; /* Borde blanco para mayor visibilidad */
+        color: #fff;
+        font-size: 1.5em;
+        line-height: 1;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-weight: 900;
+        transition: transform 0.2s, background-color 0.2s;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+        z-index: 10;
+    }
+
+    #shop-close-button:hover {
+        background-color: #c82333;
+        transform: scale(1.05);
+    }
+    
+    #shop-content-wrapper {
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Título con estilo de pancarta */
+    #shop-content-wrapper h2 {
+        color: #FFFFFF;
+        font-size: 1.8em; 
+        font-weight: 900;
+        padding: 10px 0;
+        background-color: #0a1931; /* Fondo de banner */
+        border-radius: 10px;
+        border: 2px solid #A0DEFF;
+        margin: 0 0 15px 0;
+    }
+    
+    #shop-coins-display {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        color: #A0DEFF;
+        font-weight: 600;
+        background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente para el saldo */
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+    .shop-category h3 {
+        font-size: 1.2em; 
+        margin-top: 15px;
+        margin-bottom: 15px;
+        color: #FFC107; /* Dorado */
+    }
+
+    .shop-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Cambiado a 2 columnas para ser más compacto */
+        gap: 15px; 
+    }
+
+    .shop-item {
+        background-color: #555577; /* Color de tarjeta */
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        transition: transform 0.2s;
+    }
+    
+    .shop-item p {
+        margin: 5px 0;
+        font-size: 0.9em;
+    }
+    
+    .item-description {
+        font-size: 0.8em;
+        color: #ccc;
+        min-height: 30px; /* Asegura un poco de espacio */
+    }
+    
+    /* MUESTRA DE COLOR (SKIN) */
+    .item-icon.color-sample {
+        width: 40px; /* Reducido */
+        height: 40px; /* Reducido */
+        border-radius: 50%;
+        margin: 5px auto 10px auto;
+        border: 3px solid #FFC107; 
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    }
+    
+    /* Colores de las muestras (deben coincidir con el CSS del juego principal) */
+    .theme-desert-sample { background-color: #D2B48C; }
+    .theme-royal-sample { background-color: #4B0082; }
+    .theme-egypt-sample { background-color: #000033; }
+
+    .buy-button { 
+        padding: 8px 10px; 
+        font-size: 0.9em;
+        background-color: #28a745; /* Botón verde de acción */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .buy-button.item-purchased {
+        background-color: #FFC107 !important;
+        color: #333 !important;
+    }
+    
+    .shop-item:hover {
+        transform: translateY(-5px); /* Efecto 3D al pasar el mouse */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+    }
+    
+    /* MEDIA QUERY para 3 columnas en escritorio */
+    @media (min-width: 500px) {
+        #shop-container.modal-content {
+             max-width: 550px !important;
+        }
+        .shop-grid {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+</style>
+
+<script>
+    // Se asume que las funciones y variables globales (currentCoins, hideShopModal, handleShopPurchase)
+    // están disponibles desde el script principal (index.html).
+
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const shopContainer = document.getElementById('shop-content-wrapper');
+        
+        // 1. SINCRONIZAR MONEDAS
+        if (typeof currentCoins !== 'undefined') {
+            document.getElementById('current-shop-coins').textContent = currentCoins;
+        } else {
+             document.getElementById('current-shop-coins').textContent = localStorage.getItem('currentCoins') || 20;
+        }
+        
+        // 2. APLICAR ESTADO GUARDADO Y HABILITAR BOTONES
+        document.querySelectorAll('.shop-item').forEach(item => {
+            const button = item.querySelector('.buy-button');
+            const itemKey = item.getAttribute('data-item');
+            const itemPrice = parseInt(item.getAttribute('data-price'));
+
+            // a) Chequear si el tema ya está comprado
+            const isPurchased = localStorage.getItem(itemKey) === 'true';
+            
+            if (isPurchased) {
+                button.textContent = "¡Comprado!";
+                button.disabled = true;
+                button.classList.add('item-purchased');
+            } else {
+                 // Deshabilitar si no tiene monedas
+                 if (parseInt(document.getElementById('current-shop-coins').textContent) < itemPrice) {
+                    button.disabled = true;
+                 }
+            }
+            
+            // b) Asignar el evento de compra
+            button.addEventListener('click', function() {
+                if (button.disabled) return;
+
+                const currentCoinsValue = parseInt(document.getElementById('current-shop-coins').textContent);
+                if (currentCoinsValue < itemPrice) {
+                    // Esto debería ser manejado por el disabled, pero es una doble comprobación
+                    alert("¡Monedas insuficientes! Continúa jugando para ganar más.");
+                    return;
+                }
+                
+                if (confirm(`¿Estás seguro de que quieres comprar ${itemKey} por ${itemPrice} monedas?`)) {
+                    
+                    if (typeof handleShopPurchase === 'function') {
+                        // Llama a la función global del juego principal
+                        handleShopPurchase(itemKey, itemPrice, item.getAttribute('data-style-class'));
+                        
+                        // Actualiza el estado visual de este botón
+                        button.textContent = "¡Comprado!";
+                        button.disabled = true;
+                        button.classList.add('item-purchased');
+                        
+                    } else {
+                        alert("Error: La lógica de compra no está inicializada correctamente en el juego principal.");
+                    }
+                }
+            });
+        });
+    });
+
+    // Esta función es llamada desde el script principal para actualizar el saldo
+    window.updateShopDisplayCoins = function(newCoins) {
+         document.getElementById('current-shop-coins').textContent = newCoins;
+         
+         // Revisa si los temas no comprados pueden ser habilitados o deshabilitados
+         document.querySelectorAll('.shop-item').forEach(item => {
+            const button = item.querySelector('.buy-button');
+            const itemPrice = parseInt(item.getAttribute('data-price'));
+            
+            if (!button.classList.contains('item-purchased')) { 
+                 button.disabled = (newCoins < itemPrice);
+            }
+         });
+    }
+</script>
