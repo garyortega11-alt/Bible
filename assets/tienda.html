@@ -1,0 +1,100 @@
+<script>
+    // Se asume que las variables (currentCoins, purchasedSkins, handleShopPurchase, showTooltip) 
+    // son inyectadas como globales justo antes de que este script se ejecute (ver script principal modificado).
+
+    // Función para actualizar el display de monedas. Es llamada desde el script principal.
+    window.updateShopDisplayCoins = function(newCoins) {
+         document.getElementById('current-shop-coins').textContent = newCoins;
+         
+         // Revisa si los temas no comprados pueden ser habilitados o deshabilitados
+         document.querySelectorAll('.shop-item').forEach(item => {
+            const button = item.querySelector('.buy-button');
+            const itemPrice = parseInt(item.getAttribute('data-price'));
+            
+            // Si el botón no está marcado como comprado y no es 'Pronto'
+            if (!button.classList.contains('item-purchased') && !item.classList.contains('coming-soon')) { 
+                 const isDisabled = (newCoins < itemPrice);
+                 button.disabled = isDisabled;
+                 button.textContent = `${itemPrice} 🪙`;
+            }
+         });
+    }
+
+    // Usamos 'load' en lugar de DOMContentLoaded porque el script se inserta después de la carga inicial del DOM.
+    window.addEventListener('load', () => {
+        
+        // Las variables se acceden desde el ámbito global (inyectadas por el script principal)
+        const initialCoins = typeof currentCoins !== 'undefined' ? currentCoins : (localStorage.getItem('currentCoins') || 20);
+        
+        // 1. SINCRONIZACIÓN INICIAL DEL SALDO
+        document.getElementById('current-shop-coins').textContent = initialCoins;
+
+        // 2. APLICAR ESTADO GUARDADO Y HABILITAR BOTONES
+        document.querySelectorAll('.shop-item').forEach(item => {
+            const button = item.querySelector('.buy-button');
+            const itemKey = item.getAttribute('data-item');
+            const itemPrice = parseInt(item.getAttribute('data-price'));
+            
+            // Usamos la variable global inyectada o el fallback de localStorage
+            const localPurchasedSkins = typeof purchasedSkins !== 'undefined' ? purchasedSkins : JSON.parse(localStorage.getItem('purchasedSkins')) || ['default'];
+
+            // Determinar si el skin ya fue comprado
+            const isPurchased = localPurchasedSkins.includes(itemKey);
+            
+            if (isPurchased) {
+                button.textContent = "¡Comprado!";
+                button.disabled = true;
+                button.classList.add('item-purchased');
+            } else if (item.classList.contains('coming-soon')) {
+                button.textContent = "¡Pronto!";
+                button.disabled = true;
+            } else {
+                 button.disabled = (initialCoins < itemPrice);
+                 button.textContent = `${itemPrice} 🪙`;
+            }
+            
+            // 3. Asignar el evento de compra
+            button.addEventListener('click', function() {
+                // NOTA: El botón ya está deshabilitado si no hay suficientes monedas, 
+                // pero añadimos una comprobación explícita para el tooltip en caso de error de sincronización
+                if (button.disabled) return;
+                
+                // Usamos la referencia inyectada 'handleShopPurchase'
+                if (typeof handleShopPurchase === 'function') {
+                    
+                    const currentCoinsValue = parseInt(document.getElementById('current-shop-coins').textContent);
+                    
+                    // 🚨 VERIFICACIÓN AÑADIDA PARA MOSTRAR TOOLTIP DE SALDO INSUFICIENTE
+                    if (currentCoinsValue < itemPrice) {
+                        if(typeof showTooltip === 'function') {
+                             // Llama al tooltip con el mensaje de error y el tipo 'error'
+                             showTooltip(`¡Monedas insuficientes! Necesitas ${itemPrice} 🪙.`, 'error');
+                        }
+                        // Deshabilitamos temporalmente el botón si no lo estaba por alguna razón
+                        button.disabled = true;
+                        return;
+                    }
+                    
+                    // Llama a la función global de compra
+                    const success = handleShopPurchase(itemKey, itemPrice, item.getAttribute('data-style-class'));
+                        
+                    if (success) {
+                        // Actualiza el estado visual del botón después de la compra exitosa
+                        button.textContent = "¡Comprado!";
+                        button.disabled = true;
+                        button.classList.add('item-purchased');
+                        
+                        // Sincronizar el display (la función global actualiza el localStorage)
+                        window.updateShopDisplayCoins(parseInt(localStorage.getItem('currentCoins')) || 0);
+                    }
+                    
+                } else {
+                    alert("Error: La lógica de compra no está inicializada correctamente.");
+                }
+            });
+        });
+        
+        // Llama a la función de sincronización para aplicar el estado inicial
+        window.updateShopDisplayCoins(initialCoins);
+    });
+</script>
