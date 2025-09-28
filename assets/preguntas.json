@@ -52,5 +52,851 @@
     "category": "Nuevo Testamento",
     "reference": "Mateo 2:11",
     "hint": "Los tres regalos tradicionales eran metales preciosos o resinas aromáticas. Uno de los metales listados no lo era."
+  },
+  {
+    "id": 7,
+    "question": "¿Quién fue el primer hombre creado por Dios según el libro de Génesis?",
+    "options": ["Abel", "Noé", "Adán", "Caín"],
+    "answer": "Adán",
+    "category": "Génesis",
+    "reference": "Génesis 2:7",
+    "hint": "Su nombre en hebreo significa 'hombre' o 'humanidad'."
+  },
+  {
+    "id": 8,
+    "question": "¿Cómo se llamaban los dos hijos de Adán y Eva que protagonizaron el primer asesinato?",
+    "options": ["Sem y Jafet", "Esaú y Jacob", "Caín y Abel", "Rubén y Simeón"],
+    "answer": "Caín y Abel",
+    "category": "Génesis",
+    "reference": "Génesis 4:8",
+    "hint": "Uno era pastor y el otro agricultor."
+  },
+  {
+    "id": 9,
+    "question": "¿Qué ciudad fue destruida por fuego y azufre debido a su gran maldad, junto con Gomorra?",
+    "options": ["Nínive", "Sodoma", "Jericó", "Babilonia"],
+    "answer": "Sodoma",
+    "category": "Génesis",
+    "reference": "Génesis 19:24",
+    "hint": "La esposa de Lot se convirtió en una columna de sal al mirar atrás."
+  },
+  {
+    "id": 10,
+    "question": "¿Cuál fue el nombre original de Abraham antes de que Dios se lo cambiara?",
+    "options": ["Israel", "Isaac", "Abram", "Jacob"],
+    "answer": "Abram",
+    "category": "Génesis",
+    "reference": "Génesis 17:5",
+    "hint": "Su nombre original significa 'padre exaltado'."
+  },
+  {
+    "id": 11,
+    "question": "¿Cuántos años vivió Matusalén, el hombre más longevo mencionado en la Biblia?",
+    "options": ["969 años", "777 años", "800 años", "1000 años"],
+    "answer": "969 años",
+    "category": "Génesis",
+    "reference": "Génesis 5:27",
+    "hint": "Fue abuelo de Noé y su longevidad es legendaria."
+  },
+  {
+    "id": 12,
+    "question": "¿Quién tuvo un sueño de una escalera que llegaba al cielo con ángeles subiendo y bajando?",
+    "options": ["José", "Moisés", "Jacob", "David"],
+    "answer": "Jacob",
+    "category": "Génesis",
+    "reference": "Génesis 28:12",
+    "hint": "Su nombre fue cambiado a Israel."
+  },
+  {
+    "id": 13,
+    "question": "¿Qué objeto usó Moisés para convertir el agua del río Nilo en sangre durante la primera plaga de Egipto?",
+    "options": ["Su mano", "Una piedra", "Una vara", "Su sandalia"],
+    "answer": "Una vara",
+    "category": "Éxodo",
+    "reference": "Éxodo 7:17",
+    "hint": "Este objeto también se usó para dividir el Mar Rojo."
+  },
+  {
+    "id": 14,
+    "question": "¿Cuál es el primer mandamiento de los Diez Mandamientos?",
+    "options": ["No matarás", "No tendrás dioses ajenos delante de mí", "Honra a tu padre y a tu madre", "No robarás"],
+    "answer": "No tendrás dioses ajenos delante de mí",
+    "category": "Éxodo",
+    "reference": "Éxodo 20:3",
+    "hint": "Se centra en la adoración exclusiva a Dios."
+  },
+  {
+    "id": 15,
+    "question": "¿Qué tipo de animal habló con Balaam para reprenderlo por golpearlo?",
+    "options": ["Un perro", "Un asna (burra)", "Un camello", "Una oveja"],
+    "answer": "Un asna (burra)",
+    "category": "Números",
+    "reference": "Números 22:28",
+    "hint": "Es un animal de carga asociado con la humildad."
+  },
+  {
+    "id": 16,
+    "question": "¿Quién fue la única mujer juez mencionada en el libro de Jueces?",
+    "options": ["Rut", "Débora", "Ester", "Jael"],
+    "answer": "Débora",
+    "category": "Jueces",
+    "reference": "Jueces 4:4",
+    "hint": "Ella profetizó la victoria sobre el ejército de Sísara."
+  },
+  {
+    "id": 17,
+    "question": "¿Con qué arma simple derrotó David al gigante Goliat?",
+    "options": ["Una espada", "Un arco y flecha", "Una lanza", "Una honda y una piedra"],
+    "answer": "Una honda y una piedra",
+    "category": "1 Samuel",
+    "reference": "1 Samuel 17:49",
+    "hint": "El arma de los pastores era subestimada por el gigante."
+  },
+  {
+    "id": 18,
+    "question": "¿Quién fue el primer rey de Israel?",
+    "options": ["David", "Saúl", "Salomón", "Roboam"],
+    "answer": "Saúl",
+    "category": "1 Samuel",
+    "reference": "1 Samuel 10:24",
+    "hint": "Fue ungido por el profeta Samuel."
+  },
+  {
+    "id": 19,
+    "question": "¿Qué profeta desafió a los profetas de Baal en el Monte Carmelo, haciendo descender fuego del cielo?",
+    "options": ["Isaías", "Jeremías", "Elías", "Eliseo"],
+    "answer": "Elías",
+    "category": "1 Reyes",
+    "reference": "1 Reyes 18:38",
+    "hint": "Fue llevado al cielo en un carro de fuego."
+  },
+  {
+    "id": 20,
+    "question": "¿Cómo se llamaba la mujer que se casó con Booz y fue tatarabuela del rey David?",
+    "options": ["Ester", "Noemí", "Rut", "Rebeca"],
+    "answer": "Rut",
+    "category": "Rut",
+    "reference": "Rut 4:13, 22",
+    "hint": "Su lealtad a su suegra, Noemí, es famosa."
+  },
+  {
+    "id": 21,
+    "question": "¿Qué rey de Israel construyó el primer Templo en Jerusalén?",
+    "options": ["David", "Salomón", "Ezequías", "Josías"],
+    "answer": "Salomón",
+    "category": "1 Reyes",
+    "reference": "1 Reyes 6:14",
+    "hint": "Conocido por su gran sabiduría y riqueza."
+  },
+  {
+    "id": 22,
+    "question": "¿Cuál es el libro más corto del Antiguo Testamento (por número de versículos)?",
+    "options": ["Abdías", "Hageo", "Malaquías", "Jonás"],
+    "answer": "Abdías",
+    "category": "Profetas Menores",
+    "reference": "Libro de Abdías (1 capítulo, 21 versículos)",
+    "hint": "Solo tiene un capítulo y trata principalmente sobre Edom."
+  },
+  {
+    "id": 23,
+    "question": "¿Qué profeta fue tragado por un gran pez (o ballena) después de desobedecer a Dios?",
+    "options": ["Miqueas", "Oseas", "Jonás", "Amós"],
+    "answer": "Jonás",
+    "category": "Profetas Menores",
+    "reference": "Jonás 1:17",
+    "hint": "Su misión era predicar el arrepentimiento a Nínive."
+  },
+  {
+    "id": 24,
+    "question": "¿Qué profeta tuvo una visión de un valle lleno de huesos secos que cobraron vida?",
+    "options": ["Ezequiel", "Isaías", "Jeremías", "Daniel"],
+    "answer": "Ezequiel",
+    "category": "Profetas Mayores",
+    "reference": "Ezequiel 37:1-14",
+    "hint": "Esta visión simboliza la restauración de Israel."
+  },
+  {
+    "id": 25,
+    "question": "¿Qué libro del Antiguo Testamento se compone principalmente de canciones y poemas?",
+    "options": ["Proverbios", "Eclesiastés", "Cantar de los Cantares", "Salmos"],
+    "answer": "Salmos",
+    "category": "Libros Poéticos",
+    "reference": "Introducción al Libro de Salmos",
+    "hint": "Gran parte de este libro fue escrito por el rey David."
+  },
+  {
+    "id": 26,
+    "question": "¿Cuál es el tema principal del libro de Proverbios?",
+    "options": ["La historia de Israel", "La sabiduría y la instrucción", "La ley ceremonial", "Las profecías del Mesías"],
+    "answer": "La sabiduría y la instrucción",
+    "category": "Libros Sapienciales",
+    "reference": "Proverbios 1:7",
+    "hint": "Su objetivo es enseñar a vivir una vida piadosa y práctica."
+  },
+  {
+    "id": 27,
+    "question": "¿Cómo se llama el profeta que sirvió de escriba a Jeremías y registró sus profecías?",
+    "options": ["Miqueas", "Sofonías", "Baruc", "Ageo"],
+    "answer": "Baruc",
+    "category": "Profetas Mayores",
+    "reference": "Jeremías 36:4",
+    "hint": "Fue un amigo leal y secretario del profeta."
+  },
+  {
+    "id": 28,
+    "question": "¿Quién fue la reina que se arriesgó a ir ante el rey Asuero sin ser llamada para salvar a su pueblo?",
+    "options": ["Jezabel", "Vasti", "Ester", "Dalila"],
+    "answer": "Ester",
+    "category": "Ester",
+    "reference": "Ester 4:16",
+    "hint": "Su primo Mardoqueo la crio después de que ella quedara huérfana."
+  },
+  {
+    "id": 29,
+    "question": "¿Qué gran conquistador mundial profetizó Daniel en la estatua y en la visión de las cuatro bestias?",
+    "options": ["Ciro el Grande", "Darío I", "Alejandro Magno", "Nabucodonosor"],
+    "answer": "Alejandro Magno",
+    "category": "Daniel",
+    "reference": "Daniel 8:21",
+    "hint": "Representado por un macho cabrío con un cuerno prominente."
+  },
+  {
+    "id": 30,
+    "question": "¿Quién escribió la mayor parte del libro de Salmos?",
+    "options": ["Salomón", "Moisés", "David", "Asaf"],
+    "answer": "David",
+    "category": "Libros Poéticos",
+    "reference": "Salmos (atribuciones)",
+    "hint": "Fue un pastor, músico y rey."
+  },
+  {
+    "id": 31,
+    "question": "¿Cuál es el significado del nombre 'Jesús' en español?",
+    "options": ["Rey de reyes", "El Fuerte", "Dios con nosotros", "El Señor Salva"],
+    "answer": "El Señor Salva",
+    "category": "Nuevo Testamento",
+    "reference": "Mateo 1:21",
+    "hint": "El ángel le dijo a José que lo llamara así porque salvaría a su pueblo de sus pecados."
+  },
+  {
+    "id": 32,
+    "question": "¿Qué profesión tenía el apóstol Mateo antes de seguir a Jesús?",
+    "options": ["Pescador", "Carpintero", "Recaudador de impuestos (publicano)", "Fabricante de tiendas"],
+    "answer": "Recaudador de impuestos (publicano)",
+    "category": "Nuevo Testamento",
+    "reference": "Mateo 9:9",
+    "hint": "Era un hombre muy mal visto por la sociedad judía de su época."
+  },
+  {
+    "id": 33,
+    "question": "¿Dónde nació Jesús, según el Nuevo Testamento?",
+    "options": ["Nazaret", "Jerusalén", "Belén", "Jericó"],
+    "answer": "Belén",
+    "category": "Nuevo Testamento",
+    "reference": "Lucas 2:4-7",
+    "hint": "Es conocida como la 'Ciudad de David'."
+  },
+  {
+    "id": 34,
+    "question": "¿Quién fue el sumo sacerdote que conspiró para arrestar y matar a Jesús?",
+    "options": ["Anás", "Caifás", "Pilato", "Herodes"],
+    "answer": "Caifás",
+    "category": "Nuevo Testamento",
+    "reference": "Juan 11:49-53",
+    "hint": "El Sanedrín se reunía en su casa."
+  },
+  {
+    "id": 35,
+    "question": "¿Cuántas veces negó Pedro conocer a Jesús antes de que el gallo cantara?",
+    "options": ["Una", "Dos", "Tres", "Cuatro"],
+    "answer": "Tres",
+    "category": "Nuevo Testamento",
+    "reference": "Mateo 26:75",
+    "hint": "Jesús le había advertido sobre esto específicamente."
+  },
+  {
+    "id": 36,
+    "question": "¿Cuál fue la primera persona a la que Jesús se le apareció después de resucitar, según el Evangelio de Juan?",
+    "options": ["Pedro", "María Magdalena", "Su madre María", "Tomás"],
+    "answer": "María Magdalena",
+    "category": "Nuevo Testamento",
+    "reference": "Juan 20:14-16",
+    "hint": "Ella lo confundió con el jardinero."
+  },
+  {
+    "id": 37,
+    "question": "¿Qué apóstol era conocido por ser dudoso hasta que vio las heridas de Jesús resucitado?",
+    "options": ["Andrés", "Felipe", "Tomás", "Santiago"],
+    "answer": "Tomás",
+    "category": "Nuevo Testamento",
+    "reference": "Juan 20:24-29",
+    "hint": "Su sobrenombre a menudo incluye la palabra 'gemelo'."
+  },
+  {
+    "id": 38,
+    "question": "¿Quién escribió la mayoría de las cartas del Nuevo Testamento (epístolas)?",
+    "options": ["Pedro", "Juan", "Pablo", "Santiago"],
+    "answer": "Pablo",
+    "category": "Nuevo Testamento",
+    "reference": "Atribución de 13 (o 14, si se incluye Hebreos) epístolas",
+    "hint": "Su nombre original era Saulo de Tarso."
+  },
+  {
+    "id": 39,
+    "question": "¿Qué libro del Nuevo Testamento describe el fin de los tiempos y las profecías finales?",
+    "options": ["Romanos", "Apocalipsis", "Hechos", "Hebreos"],
+    "answer": "Apocalipsis",
+    "category": "Nuevo Testamento",
+    "reference": "Libro de Apocalipsis",
+    "hint": "Fue escrito por el apóstol Juan en la isla de Patmos."
+  },
+  {
+    "id": 40,
+    "question": "¿A qué ciudad se dirigía Saulo (Pablo) cuando tuvo un encuentro con Jesús que lo cegó temporalmente?",
+    "options": ["Jerusalén", "Antioquía", "Damasco", "Corinto"],
+    "answer": "Damasco",
+    "category": "Hechos",
+    "reference": "Hechos 9:3",
+    "hint": "Estaba viajando para perseguir a los cristianos allí."
+  },
+  {
+    "id": 41,
+    "question": "¿Qué milagro de Jesús es el único registrado en los cuatro Evangelios (Mateo, Marcos, Lucas, Juan)?",
+    "options": ["Caminar sobre el agua", "La resurrección de Lázaro", "Curar al ciego de nacimiento", "La alimentación de los 5000"],
+    "answer": "La alimentación de los 5000",
+    "category": "Nuevo Testamento",
+    "reference": "Mateo 14:13-21, Marcos 6:30-44, Lucas 9:10-17, Juan 6:5-15",
+    "hint": "El milagro de los panes y los peces."
+  },
+  {
+    "id": 42,
+    "question": "¿Cuál de los siguientes era un apóstol que no era uno de los doce originales?",
+    "options": ["Bartolomé", "Matías", "Judas Tadeo", "Simón el Zelote"],
+    "answer": "Matías",
+    "category": "Nuevo Testamento",
+    "reference": "Hechos 1:26",
+    "hint": "Fue elegido para reemplazar a Judas Iscariote después de la ascensión de Jesús."
+  },
+  {
+    "id": 43,
+    "question": "¿Quién dijo: \"He aquí el Cordero de Dios, que quita el pecado del mundo\"?",
+    "options": ["Pedro", "Jesús", "Juan el Bautista", "El ángel Gabriel"],
+    "answer": "Juan el Bautista",
+    "category": "Nuevo Testamento",
+    "reference": "Juan 1:29",
+    "hint": "Estaba bautizando a la gente en el río Jordán."
+  },
+  {
+    "id": 44,
+    "question": "¿Qué rey del Antiguo Testamento escribió un libro de lamentos después de la caída de Jerusalén?",
+    "options": ["David", "Ezequías", "Jeremías", "Salomón"],
+    "answer": "Jeremías",
+    "category": "Libros Proféticos",
+    "reference": "Introducción al libro de Lamentaciones",
+    "hint": "El libro se llama Lamentaciones."
+  },
+  {
+    "id": 45,
+    "question": "¿Qué criatura marina fue creada en el quinto día de la creación?",
+    "options": ["El Leviatán", "El hombre", "Los peces y las aves", "Los animales terrestres"],
+    "answer": "Los peces y las aves",
+    "category": "Génesis",
+    "reference": "Génesis 1:20-23",
+    "hint": "El hombre fue creado en el sexto día."
+  },
+  {
+    "id": 46,
+    "question": "¿Cómo se llamaba la esposa de Moisés?",
+    "options": ["Sara", "Rebeca", "Séfora", "Raquel"],
+    "answer": "Séfora",
+    "category": "Éxodo",
+    "reference": "Éxodo 2:21",
+    "hint": "Ella era hija de Jetro, sacerdote de Madián."
+  },
+  {
+    "id": 47,
+    "question": "¿Qué ciudad derribó sus muros después de que los israelitas marcharon alrededor de ella por siete días?",
+    "options": ["Hai", "Betel", "Jericó", "Gabaón"],
+    "answer": "Jericó",
+    "category": "Josué",
+    "reference": "Josué 6:20",
+    "hint": "Los sacerdotes tocaron trompetas hechas de cuernos de carnero."
+  },
+  {
+    "id": 48,
+    "question": "¿Quién fue el juez conocido por su fuerza y por cortarle el cabello (fuente de su fuerza) Dalila?",
+    "options": ["Gedeón", "Sansón", "Jefté", "Elí"],
+    "answer": "Sansón",
+    "category": "Jueces",
+    "reference": "Jueces 16:17-19",
+    "hint": "Murió derribando un templo filisteo."
+  },
+  {
+    "id": 49,
+    "question": "¿Quién fue el profeta que ungió a David como rey en secreto?",
+    "options": ["Natán", "Elías", "Samuel", "Gad"],
+    "answer": "Samuel",
+    "category": "1 Samuel",
+    "reference": "1 Samuel 16:13",
+    "hint": "Él también fue el último de los jueces de Israel."
+  },
+  {
+    "id": 50,
+    "question": "¿Cuál es el último libro del Antiguo Testamento?",
+    "options": ["Zacarías", "Malaquías", "Ageo", "Joel"],
+    "answer": "Malaquías",
+    "category": "Profetas Menores",
+    "reference": "Orden de los libros en la Biblia",
+    "hint": "Se llama así por un profeta cuyo nombre significa 'mi mensajero'."
+  },
+  {
+    "id": 51,
+    "question": "¿Cuántos libros tiene el Nuevo Testamento?",
+    "options": ["27", "39", "66", "45"],
+    "answer": "27",
+    "category": "General",
+    "reference": "Canon bíblico",
+    "hint": "El Antiguo Testamento tiene 39 libros (para un total de 66 en la Biblia protestante)."
+  },
+  {
+    "id": 52,
+    "question": "¿Qué título se le dio a Jesús cuando entró en Jerusalén montado en un asno, antes de su crucifixión?",
+    "options": ["Rabí", "El Ungido", "Hijo de David", "Hijo de Dios"],
+    "answer": "Hijo de David",
+    "category": "Nuevo Testamento",
+    "reference": "Mateo 21:9",
+    "hint": "La gente gritaba \"¡Hosanna al Hijo de David!\"."
+  },
+  {
+    "id": 53,
+    "question": "¿Quién intentó engañar al Espíritu Santo al mentir sobre el precio de una propiedad que vendieron?",
+    "options": ["Simón el Mago", "Ananías y Safira", "Felipe y Natanael", "Bernabé y Silas"],
+    "answer": "Ananías y Safira",
+    "category": "Hechos",
+    "reference": "Hechos 5:1-11",
+    "hint": "Ambos murieron repentinamente después de mentir."
+  },
+  {
+    "id": 54,
+    "question": "¿Cuál fue la primera señal (milagro) que Jesús realizó, según el Evangelio de Juan?",
+    "options": ["Curar al hijo de un oficial", "Multiplicar los panes", "Convertir el agua en vino", "Calmar la tempestad"],
+    "answer": "Convertir el agua en vino",
+    "category": "Nuevo Testamento",
+    "reference": "Juan 2:1-11 (Bodas de Caná)",
+    "hint": "Ocurrió en una boda en Caná de Galilea."
+  },
+  {
+    "id": 55,
+    "question": "¿Cómo se llamaba el hombre que ayudó a Jesús a llevar la cruz?",
+    "options": ["José de Arimatea", "Nicodemo", "Simón de Cirene", "Barrabás"],
+    "answer": "Simón de Cirene",
+    "category": "Nuevo Testamento",
+    "reference": "Marcos 15:21",
+    "hint": "Era originario de una región del norte de África."
+  },
+  {
+    "id": 56,
+    "question": "¿Qué es lo que Jesús le dijo a Nicodemo que era necesario para ver el reino de Dios?",
+    "options": ["Dar limosnas", "Nacer de nuevo", "Seguir la ley de Moisés", "Bautizarse"],
+    "answer": "Nacer de nuevo",
+    "category": "Nuevo Testamento",
+    "reference": "Juan 3:3",
+    "hint": "Nicodemo era un fariseo y miembro del Sanedrín."
+  },
+  {
+    "id": 57,
+    "question": "¿Qué mujer ungió los pies de Jesús con perfume caro y los secó con su cabello en Betania?",
+    "options": ["María Magdalena", "Marta", "María (hermana de Lázaro)", "La mujer samaritana"],
+    "answer": "María (hermana de Lázaro)",
+    "category": "Nuevo Testamento",
+    "reference": "Juan 12:3",
+    "hint": "Su hermano había sido resucitado de entre los muertos."
+  },
+  {
+    "id": 58,
+    "question": "¿Cuál es el significado de la palabra \"Evangelio\"?",
+    "options": ["Nueva Ley", "Enseñanza Sagrada", "Buenas Nuevas", "Testamento Final"],
+    "answer": "Buenas Nuevas",
+    "category": "Nuevo Testamento",
+    "reference": "Etimología",
+    "hint": "Se refiere al mensaje de salvación a través de Jesús."
+  },
+  {
+    "id": 59,
+    "question": "¿Quién escribió la epístola a los Filipenses?",
+    "options": ["Pablo", "Pedro", "Lucas", "Santiago"],
+    "answer": "Pablo",
+    "category": "Epístolas",
+    "reference": "Filipenses 1:1",
+    "hint": "Es una de sus \"cartas de la prisión\"."
+  },
+  {
+    "id": 60,
+    "question": "¿Cuál de los profetas mayores profetizó que el Mesías nacería de una virgen?",
+    "options": ["Jeremías", "Isaías", "Ezequiel", "Daniel"],
+    "answer": "Isaías",
+    "category": "Profetas Mayores",
+    "reference": "Isaías 7:14",
+    "hint": "Es el profeta más citado en el Nuevo Testamento."
+  },
+  {
+    "id": 61,
+    "question": "¿Qué parte del cuerpo humano le fue extirpada a Adán para crear a Eva?",
+    "options": ["Un brazo", "Una costilla", "Un pie", "Un hueso del pecho"],
+    "answer": "Una costilla",
+    "category": "Génesis",
+    "reference": "Génesis 2:21",
+    "hint": "Simboliza que la mujer fue hecha para estar al lado del hombre."
+  },
+  {
+    "id": 62,
+    "question": "¿Cuál de los siguientes no es un fruto del Espíritu Santo, según la carta a los Gálatas?",
+    "options": ["Gozo", "Dominio propio", "Paciencia", "Honestidad"],
+    "answer": "Honestidad",
+    "category": "Epístolas",
+    "reference": "Gálatas 5:22-23",
+    "hint": "La lista incluye amor, gozo, paz, paciencia, benignidad, bondad, fe, mansedumbre y dominio propio."
+  },
+  {
+    "id": 63,
+    "question": "¿Qué profeta fue arrojado a un pozo lleno de lodo por sus profecías impopulares contra Jerusalén?",
+    "options": ["Ezequiel", "Isaías", "Jeremías", "Habacuc"],
+    "answer": "Jeremías",
+    "category": "Profetas Mayores",
+    "reference": "Jeremías 38:6",
+    "hint": "Es conocido como el \"profeta llorón\"."
+  },
+  {
+    "id": 64,
+    "question": "¿A qué edad Abraham tuvo a su hijo Isaac?",
+    "options": ["75 años", "90 años", "100 años", "120 años"],
+    "answer": "100 años",
+    "category": "Génesis",
+    "reference": "Génesis 21:5",
+    "hint": "Su esposa Sara tenía 90 años."
+  },
+  {
+    "id": 65,
+    "question": "¿Quién es el autor principal del libro de Eclesiastés?",
+    "options": ["David", "Moisés", "Salomón", "Isaías"],
+    "answer": "Salomón",
+    "category": "Libros Sapienciales",
+    "reference": "Eclesiastés 1:1",
+    "hint": "El libro comienza con la frase \"Vanidad de vanidades, todo es vanidad\"."
+  },
+  {
+    "id": 66,
+    "question": "¿Cuál fue la profesión del apóstol Lucas?",
+    "options": ["Pescador", "Abogado", "Médico", "Maestro"],
+    "answer": "Médico",
+    "category": "Nuevo Testamento",
+    "reference": "Colosenses 4:14",
+    "hint": "Escribió un evangelio y el libro de los Hechos."
+  },
+  {
+    "id": 67,
+    "question": "¿En qué lugar, según el libro de Hechos, se les llamó \"cristianos\" por primera vez a los discípulos de Jesús?",
+    "options": ["Jerusalén", "Antioquía", "Roma", "Corinto"],
+    "answer": "Antioquía",
+    "category": "Hechos",
+    "reference": "Hechos 11:26",
+    "hint": "Esta ciudad estaba en Siria y fue un centro misionero clave."
+  },
+  {
+    "id": 68,
+    "question": "¿Qué río tuvo que cruzar Josué y el pueblo de Israel para entrar en la Tierra Prometida?",
+    "options": ["Río Nilo", "Río Éufrates", "Río Jordán", "Río Tigris"],
+    "answer": "Río Jordán",
+    "category": "Josué",
+    "reference": "Josué 3:17",
+    "hint": "Las aguas se detuvieron milagrosamente para que pudieran cruzar."
+  },
+  {
+    "id": 69,
+    "question": "¿Qué profeta fue el último mensajero de Dios antes de los 400 años de silencio intertestamentario?",
+    "options": ["Malaquías", "Jonás", "Ageo", "Sofonías"],
+    "answer": "Malaquías",
+    "category": "Profetas Menores",
+    "reference": "Final del canon del Antiguo Testamento",
+    "hint": "Su libro termina con una profecía sobre Elías antes de la venida del Señor."
+  },
+  {
+    "id": 70,
+    "question": "¿Cuál era el nombre de la madre de Samuel, quien oró fervientemente a Dios por un hijo?",
+    "options": ["Ana", "Elisabet", "Rebeca", "Lía"],
+    "answer": "Ana",
+    "category": "1 Samuel",
+    "reference": "1 Samuel 1:10-11",
+    "hint": "Ella hizo un voto de dedicar a su hijo al servicio de Dios."
+  },
+  {
+    "id": 71,
+    "question": "¿Qué tipo de criatura engañó a Eva para que comiera del fruto prohibido?",
+    "options": ["Un dragón", "Un ángel caído", "Una serpiente", "Un chivo"],
+    "answer": "Una serpiente",
+    "category": "Génesis",
+    "reference": "Génesis 3:1-5",
+    "hint": "Fue maldecida por Dios a arrastrarse sobre su vientre."
+  },
+  {
+    "id": 72,
+    "question": "¿Cuántas veces al día, como mínimo, se recomienda orar, según el ejemplo de Daniel?",
+    "options": ["Una", "Dos", "Tres", "Cuatro"],
+    "answer": "Tres",
+    "category": "Daniel",
+    "reference": "Daniel 6:10",
+    "hint": "Oraba de rodillas mirando hacia Jerusalén."
+  },
+  {
+    "id": 73,
+    "question": "¿Quién fue el primer mártir cristiano, apedreado por predicar el evangelio?",
+    "options": ["Santiago", "Esteban", "Felipe", "Bernabé"],
+    "answer": "Esteban",
+    "category": "Hechos",
+    "reference": "Hechos 7:59-60",
+    "hint": "Saulo (Pablo) estuvo presente y aprobó su ejecución."
+  },
+  {
+    "id": 74,
+    "question": "¿Cuál es el nombre del lugar donde Jesús fue crucificado?",
+    "options": ["Gólgota", "Getsemaní", "El Calvario", "La Puerta Hermosa"],
+    "answer": "Gólgota",
+    "category": "Nuevo Testamento",
+    "reference": "Mateo 27:33",
+    "hint": "Su nombre en arameo significa \"lugar de la calavera\"."
+  },
+  {
+    "id": 75,
+    "question": "¿Qué es la \"Ley\" en el contexto de la Biblia hebrea (Antiguo Testamento)?",
+    "options": ["Los Profetas", "El Pentateuco (Torá)", "Los Escritos", "Los Salmos"],
+    "answer": "El Pentateuco (Torá)",
+    "category": "General/Antiguo Testamento",
+    "reference": "Clasificación de los libros del AT",
+    "hint": "Incluye los primeros cinco libros, escritos por Moisés."
+  },
+  {
+    "id": 76,
+    "question": "¿Qué rey se enfermó gravemente y le fue concedida una extensión de 15 años a su vida después de orar?",
+    "options": ["Acab", "Roboam", "Ezequías", "Manasés"],
+    "answer": "Ezequías",
+    "category": "2 Reyes/Isaías",
+    "reference": "2 Reyes 20:5-6",
+    "hint": "El profeta Isaías fue enviado para darle la noticia."
+  },
+  {
+    "id": 77,
+    "question": "¿Cuál de los Evangelios es el más corto?",
+    "options": ["Mateo", "Marcos", "Lucas", "Juan"],
+    "answer": "Marcos",
+    "category": "Nuevo Testamento",
+    "reference": "Comparación de longitud de Evangelios",
+    "hint": "Se cree que fue escrito en Roma y se centra en los hechos de Jesús."
+  },
+  {
+    "id": 78,
+    "question": "¿Qué se le cayó de los ojos a Saulo (Pablo) después de que Ananías oró por él para recuperar la vista?",
+    "options": ["Arena", "Escamas", "Lodo", "Telas"],
+    "answer": "Escamas",
+    "category": "Hechos",
+    "reference": "Hechos 9:18",
+    "hint": "Esto ocurrió después de su conversión en el camino a Damasco."
+  },
+  {
+    "id": 79,
+    "question": "¿En qué carta del Nuevo Testamento se encuentra el famoso pasaje sobre la armadura de Dios?",
+    "options": ["Romanos", "Efesios", "Colosenses", "1 Corintios"],
+    "answer": "Efesios",
+    "category": "Epístolas",
+    "reference": "Efesios 6:11-18",
+    "hint": "La carta fue escrita a una ciudad de Asia Menor."
+  },
+  {
+    "id": 80,
+    "question": "¿Cuál es el primer milagro de Elías registrado en la Biblia?",
+    "options": ["Resucitar al hijo de la viuda de Sarepta", "Hacer caer fuego del cielo", "Multiplicar la harina y el aceite", "Detener la lluvia por tres años"],
+    "answer": "Detener la lluvia por tres años",
+    "category": "1 Reyes",
+    "reference": "1 Reyes 17:1",
+    "hint": "Lo hizo como juicio contra el rey Acab y la adoración a Baal."
+  },
+  {
+    "id": 81,
+    "question": "¿Quién vendió su primogenitura por un plato de guiso de lentejas?",
+    "options": ["Jacob", "Rubén", "Esaú", "Ismael"],
+    "answer": "Esaú",
+    "category": "Génesis",
+    "reference": "Génesis 25:34",
+    "hint": "Era el hermano gemelo de Jacob."
+  },
+  {
+    "id": 82,
+    "question": "¿Cómo se llamaba la esposa de Abraham?",
+    "options": ["Agar", "Rebeca", "Raquel", "Sara"],
+    "answer": "Sara",
+    "category": "Génesis",
+    "reference": "Génesis 17:15",
+    "hint": "Su nombre original era Sarai."
+  },
+  {
+    "id": 83,
+    "question": "¿Cuál de los siguientes no es un nombre de uno de los tres amigos de Daniel que fueron arrojados al horno de fuego?",
+    "options": ["Sadrac", "Mesac", "Abed-nego", "Belsasar"],
+    "answer": "Belsasar",
+    "category": "Daniel",
+    "reference": "Daniel 3:20",
+    "hint": "Belsasar fue rey de Babilonia."
+  },
+  {
+    "id": 84,
+    "question": "¿Qué personaje bíblico es conocido por haber escrito una carta mientras estaba encadenado, que trata extensamente sobre la alegría?",
+    "options": ["Juan", "Pedro", "Timoteo", "Pablo"],
+    "answer": "Pablo",
+    "category": "Epístolas",
+    "reference": "Epístola a los Filipenses",
+    "hint": "La carta fue a los creyentes en Filipos."
+  },
+  {
+    "id": 85,
+    "question": "¿Cuál de los siguientes es el tema central del sermón de Jesús en el Monte (Mateo 5-7)?",
+    "options": ["La profecía de los últimos días", "Las Bienaventuranzas y la Ley", "La historia del templo", "El juicio de las naciones"],
+    "answer": "Las Bienaventuranzas y la Ley",
+    "category": "Nuevo Testamento",
+    "reference": "Mateo 5:3-12",
+    "hint": "Es el discurso más largo de Jesús en el Evangelio de Mateo."
+  },
+  {
+    "id": 86,
+    "question": "¿Qué rey de Judea fue visitado por los magos después del nacimiento de Jesús?",
+    "options": ["Herodes Antipas", "Herodes el Grande", "Herodes Agripa I", "César Augusto"],
+    "answer": "Herodes el Grande",
+    "category": "Nuevo Testamento",
+    "reference": "Mateo 2:1-3",
+    "hint": "Fue responsable de la masacre de los niños de Belén."
+  },
+  {
+    "id": 87,
+    "question": "¿Qué tipo de animal fue sacrificado por Dios para cubrir la desnudez de Adán y Eva después de pecar?",
+    "options": ["Un cordero", "Una cabra", "Un animal (pieles)", "Un buey"],
+    "answer": "Un animal (pieles)",
+    "category": "Génesis",
+    "reference": "Génesis 3:21",
+    "hint": "Este acto simboliza la necesidad de un sacrificio para cubrir el pecado."
+  },
+  {
+    "id": 88,
+    "question": "¿Qué profeta fue el principal consejero del rey David?",
+    "options": ["Natán", "Elías", "Samuel", "Hageo"],
+    "answer": "Natán",
+    "category": "Antiguo Testamento",
+    "reference": "2 Samuel 12:1-15",
+    "hint": "Él reprendió a David por su pecado con Betsabé."
+  },
+  {
+    "id": 89,
+    "question": "¿Quién es la figura clave del Antiguo Testamento a quien se le atribuye la autoría del Pentateuco (los primeros cinco libros)?",
+    "options": ["Josué", "Elías", "Moisés", "Abraham"],
+    "answer": "Moisés",
+    "category": "Antiguo Testamento",
+    "reference": "Tradición bíblica y erudita",
+    "hint": "Lideró a los israelitas fuera de Egipto."
+  },
+  {
+    "id": 90,
+    "question": "¿Qué par de hermanos apóstoles eran conocidos como \"Boanerges\" o \"Hijos del Trueno\"?",
+    "options": ["Pedro y Andrés", "Juan y Santiago", "Felipe y Bartolomé", "Mateo y Tomás"],
+    "answer": "Juan y Santiago",
+    "category": "Nuevo Testamento",
+    "reference": "Marcos 3:17",
+    "hint": "Eran hijos de Zebedeo."
+  },
+  {
+    "id": 91,
+    "question": "¿Quién liberó a Pedro de la cárcel después de que un ángel se le apareció?",
+    "options": ["Silas", "El carcelero", "Un ángel del Señor", "Un guardia sobornado"],
+    "answer": "Un ángel del Señor",
+    "category": "Hechos",
+    "reference": "Hechos 12:7-10",
+    "hint": "Pedro pensó que estaba soñando o teniendo una visión."
+  },
+  {
+    "id": 92,
+    "question": "¿A qué se refiere la frase \"Sola Scriptura\" en el contexto de la teología cristiana?",
+    "options": ["Solo la fe salva", "Solo Cristo es el camino", "Solo la Escritura es la autoridad infalible", "Solo Dios es Santo"],
+    "answer": "Solo la Escritura es la autoridad infalible",
+    "category": "General",
+    "reference": "Principio de la Reforma Protestante",
+    "hint": "Es uno de los cinco 'solas' de la Reforma."
+  },
+  {
+    "id": 93,
+    "question": "¿Quién era el rey de Babilonia que vio una mano escribir en la pared durante un banquete?",
+    "options": ["Nabucodonosor", "Ciro", "Belsasar", "Darío"],
+    "answer": "Belsasar",
+    "category": "Daniel",
+    "reference": "Daniel 5:5",
+    "hint": "El mensaje misterioso decía \"Mene, Mene, Tekel, Uparsin\"."
+  },
+  {
+    "id": 94,
+    "question": "¿En qué carta del Nuevo Testamento se encuentra el famoso \"capítulo del amor\" (que habla de que el amor es paciente, benigno, etc.)?",
+    "options": ["Romanos", "1 Corintios", "2 Corintios", "Gálatas"],
+    "answer": "1 Corintios",
+    "category": "Epístolas",
+    "reference": "1 Corintios 13",
+    "hint": "Pablo escribió esta carta a una ciudad conocida por sus problemas de división."
+  },
+  {
+    "id": 95,
+    "question": "¿Qué profeta utilizó su matrimonio infiel como una parábola para la relación de Dios con Israel?",
+    "options": ["Isaías", "Oseas", "Amós", "Joel"],
+    "answer": "Oseas",
+    "category": "Profetas Menores",
+    "reference": "Oseas 1:2",
+    "hint": "Su esposa se llamaba Gomer."
+  },
+  {
+    "id": 96,
+    "question": "¿Qué frase dijo Jesús desde la cruz para indicar que su sacrificio había terminado?",
+    "options": ["Padre, perdónalos", "Tengo sed", "Consumado es", "En tus manos encomiendo mi espíritu"],
+    "answer": "Consumado es",
+    "category": "Nuevo Testamento",
+    "reference": "Juan 19:30",
+    "hint": "Es una palabra griega que significa 'pagado por completo'."
+  },
+  {
+    "id": 97,
+    "question": "¿Qué rey se negó a escuchar el consejo de los ancianos y, por lo tanto, dividió el reino de Israel en dos (Israel y Judá)?",
+    "options": ["David", "Salomón", "Jeroboam", "Roboam"],
+    "answer": "Roboam",
+    "category": "1 Reyes",
+    "reference": "1 Reyes 12:13-16",
+    "hint": "Era hijo de Salomón."
+  },
+  {
+    "id": 98,
+    "question": "¿Quién fue la primera persona en la Tierra a la que se le exigió un diezmo (una décima parte de sus ganancias)?",
+    "options": ["Moisés", "Jacob", "Abraham", "Isaac"],
+    "answer": "Abraham",
+    "category": "Génesis",
+    "reference": "Génesis 14:20",
+    "hint": "Lo hizo al regreso de una batalla, antes de la Ley de Moisés."
+  },
+  {
+    "id": 99,
+    "question": "¿Quién fue el apóstol que caminó sobre el agua con Jesús, aunque solo por un momento?",
+    "options": ["Juan", "Santiago", "Pedro", "Andrés"],
+    "answer": "Pedro",
+    "category": "Nuevo Testamento",
+    "reference": "Mateo 14:29",
+    "hint": "Tuvo miedo y comenzó a hundirse."
+  },
+  {
+    "id": 100,
+    "question": "¿Cuál es el significado del nombre de Isaac?",
+    "options": ["Padre de multitudes", "Mi juez es Dios", "Él se ríe (Risa)", "Exaltado"],
+    "answer": "Él se ríe (Risa)",
+    "category": "Génesis",
+    "reference": "Génesis 17:17, 18:12",
+    "hint": "El nombre fue dado porque sus padres se rieron ante la idea de tener un hijo en su vejez."
   }
 ]
